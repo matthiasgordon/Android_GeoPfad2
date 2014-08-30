@@ -1,0 +1,244 @@
+<orte>
+    
+    <ort>
+        <name>1 Der Geopfad</name>
+        <image>station1bild4</image>
+        <image2>station1bild5</image2>
+        <image3>station1bild7</image3>
+        <about>
+Der Geopfad der Stadt Bergisch Gladbach bietet eine Zeitreise in die erdgeschichtliche Vergangenheit. Er „entführt“ Sie in eine Welt vor unserer Zeit. Dabei vermittelt er interessante erdgeschichtliche Ziele wie zum Beispiel den Nationalen Geotop „Schlade“ in der Paffrather Kalkmulde. Hier können Sie von der Brandungszone des ehemaligen Riffs durch dessen zentralen Bereich bis zur Lagune im Brandungschatten spazieren. Des Weiteren werden Sie frühindustrielle Entwicklung und botanische Besonderheiten auf dem Geopfad entdecken können.             	
+        </about>
+        <link>abc</link>
+        <latitude>50.99033054</latitude>
+        <longitude>7.13143487</longitude>
+        <visitKey>GEOPFAD</visitKey>
+     </ort>
+    
+    
+     <ort>
+        <name>2 Aufschluss am Gasthaus Paas</name>
+        <image>station2bild2</image>
+	<image2>station2bild3</image2>
+        <image3>station2bild4</image3>
+        <about>	
+In der Paffrather Kalkmulde sind mehr als 360 Millionen Jahre alte Gesteinsschichten des Mittel – und Oberdevons muldenförmig eingefaltet. Geschehen ist dies vor etwa 290 Millionen Jahren, als zwei Kontinentalplatten aufeinander prallten und sich an ihrer Nahtstelle  das Variszische Gebirge aus dem Meer hob. Dieses wurde zwar  in der Folgezeit wieder eingeebnet, die jüngeren Gesteinsschichten in ihrer muldenförmigen Lage blieben jedoch von der Abtragung  verschont. Am tiefsten ist die Mulde im Süden. Dort sind unterdevonische  Gesteinsserien auf sie aufgeschoben. Die Kalksteinvorkommen im Bergischen Land entstanden aus Riffschutt, Kalkschlämmen und den Skeletten devonzeitlicher Meerestiere, welche am Gasthaus gut zu erkennen sind. 
+        </about>
+        <link>abc</link>
+        <latitude>50.99047695</latitude>
+        <longitude>7.13143487</longitude>
+        <visitKey>GASTHAUS</visitKey>
+     </ort>
+     
+     <ort>
+        <name>3 Bausteine am Rathaus</name>
+        <image>station3bild3</image>
+	<image2>station3bild4</image2>
+        <image3>station3bild5</image3>
+        <about>	
+Ähnlich wie an der gegenüber liegenden Laurentiuskirche dominiert qm 1906 fertig gestellten Rathausgebäude der örtlich gebrochene Naturstein, ein dünnbankinger Kalkstein aus der Abfolge des Unteren Plattenkalks Er wurde in Steinbrüchen an der Paffrather Straße (Flora , Marienhöhe) und an der Hauptstraße (Kuhle, Kasper und Zillertal an der Feuerwache) abgebaut und ist ein Sediment der Lagune im Brandungsschatten des Riffs (siehe Station 16). Anhand der Sedimentstrukturen erkennt man, dass zeitweilig teils schon verfestigter Riffschutt in die Lagune abgerutscht sein muss. Viele Bruchsteine weisen besondere Merkmale wie z.B. Stauchfältelungen oder Trümmergefüge auf. Häufig erkennt man auch Versteinerungen wie Armfüßler, Schnecken, Korallen und ästige Kalkschwämme.    
+        </about>
+        <link>abc</link>
+        <latitude>50.99155677</latitude>
+        <longitude>7.1304892</longitude>
+        <visitKey>RATHAUS</visitKey>
+     </ort>
+     
+      <ort>
+        <name>4 Die Schlade</name>
+        <image>station4bild4</image>
+	<image2>station4bild5</image2>
+        <image3>station4bild6</image3>
+        <about>
+Vielleicht haben Sie es schon bemerkt: Der stellenweise recht breite Talgrund der „Schlade“ wird von keinem Gewässer durchflossen. Ursache für die Entstehung eines derartigen Trockentals ist die Wasserlöslichkeit  des Kalksteins. So hat sich in und um die „Schlade“ ein interessanter Formenschatz aus Trockentälern, Trichtern und Hohlformen gebildet, der allgemein als Karst bezeichnet wird. In Gebieten, deren Untergrund aus Kalkstein besteht, verlaufen die Gewässer vielfach entlang von Spalten und Klüften, die sich zu Hohlräumen erweitern können. Bricht die Decke eines Hohlraums ein entsteht eine sogenannte Doline. Solche Einsturztrichter sind typisch für eine Karstlandschaft. Die „Schlade“ ist eines der bedeutendsten Geotope im Rheinland und seit 2006 eines von 77 nationalen Geotopen in Deutschland. Sie bietet aber auch botanische Besonderheiten und gewährt mit ihren Erzgruben, Kalksteinbrüchen und Brennöfen zur Erzeugung von Branntkalk Einblick in die Wirtschaftsgeschichte des Bergisch Gladbacher Raums.     	
+       	</about>
+        <link>abc</link>
+        <latitude>51.0011731</latitude>
+        <longitude>7.13859439</longitude>
+        <visitKey>SCHLADE</visitKey>
+     </ort>
+     
+       <ort>
+        <name>5 Eisenerzbergbau</name>
+        <image>station5bild18</image>
+	<image2>station5bild19</image2>
+        <image3>station5bild20</image3>
+        <about>
+Vor allem in den Klüften, Schlotten und Einsturztrichtern des Kalksteins findet man Eisenoxide, aus denen an einigen Stellen Lagerstätten von Brauneisenerz entstanden sind. Bereits seit dem Mittelalter wurden diese „ausgebeutet“. So findet man bereits im Urkataster  von 1827 Flurnamen wie „An der Grube in der Schlade“ oder „Grubenfeld“. Sie verwesien auf alle Tagebaue auf der Hochfläche. 1848 entstand dann die Grube „Prinz Wilhelm“, deren Stollensystem bis unter das Talniveau hinabreichte. Der Moll-Stollen, der an der Straße „in der Schlade“ mündet, ist als Einschnitt noch heute erkennbar. Er war der Hauptförderstollen der Erzgrube. Die Halde auf der gegenüberliegenden Straßenseite besteht aus seinem Abraummaterial.  
+        </about>
+        <link>abc</link>
+        <latitude>51.00413031</latitude>
+        <longitude>7.14402907</longitude>
+        <visitKey>EISENBERGBAU</visitKey>
+     </ort>
+     
+       <ort>
+        <name>6 Kalkindustrie</name>
+        <image>station6bild5</image>
+	<image2>station6bild6</image2>
+        <image3>station6bild7</image3>
+        <about>
+Der Kalkstein der Paffrather Kalkmulde war sehr begehrt. Schon vom 15. Jahrhundert an wurde er – ebenso wie der hier gewonnene Branntkalk – in die benachbarten Orte Mülheim (heute Köln-Mülheim) und Köln geliefert. Ihre Blütezeit hatte die Bergisch Gladbacher Kalkindustrie jedoch vor allem im 17. Und 18. Jahrhundert sowie in der zweiten Hälfte des 19. Jahrhunderts. Damals besaßen die Steinbruchbesitzer sogar für einige Jahrzente die Monopolstellung für Branntkalkprodukte auf den rheinischen Märkten. Im Jahr der Stadterhebung 1856 gab es in Bergisch Gladbach insgesamt 14 Brennanlagen. Im Gebiet der Paffrather Kalkmulde wurden im Laufe der Zeit rund 80 Kalköfen betrieben.
+        </about>
+        <link>abc</link>
+        <latitude>51.00386935</latitude>
+        <longitude>7.14724067</longitude>
+        <visitKey>KALKINDUSTRIE</visitKey>
+     </ort>
+     
+       <ort>
+        <name>7 Riff - Steinbruch Grubenfeld</name>
+        <image>station7bild3</image>
+	<image2>station7bild4</image2>
+        <image3>station7bild5</image3>
+        <about>
+Vor über 400 Millionen Jahren war durch die Kollision verschiedener Kontinentalplatten ein riesiger Nordkontinent entstanden, der von Nordamerika bis Sibirien reichte. Die Südküste dieses Kontinents lag im Bergischen Land. Damals sah die Welt generell noch anders aus als heute, zum Beispiel hinsichtlich der Form und Lage der Kontinente. So befand sich Europa südlich des Äquators. Hier herrschten tropische Klimabedingungen. Weite Gebiete des Bergischen Landes waren vor 375 Millionen Jahren, zur Zeit des Mitteldevons, von einem mit Inseln durchsetzten, warmen Flachmeer bedeckt. Das tropische Klima und die sonnendurchfluteten Flachwasserbereiche boten ideale Bedingungen für das Wachstum von Korallen. Im klaren sauerstoffreichen Wasser besiedelten Rifffaunen Untiefen und Inselsäume. Mit der Zeit entstanden mächtige und ausgedehnte Riffe. Die unterschiedlichen Lebensbereiche eines solchen urzeitlichen Riffs – von der Brandungszone bis zur Rifflagune – sind in der „Schlade“ aufgrund des langjährigen Abbaus von Kalkstein vorzüglich erschlossen. Hier – inmitten eines Naturschutzgebietes – liegen die Gesteinsschichten heute vor uns wie ein offenes Buch. Wie viele Riffe war auch das von Bergisch Gladbach in unterschiedliche Zonen gegliedert: in die Brandungszone, den zentralen Riffkomplex und den hinter dem Riff gelegenen flachen Lagunenbereich. Im Steinbruch Grubenfeld beginnt der Rundgang dort, wo einst die Wellen gegen das Riff brandeten.
+        </about>
+        <link>abc</link>
+        <latitude>51.00361034</latitude>
+        <longitude>7.1475963</longitude>
+        <visitKey>RIFFGRUBE</visitKey>
+     </ort>
+     
+       <ort>
+        <name>8 Vorderseite des Riffs</name>
+        <image>station8bild4</image>
+	<image2>station8bild5</image2>
+        <image3>station8bild6</image3>
+        <about>
+An der Stelle, an der man den Steinbruch betritt, besteht die Felswand aus massigen, grauen Kalksteinen. Sie sind der verfestigte Schutt im einst dem offenen Meer zugewandten Vorfeld des Riffs und bestehen aus den Resten ehemaliger Riffbewohner. Hier lebten Korallen, Kalkschwämme, Muscheln und Armfüßer, die von der Brandung zerrieben und zu mächtigen Bänken augeschichtet wurden. Wer genau hinschaut wird erkennen, dass auf dem Brandungsschutt zeitweise Korallenkolonien und Algenrasen beheimatet waren, die später wieder von Schutt begraben wurden. Vor etwa 290 Millionen Jahren kollidierten – vereinfach gesagt – die Kontinentalplatten von Afrika und Europa. Dabei wurden die über zehn Kilometer dicken verfestigten Ablagerungen, die sich seit Jahrmillionen am Meeresboden angesammelt hatten, über den Meeresspielge angehoben, gefaltet, gegeneinander verschoben und sozusagen gestapelt. Es entstand das Variszische Gebirge, das sich im Erdaltertum quer durch Europa zog. Seitdem sind die ehemals horizontal abgelagerten Schichten hier um circa 40 bis 60 Grad gekippt. Bei den gelblich gefärbten, sandig zerfallenden Gesteinsschichten handelt es sich um Dolomitstein, der sich unter dem Einfluss magnesiumhaltiger Lösungen aus dem ursprünglich sehr reinen Kalkstein gebildet hat (siehe Station 13)
+        </about>
+        <link>abc</link>
+        <latitude>51.00366471</latitude>
+        <longitude>7.14764965</longitude>
+        <visitKey>RIFFVORNE</visitKey>
+     </ort>
+     
+       <ort>
+        <name>9 Riffkern</name>
+        <image>station9bild6</image>
+	<image2>station9bild7</image2>
+        <image3>station9bild8</image3>
+        <about>
+Massige Riffbildner – einst auf dem Meeresboden festsitzende Organismen – kennzeichnen den dem Wellenschlag der Brandung ausgesetzten Riffteil. Hier wurden ganze Bänke aus bis zu meterdicken, knolligen Gebilden aufgebaut, die an Fußbälle erinnern. Man findet sie auch in zahlreichen Bruchstücken auf dem Boden wieder. Es sind die Skellette von „Stromatoporen“, urtümlichen Kalkschwämmen, die schon vor 100 Millionen Jahren ausstarben. Durch ihren kugeligen Wuchs konnten sie dem kräftigen Wellenschlag widerstehen. Auch die übrigen Organismen passten sich dem Leben in der Brandungszone an. In den Lücken des Blockriffs siedelten knollige Korallenkolonien, stängelige Einzelkorallen, große Armfüßer und Muscheln. In geschützten Nischen und in strömungsarmen Tümpeln lebten Schnecken, dünnschalige Muscheln, Dreilappkrebse und Fische, deren versteinerte Überreste man mit etwas Glück in den schwarzen, schiefrig zerfallenden Mergelsteinen finden kann, die hier Teile des Blockriffs überlagern. Sie entstanden aus Kalkschwämmen, die sich in einem Rifftümpel absetzten. Von der Treppe zur oberen Steinbruchsohle fällt der Blick auf eine schräg gestellte Schichtfläche aus Rifftümpel-Sedimenten über dem Blockriff. Nach Osten hin schließt sich an den Riffkern allmählich der Übergangsbereich zwischen dem Riffkomplex und der Lagune an.
+        </about>
+        <link>abc</link>
+        <latitude>51.00380479</latitude>
+        <longitude>7.14789821</longitude>
+        <visitKey>RIFFKERN</visitKey>
+     </ort>
+     
+       <ort>
+        <name>10 Rasenriff</name>
+        <image>station10bild3</image>
+	<image2>station10bild4</image2>
+        <image3>station10bild5</image3>
+        <about>
+Im Brandungsschatten des Riffkerns breiteten sich Richtung rückwärtiger Lagune weitläufige „Rasen“ aus ästigen Korallen und Kalkschwämmen aus. Ganze Gesteinspacken bestehen hier fast nur aus den Gerüsten dieser riffbildenden Organismen. Im Volksmund werden die Kalkschwammgeflechte der Gattung Amphipora auch als „Nudelsalat“ bezeichnet. Auffällig ist hier zudem die zellige Auswitterung und Freilegung der Fossilien in den dolomitischen Gesteinsabschnitten. Die Kalksteine im Westteil der Kalkmulde sind bis in eine gewisse Tiege teilweise zu Dolomitstein umgewandelt (siehe Station 13). Wer genau hinsieht, kann erkennen, wie in den Kalkschwammgeflechten einzelne Ästchen mit feinen, dicht beieinander liegenden Poren aufsteigen und sich dann erneut zu Polstern ausbreiten. Das Rasenriff war Lebensraum verschiedener Gattungen und Arten koloniebildender Korallen und kleinerer, knolliger Kalkschwämme, Armfüßer und Muscheln, die häufig in Lebensstellung erhalten blieben. Eine Besonderheit ist die reiche Schneckenfauna, von der hervorragende Exemplare in der städtigen Fossiliensammlung im Bürgerhaus ausgestellt sind. Der relativ ruhige und strömungsarme Lebensraum des Rasenriffs wurde zeitweise von Riffschutt, in dem man nur zerbrochene Fossilreste findet, überdeckt. Darauf breiteten sich dann erneute Rasenriffe aus.
+        </about>
+        <link>abc</link>
+        <latitude>51.0037458</latitude>
+        <longitude>7.14958875</longitude>
+        <visitKey>RASENRIFF</visitKey>
+     </ort>
+     
+       <ort>
+        <name>11 Lebensgemeinschaft des Riffs</name>
+        <image>station11bild5</image>
+	<image2>station11bild6</image2>
+        <image3>station11bild7</image3>
+        <about>
+            bla
+        </about>
+        <link>abc</link>
+        <latitude>51.00402536</latitude>
+        <longitude>7.148920385</longitude>
+        <visitKey>LEBENSGEMEINSCHAFT</visitKey>
+     </ort>
+     
+       <ort>
+        <name>12 Naturschutz und Sukzession</name>
+        <image>station12bild6</image>
+	<image2>station12bild7</image2>
+        <image3>station12bild8</image3>
+        <about>
+            bla
+        </about>
+        <link>abc</link>
+        <latitude>51.00393617</latitude>
+        <longitude>7.15003962</longitude>
+        <visitKey>NATURSCHUTZ</visitKey>
+     </ort>
+     
+       <ort>
+        <name>13 Riff - Steinbruch am Kohlenbusch</name>
+        <image>station13bild4</image>
+	<image2>station13bild5</image2>
+        <image3>station13bild6</image3>
+        <about>
+            bla
+        </about>
+        <link>abc</link>
+        <latitude>51.00380691</latitude>
+        <longitude>7.15261604</longitude>
+        <visitKey>RIFFKOHLE</visitKey>
+     </ort>
+     
+       <ort>
+        <name>14 Kölner Bucht und Bergische Randhöhen</name>
+        <image>station14bild4</image>
+	<image2>station14bild5</image2>
+        <image3>station14bild6</image3>
+        <about>
+            bla
+        </about>
+        <link>abc</link>
+        <latitude>51.00258112</latitude>
+        <longitude>7.1551456</longitude>
+        <visitKey>BUCHT</visitKey>
+     </ort>
+     
+       <ort>
+        <name>15 Buchenwald</name>
+        <image>station15bild4</image>
+	<image2>station15bild5</image2>
+        <image3>station15bild6</image3>
+        <about>
+            bla
+        </about>
+        <link>abc</link>
+        <latitude>51.00173708</latitude>
+        <longitude>7.15868311</longitude>
+        <visitKey>BUCHENWALD</visitKey>
+     </ort>
+     
+      <ort>
+        <name>16 Die Rifflagune - Steinbruch neue Dombach</name>
+        <image>station16bild5</image>
+	<image2>station16bild6</image2>
+        <image3>station16bild7</image3>
+        <about>
+            bla
+        </about>
+        <link>abc</link>
+        <latitude>50.99527259</latitude>
+        <longitude>7.15813455</longitude>
+        <visitKey>RIFFLAGUNE</visitKey>
+     </ort>
+     
+       <ort>
+        <name>17 Zinkerzbergbau</name>
+        <image>station17bild6</image>
+	<image2>station17bild5</image2>
+        <image3>station17bild7</image3>
+        <about>
+            bla
+        </about>
+        <link>abc</link>
+        <latitude>50.994752</latitude>
+        <longitude>7.14810747</longitude>
+        <visitKey>ZINKERZENBAU</visitKey>
+     </ort>
+</orte>
+
+
+

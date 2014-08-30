@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background" >
+    
+<TextView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:text="Ortname"/>
+    
+   <EditText 
+       android:id="@+id/etxtName"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"/>
+   
+   <TextView 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:text="Ortbeschreibung"/>
+   
+   <EditText 
+       android:id="@+id/etxtAbout"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"/>
+   
+    <TextView 
+       android:id="@+id/bildurl"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:text="Test"/>
+    
+    <RelativeLayout 
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    
+		    <Button 
+		       android:id="@+id/btnbildurl"
+		       android:layout_width="64px"
+		       android:layout_height="56px"
+		       android:background="@drawable/button_folder"/>
+
+		   	<Button
+		   	    android:id="@+id/btnAnlegen"
+		   	    android:layout_width="64px"
+		   	    android:layout_height="64px"
+		   	    android:layout_alignParentRight="true"
+		   	    android:layout_alignParentTop="true"
+		   	    android:background="@drawable/button_savelocation" />
+
+	</RelativeLayout>	      
+   <TextView 
+       android:id="@+id/txtName"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"/>
+   
+   
+     
+   <TextView
+       android:id="@+id/txtAbout" 
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout 
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MapFragment" xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <TextView
+        android:id="@+id/emptyList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:text="@string/empty_listview"
+        android:textSize="22sp" />
+
+    <ListView
+        android:id="@+id/listViewOrte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background" >
+    </ListView>
+
+   
+</FrameLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Geo Pfad</string>
+    <string name="NavigationLocation"></string>
+    <string name="LocationName">Buxdehudes eisenwerk 3.0</string>
+    <string name="LocationText">Ich bin hier was am probieren aber scheiß will nicht funktionieren....ich muss das bild größer bekommen aber wenn ich es verändern will legt es sich hinter den text oder verrückt die anderen da sie in abhängigkeit zum bild stehen</string>
+    <string-array name="string_spinner">
+        <item>Alle Orte anzeigen</item>
+        <item>Nur besuchte Orte anzeigen</item>
+        <item>Nur unbesuchte Orte anzeigen</item>
+    </string-array>
+    <string name="activity_location">ActivityLocation</string>
+    <string name="Willkommen">Herzlich Willkommen zur GeoPfad-App</string>
+    <string name="Erklaerung">Diese App bietet ihnen alle möglichen Infos rund um den Geopfad. Dabei handelt es sich um einen unter Geologen weltbekannten Rundweg durch Bergisch Gladbach. Auf dem Weg findet man zahlreiche geologisch wertvolle Funde, die eine Geschichte aus vergangenen Zeiten erzählen.</string>
+    <string name="Wetter">Hier das aktuelle Wetter in Bergisch Gladbach:</string>
+    <string name="Button_Map"></string>
+    <string name="which_places">Welche Orte sollen angezeigt werden?</string>
+    <string name="add_location">Add Location</string>
+    <string name="empty_listview">Keine Orte gefunden.</string>
+    <string name="search_actionbar">Suchen</string>    
+</resources>

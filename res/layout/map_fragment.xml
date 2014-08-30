@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapFragment"
+    android:background="@color/background" >
+    
+<LinearLayout
+		android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+    
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="20"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+    
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+    
+        <TextView 
+            android:text="@string/which_places"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        
+	    <Spinner
+	        android:id="@+id/spinner1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="60dp"
+	        android:layout_weight="1" />
+    
+    </LinearLayout>
+</LinearLayout>    
+ 	<!-- <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="425dp"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+        -->
+        
+    
+
+</FrameLayout>
