@@ -17,10 +17,12 @@ import android.widget.Toast;
 @SuppressLint("SdCardPath") 
 public class FileChooser extends ListActivity {
 	    
-	    private File currentDir;
+		//create a current directory variable
+		private File currentDir;
 	    private FileArrayAdapter adapter;
 	    private String url;
 	   
+	    // Called when the activity is first created
 	    @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	    	
@@ -30,7 +32,13 @@ public class FileChooser extends ListActivity {
 	        
 	    }
 	    
-	    
+	    //The first method is called fill. The purpose of fill is to get all the files and folder for the current directory we are in
+	    //The Method work like this:
+	    //get an array of all the files and directories in the current we are in 
+	    //create 2 ListArrays. One for folders and one for files.
+	    //sort files and directories into the appropriate ListArray.
+	    //sort the ListArrays alphabetically and pass to one ListArray.
+	    //pass this ListArray to our custom ArrayAdapter
 	    void fill(File f)
 	    {
 	        File[]dirs = f.listFiles();
@@ -55,11 +63,13 @@ public class FileChooser extends ListActivity {
 	         Collections.sort(fls);
 	         dir.addAll(fls);
 	         if(!f.getName().equalsIgnoreCase("sdcard"))
-	             dir.add(0,new FileChooserOption("..","Parent Directory",f.getParent()));
+	         dir.add(0,new FileChooserOption("..","Parent Directory",f.getParent()));
 	         adapter = new FileArrayAdapter(FileChooser.this,R.layout.file_view,dir);
 	         //ListView lv= (ListView) findViewById(R.id.listView1);
 	         this.setListAdapter(adapter);
 	    }
+	    
+	    //We need to handle users clicking on files and folders
 	    @Override
 	    protected void onListItemClick(ListView l, View v, int position, long id) {
 	        // TODO Auto-generated method stub
@@ -73,7 +83,8 @@ public class FileChooser extends ListActivity {
 	        {
 	            onFileClick(o);
 	        }
-	        
+	    
+	    //The "file URL" is put in the variable url    
 	    }
 	    private void onFileClick(FileChooserOption o)
 	    {
@@ -90,6 +101,7 @@ public class FileChooser extends ListActivity {
 			startActivity(intent);*/
 	    }
 
+	    //getters an setters
 		public void setCurrentDir(File currentDir) {
 			this.currentDir = currentDir;
 		}

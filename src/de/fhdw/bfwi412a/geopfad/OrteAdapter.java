@@ -47,6 +47,8 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 				holder.imgIcon = (ImageView)row.findViewById(R.id.imgIcon);
 				holder.txtOrtName = (TextView)row.findViewById(R.id.txtOrtName);
 				
+				holder.txtOrtEntfernung = (TextView)row.findViewById(R.id.txtOrtEntfernung);
+				
 				row.setTag(holder);
 			}
 			else {
@@ -56,6 +58,8 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 			
 			Ort ort = orte.get(position);
 			holder.txtOrtName.setText(ort.getName());
+			
+			holder.txtOrtEntfernung.setText("Entfernung_Text");
 			
 			int id = context.getResources().getIdentifier("thumb_"+ort.getImgUrl(), "drawable", context.getPackageName());
 			holder.imgIcon.setImageResource(id);
@@ -67,6 +71,7 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 	static class OrtHolder {
 		ImageView imgIcon;
 		TextView txtOrtName;
+		TextView txtOrtEntfernung;
 	}
 
 		

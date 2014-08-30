@@ -24,11 +24,15 @@ public class FileArrayAdapter extends ArrayAdapter<FileChooserOption>{
         id = textViewResourceId;
         items = objects;
     }
+    
+    //Method to get item from a location in the List
     public FileChooserOption getItem(int i)
      {
          return items.get(i);
      }
-     @Override
+
+    //Method create our custom view from the data in items and use add_location.xml to be the view
+    @Override
        public View getView(int position, View convertView, ViewGroup parent) {
                View v = convertView;
                if (v == null) {
