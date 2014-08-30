@@ -1,4 +1,5 @@
 Android_GeoPfad2
 ================
 
-Hier sollte hoffentlich alles wieder klappen
+Wir bauen eine tolle Android-App
+und Marc ist blöd.
