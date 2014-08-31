@@ -20,6 +20,16 @@ public class ActivityStart extends Activity {
 	}
 	
 	@Override
+	protected void onResume() {
+		initData();
+		initGUI();
+		initApplicationLogic();
+		initEventToListenerMapping();	
+
+		super.onResume();
+	}
+	
+	@Override
 	protected void onDestroy() {
 		stopService(new Intent(this, ServiceNotifyDistance.class));
 		super.onDestroy();
@@ -31,11 +41,11 @@ public class ActivityStart extends Activity {
 	
 	private void initGUI() {
 		setContentView(R.layout.activity_start);
-		mGUI = new ActivityStartGUI(this);
+		mGUI = new ActivityStartGUI(this, mData);
 	}
 	
 	private void initApplicationLogic() {
-		mAppLogic = new ActivityStartApplicationLogic(mGUI,mData);
+		mAppLogic = new ActivityStartApplicationLogic(this,mGUI,mData);
 	}
 	
 	private void initEventToListenerMapping() {

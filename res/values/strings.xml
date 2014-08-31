@@ -11,10 +11,10 @@
         <item>Nur unbesuchte Orte anzeigen</item>
     </string-array>
     <string name="activity_location">ActivityLocation</string>
-    <string name="Willkommen">Herzlich Willkommen zur GeoPfad-App</string>
+    <string name="Willkommen">Willkommen zum GeoPfad</string>
     <string name="Erklaerung">Diese App bietet ihnen alle möglichen Infos rund um den Geopfad. Dabei handelt es sich um einen unter Geologen weltbekannten Rundweg durch Bergisch Gladbach. Auf dem Weg findet man zahlreiche geologisch wertvolle Funde, die eine Geschichte aus vergangenen Zeiten erzählen.</string>
     <string name="Wetter">Hier das aktuelle Wetter in Bergisch Gladbach:</string>
-    <string name="Button_Map"></string>
+    <string name="Button_Map">Los!</string>
     <string name="which_places">Welche Orte sollen angezeigt werden?</string>
     <string name="add_location">Add Location</string>
     <string name="empty_listview">Keine Orte gefunden.</string>

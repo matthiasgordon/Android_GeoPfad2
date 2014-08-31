@@ -12,10 +12,19 @@ public class ActivityStartEventToListenerMapping implements OnClickListener {
 		mGUI = gui;
 		mAppLogic = appLogic;
 		mGUI.getToActivityMainButton().setOnClickListener(this);
+		mGUI.getBtnWeather().setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
-		mAppLogic.onToActivityMainButtonClicked();
+		switch(v.getId()){
+		
+		case R.id.ToActivityMainButton:
+			mAppLogic.onToActivityMainButtonClicked();
+			break;
+		case R.id.btnWeather:
+			mAppLogic.openWeatherDialog();
+			break;
+		}
 	}
 }
