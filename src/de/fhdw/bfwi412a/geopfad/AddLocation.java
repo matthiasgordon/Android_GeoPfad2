@@ -134,7 +134,7 @@ public class AddLocation extends Activity {
 							}
 							
 						    else {
-						    	 FileOutputStream fileos= new FileOutputStream(ORTE_XML);//getApplicationContext().openFileOutput(xmlFile, Context.MODE_PRIVATE);
+						    	 FileOutputStream fileos= new FileOutputStream(ORTE_XML);
 								    XmlSerializer xmlSerializer = Xml.newSerializer();              
 								    StringWriter writer = new StringWriter();
 								    xmlSerializer.setOutput(writer);
