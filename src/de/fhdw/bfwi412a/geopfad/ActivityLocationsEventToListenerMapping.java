@@ -18,7 +18,6 @@ public class ActivityLocationsEventToListenerMapping implements OnClickListener,
 		mGUI.getBtnVisit().setOnClickListener(this);
 		mAppLogic.getLocationManager().requestLocationUpdates(mAppLogic.getmProvider(), 400, 1, this);
 		if(mAppLogic.isProviderEnabled() == true) {
-		mAppLogic.setLivePosition();
 		mAppLogic.setDistance();
 		}
 	}
@@ -37,7 +36,6 @@ public class ActivityLocationsEventToListenerMapping implements OnClickListener,
 
 	@Override
 	public void onLocationChanged(Location location) {
-		mAppLogic.setLivePosition();
 		mAppLogic.setDistance();
 	}
 

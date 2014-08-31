@@ -6,25 +6,26 @@ import android.content.SharedPreferences;
 import android.location.Criteria;
 import android.location.LocationManager;
 import android.net.Uri;
-import android.location.Location;
 
 public class ActivityLocationsApplicationLogic {
 	
 	private ActivityLocationsData mData;
 	private ActivityLocationsGUI mGUI;
+	private DistanceCalculator mDistCalc;
 	ActivityLocations mActivity;
 	private LocationManager mLocationManager;
 	private String mProvider;
-	Criteria criteria;
+	Criteria mCriteria;
 	
 
 	public ActivityLocationsApplicationLogic(ActivityLocations act, ActivityLocationsData data, ActivityLocationsGUI gui) {
 		mData = data;
 		mGUI = gui;
+		mDistCalc = new DistanceCalculator();
 		mActivity = act;
 		mLocationManager = (LocationManager) act.getSystemService(Context.LOCATION_SERVICE);
-		criteria = new Criteria();
-		mProvider = mLocationManager.getBestProvider(criteria, false);
+		mCriteria = new Criteria();
+		mProvider = mLocationManager.getBestProvider(mCriteria, false);
 	}
 	
 	public LocationManager getLocationManager() {
@@ -58,35 +59,11 @@ public class ActivityLocationsApplicationLogic {
 		mGUI.getVisitStatus().setText(visitStatus.getString(mData.mVisitKey, "Nein"));
 	}
 	
-	public void setLivePosition() {
-		Location liveLocation = mLocationManager.getLastKnownLocation(mProvider);
-		if(liveLocation != null) {
-		mData.setLiveLatitude(liveLocation.getLatitude());
-		mData.setLiveLongitude(liveLocation.getLongitude());
-		}
-	}
-	
-	public double calculateDistance(double liveLat, double liveLng, double toLat, double toLng) {
-		if(mData.getLiveLaditude() != 0) {
-		    int r = 6371000; // average radius of the earth in m
-		    double dLat = Math.toRadians(toLat - liveLat);
-		    double dLon = Math.toRadians(toLng - liveLng);
-		    double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-		      Math.cos(Math.toRadians(liveLat)) * Math.cos(Math.toRadians(toLat)) 
-		      * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-		    double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		    double d = r * c;
-		    return d;
-		}
-		return 0;
-	}
-	
 	public void setDistance() {
-		if(mData.getLiveLaditude() !=0){
-			Double distance = calculateDistance(mData.getLiveLaditude(), mData.getLiveLongitude(), mData.getLatitude(), mData.getLongitude());
+		Double distance = mDistCalc.getDistance(mData.getLatitude(), mData.getLongitude(), mActivity);
+		if(distance != 0 && distance != -1) {
 			Double distance_rounded = Math.rint(distance*100)/100;
-			
-			if (distance_rounded>1000) {
+			if(distance_rounded>1000) {
 		    	double distance_km = distance / 1000;
 		    	double distance_km_gerundet=Math.rint(distance_km*100)/100;
 		    	mGUI.getDistance().setText(String.valueOf(distance_km_gerundet + " km"));
