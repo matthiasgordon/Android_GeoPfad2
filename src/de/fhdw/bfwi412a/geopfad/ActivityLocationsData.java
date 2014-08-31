@@ -12,9 +12,12 @@ public class ActivityLocationsData {
 	String mImageUrl;
 	String mImageUrl2;
 	String mImageUrl3;
+	String mExtImageUrl;
 	String mAbout;
 	double mLatitude;
 	double mLongitude;
+	double mLiveLatitude;
+	double mLiveLongitude;
 	final String mVisitKey;
 	private SharedPreferences mVisitStatus;
 
@@ -26,6 +29,7 @@ public class ActivityLocationsData {
 		mImageUrl = mOrtInfo.getString("imageUrl");
 		mImageUrl2 = mOrtInfo.getString("imageUrl2");
 		mImageUrl3 = mOrtInfo.getString("imageUrl3");
+		mExtImageUrl = mOrtInfo.getString("extImageUrl");
 		mAbout = mOrtInfo.getString("about");
 		mVisitKey = mOrtInfo.getString("visitKey");
 		mLatitude = mOrtInfo.getDouble("latitude");
@@ -80,6 +84,15 @@ public class ActivityLocationsData {
 		this.mImageUrl3 = mImageUrl3;
 	}
 
+	
+	public String getExtImageUrl() {
+		return mExtImageUrl;
+	}
+
+	public void setExtImageUrl(String mExtImageUrl) {
+		this.mExtImageUrl = mExtImageUrl;
+	}
+
 	public String getAbout() {
 		return mAbout;
 	}
@@ -106,6 +119,22 @@ public class ActivityLocationsData {
 
 	public void setLongitude(double mLongitude) {
 		this.mLongitude = mLongitude;
+	}
+	
+	public double getLiveLaditude() {
+		return mLiveLatitude;
+	}
+
+	public void setLiveLatitude(double mLiveLatitude) {
+		this.mLiveLatitude = mLiveLatitude;
+	}
+
+	public double getLiveLongitude() {
+		return mLiveLongitude;
+	}
+
+	public void setLiveLongitude(double mLiveLongitude) {
+		this.mLiveLongitude = mLiveLongitude;
 	}
 	
 	public SharedPreferences getVisitStatus() {

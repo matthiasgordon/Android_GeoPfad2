@@ -11,7 +11,7 @@ public class ListFragmentGUI {
 	private ListView mListOrte;
 	private OrteAdapter ortAdapter;
 	private TextView mError;
-	
+	private int mListLength;
 	ListFragmentData mData;
 	
 	public ListFragmentGUI(View mView, ListFragmentData data) {
@@ -26,10 +26,19 @@ public class ListFragmentGUI {
 		mListOrte = (ListView) mView.findViewById(R.id.listViewOrte);
 		mListOrte.setAdapter(ortAdapter);
 		mListOrte.setEmptyView(mError);
+		setmListLength(mListOrte.getCount());
 	}
 	
 	public ListView getListOrte() {
 		return mListOrte;
+	}
+
+	public int getmListLength() {
+		return mListLength;
+	}
+
+	public void setmListLength(int mListLength) {
+		this.mListLength = mListLength;
 	}
 	
 }

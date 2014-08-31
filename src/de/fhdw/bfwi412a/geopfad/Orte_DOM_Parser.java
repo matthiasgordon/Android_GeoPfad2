@@ -45,9 +45,6 @@ public class Orte_DOM_Parser {
 	        
         }
         
-        //String urlString = "https://dl.dropboxusercontent.com/s/3baizol2r780o7o/orte.xml";
-        //InputStream is = getInputStreamFromURL(urlString);
-        
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db;
 
@@ -81,10 +78,12 @@ public class Orte_DOM_Parser {
 				        		Element entry = (Element) nl.item(i);
 				        		
 				        		//read the title of each entry
+				        		Element id = (Element) entry.getElementsByTagName("id").item(0);
 				        		Element title = (Element) entry.getElementsByTagName("name").item(0);
 				        		Element image = (Element) entry.getElementsByTagName("image").item(0);
 				        		Element image2 = (Element) entry.getElementsByTagName("image2").item(0);
 				        		Element image3 = (Element) entry.getElementsByTagName("image3").item(0);
+				        		Element extImage = (Element) entry.getElementsByTagName("extImageUrl").item(0);
 				        		Element about = (Element) entry.getElementsByTagName("about").item(0);
 				        		Element link = (Element) entry.getElementsByTagName("link").item(0);
 				        		Element latitude = (Element) entry.getElementsByTagName("latitude").item(0);
@@ -92,21 +91,43 @@ public class Orte_DOM_Parser {
 				        		Element visitKey = (Element) entry.getElementsByTagName("visitKey").item(0);
 				        		
 				        		//add both new TextView and LinearLayout
+					        	curOrt.setId(id.getFirstChild().getNodeValue());
 					        	curOrt.setName(title.getFirstChild().getNodeValue());	//layout.addView(tv_title);
 					        	
-					        	if(image != null){
-					        	String imageName = image.getFirstChild().getNodeValue();
-					        	curOrt.setImgUrl(imageName);
-					        	String imageName2 = image2.getFirstChild().getNodeValue();
-					        	curOrt.setImgUrl2(imageName2);
-					        	String imageName3 = image3.getFirstChild().getNodeValue();
-					        	curOrt.setImgUrl3(imageName3);
-					        	
-					        	curOrt.setAbout(about.getFirstChild().getNodeValue());
-					        	curOrt.setLink(link.getFirstChild().getNodeValue());
-					        	curOrt.setLat(Double.parseDouble(latitude.getFirstChild().getNodeValue()));
-					        	curOrt.setLng(Double.parseDouble(longitude.getFirstChild().getNodeValue()));
-					        	curOrt.setVisitKey(visitKey.getFirstChild().getNodeValue());
+					        	if(image != null || extImage != null){
+					        		if(image2 != null){	
+						        	String imageName = image.getFirstChild().getNodeValue();
+						        	curOrt.setImgUrl(imageName);
+					        		}
+						        	if(image2 != null){
+						        		String imageName2 = image2.getFirstChild().getNodeValue();
+						        		curOrt.setImgUrl2(imageName2);
+						        	}
+						        	if(image3 != null){
+						        		String imageName3 = image3.getFirstChild().getNodeValue();
+							        	curOrt.setImgUrl3(imageName3);
+						        	}
+						        	if(extImage != null){
+						        		String extImageUrl = extImage.getFirstChild().getNodeValue();
+							        	curOrt.setExtImgUrl(extImageUrl); 
+						        	}
+						        	if(about != null){
+						        		curOrt.setAbout(about.getFirstChild().getNodeValue());
+						        	}
+						        	if(link != null){
+							        	curOrt.setLink(link.getFirstChild().getNodeValue());
+						        	}
+						        	if(latitude != null){
+							        	curOrt.setLat(Double.parseDouble(latitude.getFirstChild().getNodeValue()));
+						        	}
+						        	if(longitude != null){
+							        	curOrt.setLng(Double.parseDouble(longitude.getFirstChild().getNodeValue()));
+						        	}
+						        	if(visitKey != null){
+							        	curOrt.setVisitKey(visitKey.getFirstChild().getNodeValue());
+						        	}
+						        	
+						        	
 					        	}
 					        	listOrte.add(curOrt);
 				        	

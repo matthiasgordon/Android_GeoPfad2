@@ -1,6 +1,7 @@
 <orte>
     
     <ort>
+        <id>1</id>
         <name>1 Der Geopfad</name>
         <image>station1bild4</image>
         <image2>station1bild5</image2>
@@ -9,13 +10,14 @@
 Der Geopfad der Stadt Bergisch Gladbach bietet eine Zeitreise in die erdgeschichtliche Vergangenheit. Er „entführt“ Sie in eine Welt vor unserer Zeit. Dabei vermittelt er interessante erdgeschichtliche Ziele wie zum Beispiel den Nationalen Geotop „Schlade“ in der Paffrather Kalkmulde. Hier können Sie von der Brandungszone des ehemaligen Riffs durch dessen zentralen Bereich bis zur Lagune im Brandungschatten spazieren. Des Weiteren werden Sie frühindustrielle Entwicklung und botanische Besonderheiten auf dem Geopfad entdecken können.             	
         </about>
         <link>abc</link>
-        <latitude>50.99083327</latitude>
-        <longitude>7.13135136</longitude>
+        <latitude>50.99033054</latitude>
+        <longitude>7.13143487</longitude>
         <visitKey>GEOPFAD</visitKey>
      </ort>
     
     
      <ort>
+         <id>2</id>
         <name>2 Aufschluss am Gasthaus Paas</name>
         <image>station2bild2</image>
 	<image2>station2bild3</image2>
@@ -30,6 +32,7 @@ In der Paffrather Kalkmulde sind mehr als 360 Millionen Jahre alte Gesteinsschic
      </ort>
      
      <ort>
+         <id>3</id>
         <name>3 Bausteine am Rathaus</name>
         <image>station3bild3</image>
 	<image2>station3bild4</image2>
@@ -44,6 +47,7 @@ In der Paffrather Kalkmulde sind mehr als 360 Millionen Jahre alte Gesteinsschic
      </ort>
      
       <ort>
+          <id>4</id>
         <name>4 Die Schlade</name>
         <image>station4bild4</image>
 	<image2>station4bild5</image2>
@@ -58,6 +62,7 @@ Vielleicht haben Sie es schon bemerkt: Der stellenweise recht breite Talgrund de
      </ort>
      
        <ort>
+           <id>5</id>
         <name>5 Eisenerzbergbau</name>
         <image>station5bild18</image>
 	<image2>station5bild19</image2>
@@ -72,6 +77,7 @@ Vor allem in den Klüften, Schlotten und Einsturztrichtern des Kalksteins findet
      </ort>
      
        <ort>
+           <id>6</id>
         <name>6 Kalkindustrie</name>
         <image>station6bild5</image>
 	<image2>station6bild6</image2>
@@ -86,6 +92,7 @@ Der Kalkstein der Paffrather Kalkmulde war sehr begehrt. Schon vom 15. Jahrhunde
      </ort>
      
        <ort>
+           <id>7</id>
         <name>7 Riff - Steinbruch Grubenfeld</name>
         <image>station7bild3</image>
 	<image2>station7bild4</image2>
@@ -100,6 +107,7 @@ Vor über 400 Millionen Jahren war durch die Kollision verschiedener Kontinental
      </ort>
      
        <ort>
+           <id>8</id>
         <name>8 Vorderseite des Riffs</name>
         <image>station8bild4</image>
 	<image2>station8bild5</image2>
@@ -114,6 +122,7 @@ An der Stelle, an der man den Steinbruch betritt, besteht die Felswand aus massi
      </ort>
      
        <ort>
+           <id>9</id>
         <name>9 Riffkern</name>
         <image>station9bild6</image>
 	<image2>station9bild7</image2>
@@ -128,6 +137,7 @@ Massige Riffbildner – einst auf dem Meeresboden festsitzende Organismen – ke
      </ort>
      
        <ort>
+           <id>10</id>
         <name>10 Rasenriff</name>
         <image>station10bild3</image>
 	<image2>station10bild4</image2>
@@ -142,6 +152,7 @@ Im Brandungsschatten des Riffkerns breiteten sich Richtung rückwärtiger Lagune
      </ort>
      
        <ort>
+           <id>11</id>
         <name>11 Lebensgemeinschaft des Riffs</name>
         <image>station11bild5</image>
 	<image2>station11bild6</image2>
@@ -156,6 +167,7 @@ Im Brandungsschatten des Riffkerns breiteten sich Richtung rückwärtiger Lagune
      </ort>
      
        <ort>
+           <id>12</id>
         <name>12 Naturschutz und Sukzession</name>
         <image>station12bild6</image>
 	<image2>station12bild7</image2>
@@ -170,6 +182,7 @@ Im Brandungsschatten des Riffkerns breiteten sich Richtung rückwärtiger Lagune
      </ort>
      
        <ort>
+           <id>13</id>
         <name>13 Riff - Steinbruch am Kohlenbusch</name>
         <image>station13bild4</image>
 	<image2>station13bild5</image2>
@@ -184,6 +197,7 @@ Im Brandungsschatten des Riffkerns breiteten sich Richtung rückwärtiger Lagune
      </ort>
      
        <ort>
+           <id>14</id>
         <name>14 Kölner Bucht und Bergische Randhöhen</name>
         <image>station14bild4</image>
 	<image2>station14bild5</image2>
@@ -198,6 +212,7 @@ Im Brandungsschatten des Riffkerns breiteten sich Richtung rückwärtiger Lagune
      </ort>
      
        <ort>
+           <id>15</id>
         <name>15 Buchenwald</name>
         <image>station15bild4</image>
 	<image2>station15bild5</image2>
@@ -212,6 +227,7 @@ Im Brandungsschatten des Riffkerns breiteten sich Richtung rückwärtiger Lagune
      </ort>
      
       <ort>
+          <id>16</id>
         <name>16 Die Rifflagune - Steinbruch neue Dombach</name>
         <image>station16bild5</image>
 	<image2>station16bild6</image2>
@@ -226,6 +242,7 @@ Im Brandungsschatten des Riffkerns breiteten sich Richtung rückwärtiger Lagune
      </ort>
      
        <ort>
+           <id>17</id>
         <name>17 Zinkerzbergbau</name>
         <image>station17bild6</image>
 	<image2>station17bild5</image2>
@@ -239,6 +256,3 @@ Im Brandungsschatten des Riffkerns breiteten sich Richtung rückwärtiger Lagune
         <visitKey>ZINKERZENBAU</visitKey>
      </ort>
 </orte>
-
-
-

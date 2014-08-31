@@ -34,6 +34,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class AddLocation extends Activity {
@@ -42,6 +43,7 @@ public class AddLocation extends Activity {
 		static final int IMAGE_URL = 100;
 		static final File ORTE_XML = new File(Environment.getExternalStorageDirectory().getPath() + "/orte.xml");
 		ActionBar mActionBar;
+		ListFragmentGUI mListFragmentGUI;
 		
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +53,10 @@ public class AddLocation extends Activity {
 			final String xmlFile = "neueOrte";
 			Button btnAnlegen = (Button)findViewById(R.id.btnAnlegen);
 			Button btnbildurl = (Button)findViewById(R.id.btnbildurl);
+			final String ortId = this.getIntent().getExtras().getString("listLength");
 			final EditText etOrtName = (EditText) findViewById(R.id.etxtName);
 			final EditText etAbout = (EditText) findViewById(R.id.etxtAbout);
+			final TextView imageUrl = (TextView) findViewById(R.id.bildurl);
 			
 			mActionBar = this.getActionBar();
 			mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0979BB")));
@@ -85,65 +89,86 @@ public class AddLocation extends Activity {
 					try {
 						String ortName = etOrtName.getText().toString();
 						String about = etAbout.getText().toString();
+						String extImageUrl = imageUrl.getText().toString();
 					    //FileOutputStream fos = new  FileOutputStream("neueOrte.xml");
-						
-						if(ORTE_XML.exists()){
-			
-							DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-					        //Create the documentBuilder
-					        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-					        //Create the Document  by parsing the file
-					        Document document = documentBuilder.parse(ORTE_XML);
-					         //Get the root element of the xml Document;
-					        
-					        System.out.println(document);
-					    	
-					    	Node node =  document.getElementsByTagName("orte").item(0);
-					    	
-					    	org.w3c.dom.Element newOrt = document.createElement("ort");
-					    	
-					    	org.w3c.dom.Element newOrtName = document.createElement("name");
-					    	newOrtName.appendChild(document.createTextNode(ortName));
-					    	newOrt.appendChild(newOrtName);
-					    	
-					    	org.w3c.dom.Element newAbout = document.createElement("about");
-					    	newAbout.appendChild(document.createTextNode(about));
-					    	newOrt.appendChild(newAbout);
-					    	
-					    	node.appendChild(newOrt);
-					    	
-					    	TransformerFactory factory = TransformerFactory.newInstance();
-					    	Transformer transformer = factory.newTransformer();
-
-					    	DOMSource source = new DOMSource(document);
-					    	StreamResult result = new StreamResult(ORTE_XML);
-					    	transformer.transform(source, result);
+						if(!extImageUrl.equals("")){
+							if(ORTE_XML.exists()){
 				
+								DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+						        //Create the documentBuilder
+						        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+						        //Create the Document  by parsing the file
+						        Document document = documentBuilder.parse(ORTE_XML);
+						         //Get the root element of the xml Document;
+						        
+						        System.out.println(document);
+						    	
+						    	Node node =  document.getElementsByTagName("orte").item(0);
+						    	
+						    	org.w3c.dom.Element newOrt = document.createElement("ort");
+						    	
+						    	org.w3c.dom.Element newOrtId = document.createElement("id");
+						    	newOrtId.appendChild(document.createTextNode(ortId));
+						    	newOrt.appendChild(newOrtId);
+						    	
+						    	org.w3c.dom.Element newOrtName = document.createElement("name");
+						    	newOrtName.appendChild(document.createTextNode(ortName));
+						    	newOrt.appendChild(newOrtName);
+						    	
+						    	org.w3c.dom.Element newAbout = document.createElement("about");
+						    	newAbout.appendChild(document.createTextNode(about));
+						    	newOrt.appendChild(newAbout);
+						    	
+						    	org.w3c.dom.Element newExtImageUrl = document.createElement("extImageUrl");
+						    	newExtImageUrl.appendChild(document.createTextNode(extImageUrl));
+						    	newOrt.appendChild(newExtImageUrl);
+						    	
+						    	node.appendChild(newOrt);
+						    	
+						    	TransformerFactory factory = TransformerFactory.newInstance();
+						    	Transformer transformer = factory.newTransformer();
+	
+						    	DOMSource source = new DOMSource(document);
+						    	StreamResult result = new StreamResult(ORTE_XML);
+						    	transformer.transform(source, result);
+			//			    	finish();
+					
+							}
+							
+						    else {
+						    	 FileOutputStream fileos= new FileOutputStream(ORTE_XML);//getApplicationContext().openFileOutput(xmlFile, Context.MODE_PRIVATE);
+								    XmlSerializer xmlSerializer = Xml.newSerializer();              
+								    StringWriter writer = new StringWriter();
+								    xmlSerializer.setOutput(writer);
+								    xmlSerializer.startDocument("UTF-8", true);
+								    xmlSerializer.startTag(null, "orte");
+								    xmlSerializer.startTag(null, "ort");
+								    xmlSerializer.startTag(null, "id");
+								    xmlSerializer.text(ortId);
+								    xmlSerializer.endTag(null, "id");
+								    xmlSerializer.startTag(null, "name");
+								    xmlSerializer.text(ortName);
+								    xmlSerializer.endTag(null, "name");
+								    xmlSerializer.startTag(null, "extImageUrl");
+								    xmlSerializer.text(extImageUrl);
+								    xmlSerializer.endTag(null, "extImageUrl");
+								    xmlSerializer.startTag(null,"about");
+								    xmlSerializer.text(about);
+								    xmlSerializer.endTag(null, "about");             
+								    xmlSerializer.endTag(null, "ort");
+								    xmlSerializer.endTag(null, "orte");
+								    xmlSerializer.endDocument();
+								    xmlSerializer.flush();
+								    String dataWrite = writer.toString();
+								    fileos.write(dataWrite.getBytes());
+								    fileos.close();
+						    }
 						}
-						
-					    else {
-					    	 FileOutputStream fileos= new FileOutputStream(ORTE_XML);//getApplicationContext().openFileOutput(xmlFile, Context.MODE_PRIVATE);
-							    XmlSerializer xmlSerializer = Xml.newSerializer();              
-							    StringWriter writer = new StringWriter();
-							    xmlSerializer.setOutput(writer);
-							    xmlSerializer.startDocument("UTF-8", true);
-							    xmlSerializer.startTag(null, "orte");
-							    xmlSerializer.startTag(null, "ort");
-							    xmlSerializer.startTag(null, "name");
-							    xmlSerializer.text(ortName);
-							    xmlSerializer.endTag(null, "name");
-							    xmlSerializer.startTag(null,"about");
-							    xmlSerializer.text(about);
-							    xmlSerializer.endTag(null, "about");             
-							    xmlSerializer.endTag(null, "ort");
-							    xmlSerializer.endTag(null, "orte");
-							    xmlSerializer.endDocument();
-							    xmlSerializer.flush();
-							    String dataWrite = writer.toString();
-							    fileos.write(dataWrite.getBytes());
-							    fileos.close();
-					    }
-					    
+						else {
+							String bildFehler = "Bitte fügen Sie ein Bild hinzu!";
+							Toast.makeText(AddLocation.this, bildFehler,
+							        Toast.LENGTH_LONG).show();
+						}
 					    
 					}
 					catch (FileNotFoundException e) {
@@ -174,7 +199,7 @@ public class AddLocation extends Activity {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				finish();
+				
 				}
 				
 			});	

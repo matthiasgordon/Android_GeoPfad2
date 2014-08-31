@@ -3,10 +3,12 @@ package de.fhdw.bfwi412a.geopfad;
 
 
 public class Ort {
+	private String id;
 	private String name;
 	private String imgUrl;
 	private String imgUrl2;
 	private String imgUrl3;
+	private String extImgUrl;
 	private String about;
 	private String link;	
 	private double latitude;
@@ -17,6 +19,14 @@ public class Ort {
 		
 	}
 	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public Ort(String Errormessage){
 		name = Errormessage;
 	}
@@ -50,6 +60,13 @@ public class Ort {
 	}
 	public String getAbout() {
 		return about;
+	}
+	public String getExtImgUrl() {
+		return extImgUrl;
+	}
+
+	public void setExtImgUrl(String extImgUrl) {
+		this.extImgUrl = extImgUrl;
 	}
 	public void setAbout(String about) {
 		this.about = about;

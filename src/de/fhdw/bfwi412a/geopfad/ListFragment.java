@@ -59,6 +59,7 @@ public class ListFragment extends Fragment implements SearchView.OnQueryTextList
 
 	public void addLocation() {
 		Intent intent = new Intent(getActivity(), AddLocation.class);
+		intent.putExtra("listLength", String.valueOf(mGUI.getmListLength()+1));
 		startActivityForResult(intent, requestCode);
 	}
 	

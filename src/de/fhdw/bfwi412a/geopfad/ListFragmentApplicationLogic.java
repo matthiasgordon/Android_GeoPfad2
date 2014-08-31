@@ -21,10 +21,12 @@ public class ListFragmentApplicationLogic {
 		intent.putExtra("imageUrl", orte.get(position).getImgUrl());
 		intent.putExtra("imageUrl2", orte.get(position).getImgUrl2());
 		intent.putExtra("imageUrl3", orte.get(position).getImgUrl3());
+		intent.putExtra("extImageUrl", orte.get(position).getExtImgUrl());
 		intent.putExtra("about", orte.get(position).getAbout());
 		intent.putExtra("latitude", orte.get(position).getLat());
 		intent.putExtra("longitude", orte.get(position).getLng());
 		intent.putExtra("visitKey", orte.get(position).getVisitKey());
+
 		
 		mData.getActivity().startActivity(intent);	
 	}

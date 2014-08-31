@@ -1,8 +1,11 @@
 package de.fhdw.bfwi412a.geopfad;
 import java.util.List;
 
+import com.sonyericsson.util.ScalingUtilities;
+
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,8 +64,34 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 			
 			holder.txtOrtEntfernung.setText("Entfernung_Text");
 			
-			int id = context.getResources().getIdentifier("thumb_"+ort.getImgUrl(), "drawable", context.getPackageName());
-			holder.imgIcon.setImageResource(id);
+			int id;
+			
+			if(ort.getImgUrl() != null){
+				long zstVorher;
+				long zstNachher;
+
+				zstVorher = System.currentTimeMillis();
+				Bitmap mOrtBitmap = ScalingUtilities.fitScale(context.getResources(),context.getResources().getIdentifier("thumb_"+ort.getImgUrl(), "drawable", context.getPackageName()), context, "list");
+				holder.imgIcon.setImageBitmap(mOrtBitmap);
+				zstNachher = System.currentTimeMillis();
+				System.out.println("Zeit benötigt: " + (zstNachher - zstVorher) + " milli");
+				System.out.println("Zeit benötigt: " + ((zstNachher - zstVorher)/1000) + " sec");
+			}
+			else if(ort.getExtImgUrl() != null) {
+				long zstVorher;
+				long zstNachher;
+
+				zstVorher = System.currentTimeMillis();
+				Bitmap mOrtBitmap = ScalingUtilities.fitScaleExtern(ort.getExtImgUrl(), context, "list");
+				holder.imgIcon.setImageBitmap(mOrtBitmap);
+				zstNachher = System.currentTimeMillis();
+				System.out.println("Zeit benötigt: " + (zstNachher - zstVorher) + " milli");
+				System.out.println("Zeit benötigt: " + ((zstNachher - zstVorher)/1000) + " sec");
+			}
+			else {
+				id = context.getResources().getIdentifier("thumb_station1bild4", "drawable", context.getPackageName());
+				holder.imgIcon.setImageResource(id);
+			}
 			
 			return row;
 
