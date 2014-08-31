@@ -89,7 +89,7 @@ public class FileChooser extends ListActivity {
 	    private void onFileClick(FileChooserOption o)
 	    {
 	        Toast.makeText(this, "File Clicked: "+o.getName(), Toast.LENGTH_SHORT).show();
-	    	url = o.getName();
+	    	url = o.getPath();
 //	    	TextView text1 = (TextView)findViewById(R.id.textView1);
 //	    	text1.setText(url);
 	    	

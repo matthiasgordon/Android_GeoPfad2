@@ -131,7 +131,11 @@ public class AddLocation extends Activity {
 						    	DOMSource source = new DOMSource(document);
 						    	StreamResult result = new StreamResult(ORTE_XML);
 						    	transformer.transform(source, result);
-			//			    	finish();
+						    	
+						    	String bildFehler = "Ort wurde hinzugefügt!";
+								Toast.makeText(AddLocation.this, bildFehler,
+								        Toast.LENGTH_LONG).show();
+						    	finish();
 					
 							}
 							

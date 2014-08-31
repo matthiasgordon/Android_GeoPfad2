@@ -1,7 +1,5 @@
 package de.fhdw.bfwi412a.geopfad;
 
-import com.sonyericsson.util.ScalingUtilities;
-
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;

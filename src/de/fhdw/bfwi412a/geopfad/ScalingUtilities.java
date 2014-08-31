@@ -25,7 +25,7 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.sonyericsson.util;
+package de.fhdw.bfwi412a.geopfad;
 
 import de.fhdw.bfwi412a.geopfad.R;
 import android.content.Context;
