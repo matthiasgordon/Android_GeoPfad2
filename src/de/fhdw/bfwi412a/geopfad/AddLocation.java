@@ -68,12 +68,6 @@ public class AddLocation extends Activity {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					/*FileChooser filec = new FileChooser();
-					File sdcard = new File("/sdcard/");
-					filec.setCurrentDir(sdcard);
-					filec.fill(filec.getCurrentDir());
-					filec.getUrl();*/
-					   
 					Intent intent = new Intent(AddLocation.this, FileChooser.class);
 					startActivityForResult(intent, IMAGE_URL);
 				}
@@ -132,8 +126,8 @@ public class AddLocation extends Activity {
 						    	StreamResult result = new StreamResult(ORTE_XML);
 						    	transformer.transform(source, result);
 						    	
-						    	String bildFehler = "Ort wurde hinzugefügt!";
-								Toast.makeText(AddLocation.this, bildFehler,
+						    	String message = "Ort wurde hinzugefügt!";
+								Toast.makeText(AddLocation.this, message,
 								        Toast.LENGTH_LONG).show();
 						    	finish();
 					
@@ -214,19 +208,8 @@ public class AddLocation extends Activity {
 		  if (resultCode == RESULT_OK && requestCode == IMAGE_URL) {
 		    if (data.hasExtra("bildurl")) {
 		    	TextView url = (TextView) findViewById(R.id.bildurl);
-		    	url.setText(data.getExtras().getString("bildurl"));
-		      /*Toast.makeText(this, data.getExtras().getString("bildurl"),
-		        Toast.LENGTH_SHORT).show();*/
-		      
+		    	url.setText(data.getExtras().getString("bildurl"));		      
 		    }
 		  }
 		} 
-		
-		@Override
-		public void finish() {
-		  // Prepare data intent 
-		  // Activity finished ok, return the data
-		  setResult(RESULT_OK);
-		  super.finish();
-		}
 }

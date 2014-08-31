@@ -60,7 +60,7 @@ public class ListFragment extends Fragment implements SearchView.OnQueryTextList
 	public void addLocation() {
 		Intent intent = new Intent(getActivity(), AddLocation.class);
 		intent.putExtra("listLength", String.valueOf(mGUI.getmListLength()+1));
-		startActivityForResult(intent, requestCode);
+		startActivity(intent);
 	}
 	
 	
@@ -90,14 +90,14 @@ public class ListFragment extends Fragment implements SearchView.OnQueryTextList
 
 	    super.onCreateOptionsMenu(menu, inflater);
 	}
-	
-	
+
+
 	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		 if (resultCode == 0 && requestCode == ListFragment.requestCode) {
-			
-		 }
-		
+	public void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		initData();
+		initGUI(getView());
 	}
 
 	@Override
