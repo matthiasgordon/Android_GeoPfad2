@@ -17,10 +17,13 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 	private Context context;
 	private List<Ort> orte = null;
 	private  int layoutResourceId;
+	private DistanceCalculator mDistanceCalc;
+	private Ort ort;
 		
 		
 	public OrteAdapter(Context context, int layoutResourceId, List<Ort> orte) {
 		super(context, layoutResourceId, orte);
+		mDistanceCalc = new DistanceCalculator();
 		this.layoutResourceId = layoutResourceId;
 		this.orte = orte;
 		this.context = context;
@@ -60,7 +63,18 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 			Ort ort = orte.get(position);
 			holder.txtOrtName.setText(ort.getName());
 			
-			holder.txtOrtEntfernung.setText("Entfernung_Text");
+			Double distance = mDistanceCalc.getDistance(ort.getLat(), ort.getLng(), context);
+			if(distance != 0 && distance != -1) {
+				Double distance_rounded = Math.rint(distance*100)/100;
+				if(distance_rounded>1000) {
+			    	double distance_km = distance / 1000;
+			    	double distance_km_gerundet=Math.rint(distance_km*100)/100;
+			    	holder.txtOrtEntfernung.setText(String.valueOf(distance_km_gerundet + " km"));
+			    }
+			    else {
+			    	holder.txtOrtEntfernung.setText(String.valueOf(distance_rounded + " m"));
+			    }
+			}
 			
 			int id;
 			
