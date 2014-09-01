@@ -34,7 +34,8 @@ int attr uiZoomGestures 0x7f01000e
 int attr useViewLifecycle 0x7f01000f
 int attr zOrderOnTop 0x7f010010
 int color actionbar 0x7f08001c
-int color actionbar_tab_text 0x7f08001d
+int color actionbar_tab_text 0x7f08001e
+int color actionbar_text 0x7f08001d
 int color background 0x7f08001b
 int color blue 0x7f080018
 int color common_action_bar_splitter 0x7f080009
@@ -47,8 +48,8 @@ int color common_signin_btn_light_text_default 0x7f080004
 int color common_signin_btn_light_text_disabled 0x7f080006
 int color common_signin_btn_light_text_focused 0x7f080007
 int color common_signin_btn_light_text_pressed 0x7f080005
-int color common_signin_btn_text_dark 0x7f08001e
-int color common_signin_btn_text_light 0x7f08001f
+int color common_signin_btn_text_dark 0x7f08001f
+int color common_signin_btn_text_light 0x7f080020
 int color gray 0x7f080019
 int color transparent 0x7f08001a
 int color wallet_bright_foreground_disabled_holo_light 0x7f08000f
@@ -64,8 +65,8 @@ int color wallet_hint_foreground_holo_dark 0x7f080012
 int color wallet_hint_foreground_holo_light 0x7f080011
 int color wallet_holo_blue_light 0x7f080015
 int color wallet_link_text_light 0x7f080016
-int color wallet_primary_text_holo_light 0x7f080020
-int color wallet_secondary_text_holo_dark 0x7f080021
+int color wallet_primary_text_holo_light 0x7f080021
+int color wallet_secondary_text_holo_dark 0x7f080022
 int color yellow 0x7f080017
 int dimen destination_list_height 0x7f0c0002
 int dimen destination_list_width 0x7f0c0001

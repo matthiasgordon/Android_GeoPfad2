@@ -6,6 +6,7 @@
     <color name="transparent">#00000000</color>
     <color name="background">#E6E6E6</color>
     <color name="actionbar">#0A0A0A</color>
+    <color name="actionbar_text">#ffffff</color>
     <color name="actionbar_tab_text">#6E6E6E</color>
     
 </resources>

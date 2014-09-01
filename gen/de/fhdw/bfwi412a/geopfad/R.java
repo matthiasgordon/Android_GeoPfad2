@@ -333,7 +333,8 @@ containing a value of this type.
     }
     public static final class color {
         public static final int actionbar=0x7f08001c;
-        public static final int actionbar_tab_text=0x7f08001d;
+        public static final int actionbar_tab_text=0x7f08001e;
+        public static final int actionbar_text=0x7f08001d;
         public static final int background=0x7f08001b;
         public static final int blue=0x7f080018;
         public static final int common_action_bar_splitter=0x7f080009;
@@ -348,8 +349,8 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f080006;
         public static final int common_signin_btn_light_text_focused=0x7f080007;
         public static final int common_signin_btn_light_text_pressed=0x7f080005;
-        public static final int common_signin_btn_text_dark=0x7f08001e;
-        public static final int common_signin_btn_text_light=0x7f08001f;
+        public static final int common_signin_btn_text_dark=0x7f08001f;
+        public static final int common_signin_btn_text_light=0x7f080020;
         public static final int gray=0x7f080019;
         public static final int transparent=0x7f08001a;
         public static final int wallet_bright_foreground_disabled_holo_light=0x7f08000f;
@@ -370,8 +371,8 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f080011;
         public static final int wallet_holo_blue_light=0x7f080015;
         public static final int wallet_link_text_light=0x7f080016;
-        public static final int wallet_primary_text_holo_light=0x7f080020;
-        public static final int wallet_secondary_text_holo_dark=0x7f080021;
+        public static final int wallet_primary_text_holo_light=0x7f080021;
+        public static final int wallet_secondary_text_holo_dark=0x7f080022;
         public static final int yellow=0x7f080017;
     }
     public static final class dimen {
