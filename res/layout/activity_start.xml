@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="2dp"
     android:background="@color/background"
-    android:orientation="vertical" >
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
         android:id="@+id/textView1"
@@ -33,32 +32,33 @@
         android:layout_marginBottom="10dp">
         
         <ImageView
-      		android:adjustViewBounds="true"
             android:id="@+id/schneckeView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />    
-    </LinearLayout>
-    
-   	<RelativeLayout
-   	    android:layout_width="match_parent"
-   	    android:layout_height="wrap_content">
-   	
-   	<Button
-   	    android:id="@+id/btnWeather"
-   	    android:layout_width="wrap_content"
-   	    android:layout_height="wrap_content"
-   	    android:layout_gravity="left"
-   	    android:text="Wetter" />
-   	    
-   	<Button
-   	    android:id="@+id/ToActivityMainButton"
-   	    android:layout_width="wrap_content"
-   	    android:layout_height="wrap_content"
-   	    android:layout_alignParentLeft="false"
-   	    android:layout_alignParentRight="true"
-   	    android:text="@string/Button_Map" />
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:maxHeight="250dp" />
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="fill_parent">
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/btnWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="left"
+                android:text="Wetter" />
+
+            <Button
+                android:id="@+id/ToActivityMainButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/Button_Map" />
+
+        </RelativeLayout>
+    
+    </LinearLayout>
     
 </LinearLayout>
