@@ -26,6 +26,9 @@ public class ActivityLocationsApplicationLogic {
 		mLocationManager = (LocationManager) act.getSystemService(Context.LOCATION_SERVICE);
 		mCriteria = new Criteria();
 		mProvider = mLocationManager.getBestProvider(mCriteria, false);
+		if(isProviderEnabled() == true) {
+			setDistance();
+			}
 	}
 	
 	public LocationManager getLocationManager() {

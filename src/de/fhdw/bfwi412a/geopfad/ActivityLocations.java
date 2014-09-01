@@ -28,33 +28,8 @@ public class ActivityLocations extends Activity {
 
 	private void initGUI () {
 		setContentView(R.layout.activity_locations);
-		mGUI = new ActivityLocationsGUI(this, this, mData);
+		mGUI = new ActivityLocationsGUI(this, mData);
 		mGUI.getActionBar().setTitle(mData.getTitle());
-		if(mData.getImageUrl() != null){
-			Bitmap picture = ScalingUtilities.fitScale(getResources(),getResources().getIdentifier(mData.getImageUrl(), "drawable", this.getPackageName()), context, "location");
-			mGUI.getImageUrl().setImageBitmap(picture);
-		//mGUI.getImageUrl().setImageResource(this.getResources().getIdentifier(mData.getImageUrl(), "drawable", this.getPackageName()));
-		}
-		if(mData.getImageUrl2() != null){
-			Bitmap picture = ScalingUtilities.fitScale(getResources(),getResources().getIdentifier(mData.getImageUrl2(), "drawable", this.getPackageName()), context, "location");
-			mGUI.getImageUrl2().setImageBitmap(picture);
-		}
-		if(mData.getImageUrl3() != null){
-			Bitmap picture = ScalingUtilities.fitScale(getResources(),getResources().getIdentifier(mData.getImageUrl3(), "drawable", this.getPackageName()), context, "location");
-			mGUI.getImageUrl3().setImageBitmap(picture);
-		}
-		if(mData.getExtImageUrl() != null){	
-		Bitmap picture = ScalingUtilities.fitScaleExtern(mData.getExtImageUrl(), context, "location");
-        Log.v("Path", mData.getExtImageUrl());
-		mGUI.getmExtImageUrl().setImageBitmap(picture);
-		}
-		if(mData.getAbout() != null){
-		mGUI.getAbout().setText(mData.getAbout());
-		}
-		if(mData.getVisitStatus() != null){
-		mGUI.getVisitStatus().setText(mData.getVisitStatus()
-				.getString(mData.getVisitKey(), "Nein"));
-		}
 	}
 	
 	private void initApplicationLogic () {
@@ -64,6 +39,5 @@ public class ActivityLocations extends Activity {
 	private void initEventToListenerMapping () {
 		new ActivityLocationsEventToListenerMapping(mGUI, mAppLogic);
 	}
-	
 	
 }

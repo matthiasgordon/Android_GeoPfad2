@@ -1,8 +1,10 @@
 package de.fhdw.bfwi412a.geopfad;
 
 import android.app.ActionBar;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,7 +26,7 @@ public class ActivityLocationsGUI {
 	Button mBtnNavigation;
 	final ActionBar mActionBar;
 
-	public ActivityLocationsGUI(ActivityLocations actloc, ActivityLocations act, ActivityLocationsData data) {
+	public ActivityLocationsGUI(ActivityLocations actloc, ActivityLocationsData data) {
 		mActLoc = actloc;
 		mData = data;
 		mAbout = (TextView) mActLoc.findViewById(R.id.textView2);
@@ -37,18 +39,15 @@ public class ActivityLocationsGUI {
 		mDistance = (TextView) mActLoc.findViewById(R.id.txtDistance);
 		mBtnVisit = (Button) mActLoc.findViewById(R.id.btnVisit);
 		mBtnNavigation = (Button) mActLoc.findViewById(R.id.btnNavigation);
-		mActionBar = act.getActionBar();
+		mActionBar = mActLoc.getActionBar();
 		mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0979BB")));
 		mActionBar.setIcon(R.drawable.actionbar_icon_white);
 		mActionBar.setDisplayHomeAsUpEnabled(true);
+		scalePictures();
 	}
 
 	public ActionBar getActionBar() {
 		return mActionBar;
-	}
-
-	public ActivityLocations getActLoc() {
-		return mActLoc;
 	}
 
 	public TextView getAbout() {
@@ -90,4 +89,33 @@ public class ActivityLocationsGUI {
 		return mBtnNavigation;
 	}
 	
+	public void scalePictures() {
+		if(mData.getImageUrl() != null){
+			Bitmap picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
+					.getIdentifier(mData.getImageUrl(), "drawable", mActLoc.getPackageName()), mActLoc, "location");
+			mImageUrl.setImageBitmap(picture);
+		}
+		if(mData.getImageUrl2() != null){
+			Bitmap picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
+					.getIdentifier(mData.getImageUrl2(), "drawable", mActLoc.getPackageName()), mActLoc, "location");
+			mImageUrl2.setImageBitmap(picture);
+		}
+		if(mData.getImageUrl3() != null){
+			Bitmap picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
+					.getIdentifier(mData.getImageUrl3(), "drawable", mActLoc.getPackageName()), mActLoc, "location");
+			mImageUrl3.setImageBitmap(picture);
+		}
+		if(mData.getExtImageUrl() != null){	
+		Bitmap picture = ScalingUtilities.fitScaleExtern(mData.getExtImageUrl(), mActLoc, "location");
+        Log.v("Path", mData.getExtImageUrl());
+		mExtImageUrl.setImageBitmap(picture);
+		}
+		if(mData.getAbout() != null){
+		mAbout.setText(mData.getAbout());
+		}
+		if(mData.getVisitStatus() != null){
+		mVisitStatus.setText(mData.getVisitStatus()
+				.getString(mData.getVisitKey(), "Nein"));
+		}
+	}	
 }

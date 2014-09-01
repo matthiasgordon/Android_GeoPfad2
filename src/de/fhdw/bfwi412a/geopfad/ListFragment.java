@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 
-public class ListFragment extends Fragment implements SearchView.OnQueryTextListener {
+public class ListFragment extends Fragment {
 	
 	static final int requestCode = 100;
 	
@@ -26,12 +25,7 @@ public class ListFragment extends Fragment implements SearchView.OnQueryTextList
 	ListFragmentApplicationLogic mAppLogic;
 	ListFragmentEventToListenerMapping mEventToListenerMapping;
 
-	public ListFragment () {
-		
-	}
-
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		
 		View mView = inflater.inflate(R.layout.list_fragment, container, false);
 		setHasOptionsMenu(true);
 		initData();
@@ -40,7 +34,41 @@ public class ListFragment extends Fragment implements SearchView.OnQueryTextList
 		initEventToListenerMapping();
 		return mView;
 	}
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+		initData();
+		initGUI(getView());
+		initApplicationLogic();
+		initEventToListenerMapping();
+	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle presses on the action bar items
+		switch (item.getItemId()) {
+		case R.id.addLocation:
+			mAppLogic.addLocation();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+	
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		// TODO Auto-generated method stub
+		inflater.inflate(R.menu.location_actionbar_menu, menu);
+		// get the searview
+		MenuItem searchfield = menu.findItem(R.id.action_search);
+		SearchView searchview = (SearchView) searchfield.getActionView();
+		
+		// Execute this when searching
+		searchview.setOnQueryTextListener(mEventToListenerMapping);
+		super.onCreateOptionsMenu(menu, inflater);
+	}
+	
 	private void initData() {
 		mData = new ListFragmentData(this);
 	}
@@ -50,79 +78,11 @@ public class ListFragment extends Fragment implements SearchView.OnQueryTextList
 	}
 	
 	private void initApplicationLogic() {
-		mAppLogic = new ListFragmentApplicationLogic(mData, mGUI);
+		mAppLogic = new ListFragmentApplicationLogic(this, mData, mGUI);
 	}
 	
 	private void initEventToListenerMapping() {
-		mEventToListenerMapping = new ListFragmentEventToListenerMapping(mGUI, mAppLogic);
-	}
-
-	public void addLocation() {
-		Intent intent = new Intent(getActivity(), AddLocation.class);
-		intent.putExtra("listLength", String.valueOf(mGUI.getmListLength()+1));
-		startActivity(intent);
+		mEventToListenerMapping = new ListFragmentEventToListenerMapping(this, mData, mGUI, mAppLogic);
 	}
 	
-	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle presses on the action bar items
-	    switch (item.getItemId()) {
-	        case R.id.addLocation:
-	            addLocation();
-	            return true;
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
-	}
-	
-	
-	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		// TODO Auto-generated method stub
-		inflater.inflate(R.menu.location_actionbar_menu, menu);
-		   // get the searview
-	    MenuItem searchfield = menu.findItem(R.id.action_search);
-	    SearchView searchview = (SearchView) searchfield.getActionView();
-
-	    // Execute this when searching
-	    searchview.setOnQueryTextListener(this);
-
-	    super.onCreateOptionsMenu(menu, inflater);
-	}
-
-
-	@Override
-	public void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-		initData();
-		initGUI(getView());
-		initApplicationLogic();
-		initEventToListenerMapping();
-	}
-
-	@Override
-	public boolean onQueryTextChange(String mEntry) {
-		// TODO Auto-generated method stub
-		List <Ort> Orte = mData.getOrte();
-		List <Ort> shownOrte = new ArrayList <Ort>();
-		for(Ort currOrt : Orte){
-			if(currOrt.getName().toUpperCase(Locale.GERMAN)
-					.contains(mEntry.toUpperCase(Locale.GERMAN))){
-				shownOrte.add(currOrt);
-			}		
-		}
-//		if(shownOrte.size() == 0){
-//			shownOrte.add(new Ort("Error"));
-//		}
-			mGUI.fillListView(getView(), shownOrte);
-		return false;
-	}
-
-	@Override
-	public boolean onQueryTextSubmit(String arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 }

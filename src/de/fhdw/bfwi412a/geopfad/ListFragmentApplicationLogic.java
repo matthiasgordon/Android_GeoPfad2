@@ -6,10 +6,12 @@ import android.content.Intent;
 
 public class ListFragmentApplicationLogic {
 
+	private ListFragment mFrag;
 	private ListFragmentGUI mGUI;
 	private ListFragmentData mData;
 	
-	public ListFragmentApplicationLogic(ListFragmentData data, ListFragmentGUI gui) {
+	public ListFragmentApplicationLogic(ListFragment frag, ListFragmentData data, ListFragmentGUI gui) {
+		mFrag = frag;
 		mData = data;
 		mGUI = gui;
 	}
@@ -30,4 +32,11 @@ public class ListFragmentApplicationLogic {
 		
 		mData.getActivity().startActivity(intent);	
 	}
+	
+	public void addLocation() {
+		Intent intent = new Intent(mFrag.getActivity(), AddLocation.class);
+		intent.putExtra("listLength", String.valueOf(mGUI.getmListLength()+1));
+		mFrag.startActivity(intent);
+	}
+	
 }
