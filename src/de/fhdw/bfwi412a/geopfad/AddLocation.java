@@ -27,6 +27,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Xml;
@@ -53,15 +55,44 @@ public class AddLocation extends Activity {
 			final String xmlFile = "neueOrte";
 			Button btnAnlegen = (Button)findViewById(R.id.btnAnlegen);
 			Button btnbildurl = (Button)findViewById(R.id.btnbildurl);
+			Button btnCoordination = (Button)findViewById(R.id.btnAddLocationCoordination);
 			final String ortId = this.getIntent().getExtras().getString("listLength");
-			final EditText etOrtName = (EditText) findViewById(R.id.etxtName);
-			final EditText etAbout = (EditText) findViewById(R.id.etxtAbout);
+			final EditText etOrtName = (EditText) findViewById(R.id.etxtAddLocationName);
+			final EditText etAbout = (EditText) findViewById(R.id.etxtAddLocationAbout);
+			final EditText mEtLat = (EditText) findViewById(R.id.etxtAddLocationLatitude);
+			final EditText mEtLng = (EditText) findViewById(R.id.etxtAddLocationLongitude);
 			final TextView imageUrl = (TextView) findViewById(R.id.bildurl);
 			
 			mActionBar = this.getActionBar();
 			mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0979BB")));
 			mActionBar.setIcon(R.drawable.actionbar_icon_white);
 			
+			
+			btnCoordination.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					LocationManager service = (LocationManager) getSystemService(LOCATION_SERVICE);
+		     		boolean enabled = service.isProviderEnabled(LocationManager.GPS_PROVIDER);
+					DistanceCalculator mDC = new DistanceCalculator();
+					Location mLiveLocation = mDC.getLiveLocation(AddLocation.this);
+					if(mLiveLocation != null){
+						mEtLat.setText(String.valueOf(mLiveLocation.getLatitude()));
+						mEtLng.setText(String.valueOf(mLiveLocation.getLongitude()));
+					}
+					else if(enabled) {
+						String mGPSFehler = "Kein GPS Signal!";
+						Toast.makeText(AddLocation.this, mGPSFehler,
+						        Toast.LENGTH_SHORT).show();
+					}
+					else {
+						String mGPSFehler = "Bitte schalten Sie GPS ein!";
+						Toast.makeText(AddLocation.this, mGPSFehler,
+						        Toast.LENGTH_SHORT).show();
+					}
+				}
+			});
 			
 			btnbildurl.setOnClickListener(new View.OnClickListener() {
 				
@@ -84,7 +115,9 @@ public class AddLocation extends Activity {
 						String ortName = etOrtName.getText().toString();
 						String about = etAbout.getText().toString();
 						String extImageUrl = imageUrl.getText().toString();
-					    //FileOutputStream fos = new  FileOutputStream("neueOrte.xml");
+						String ortLat = mEtLat.getText().toString();
+						String ortLng = mEtLng.getText().toString();
+					  
 						if(!extImageUrl.equals("")){
 							if(ORTE_XML.exists()){
 				
@@ -112,6 +145,14 @@ public class AddLocation extends Activity {
 						    	org.w3c.dom.Element newAbout = document.createElement("about");
 						    	newAbout.appendChild(document.createTextNode(about));
 						    	newOrt.appendChild(newAbout);
+						    	
+						    	org.w3c.dom.Element newLat = document.createElement("latitude");
+						    	newLat.appendChild(document.createTextNode(ortLat));
+						    	newOrt.appendChild(newLat);
+						    	
+						    	org.w3c.dom.Element newLng = document.createElement("longitude");
+						    	newLng.appendChild(document.createTextNode(ortLng));
+						    	newOrt.appendChild(newLng);
 						    	
 						    	org.w3c.dom.Element newExtImageUrl = document.createElement("extImageUrl");
 						    	newExtImageUrl.appendChild(document.createTextNode(extImageUrl));
@@ -152,7 +193,13 @@ public class AddLocation extends Activity {
 								    xmlSerializer.endTag(null, "extImageUrl");
 								    xmlSerializer.startTag(null,"about");
 								    xmlSerializer.text(about);
-								    xmlSerializer.endTag(null, "about");             
+								    xmlSerializer.endTag(null, "about"); 
+								    xmlSerializer.startTag(null,"latitude");
+								    xmlSerializer.text(ortLat);
+								    xmlSerializer.endTag(null, "latitude");
+								    xmlSerializer.startTag(null,"longitude");
+								    xmlSerializer.text(ortLng);
+								    xmlSerializer.endTag(null, "longitude");
 								    xmlSerializer.endTag(null, "ort");
 								    xmlSerializer.endTag(null, "orte");
 								    xmlSerializer.endDocument();
@@ -160,6 +207,11 @@ public class AddLocation extends Activity {
 								    String dataWrite = writer.toString();
 								    fileos.write(dataWrite.getBytes());
 								    fileos.close();
+								    
+								    String message = "Ort wurde hinzugefügt!";
+									Toast.makeText(AddLocation.this, message,
+									        Toast.LENGTH_LONG).show();
+							    	finish();
 						    }
 						}
 						else {

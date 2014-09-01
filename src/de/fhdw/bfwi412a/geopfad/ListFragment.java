@@ -98,6 +98,8 @@ public class ListFragment extends Fragment implements SearchView.OnQueryTextList
 		super.onResume();
 		initData();
 		initGUI(getView());
+		initApplicationLogic();
+		initEventToListenerMapping();
 	}
 
 	@Override

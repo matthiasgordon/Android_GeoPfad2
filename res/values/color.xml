@@ -8,5 +8,6 @@
     <color name="actionbar">#0A0A0A</color>
     <color name="actionbar_text">#ffffff</color>
     <color name="actionbar_tab_text">#6E6E6E</color>
+    <color name="hint">#BDBDBD</color>
     
 </resources>
