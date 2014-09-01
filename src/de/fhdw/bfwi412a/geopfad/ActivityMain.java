@@ -1,3 +1,5 @@
+//Class implemented by: Matthias Gordon
+
 package de.fhdw.bfwi412a.geopfad;
 
 import android.os.Bundle;
@@ -23,7 +25,7 @@ public class ActivityMain extends FragmentActivity {
 	private void initGUI () {
 		setContentView(R.layout.activity_main);
 		mGUI = new ActivityMainGUI(this);
-		mGUI.getViewPager().setAdapter(new MyAdapter (getSupportFragmentManager()));
+		mGUI.getViewPager().setAdapter(new FragmentAdapter (getSupportFragmentManager()));
 	}
 	
 	private void initApplicationLogic () {

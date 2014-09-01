@@ -1,17 +1,18 @@
+//Class implemented by: Matthias Gordon
+
 package de.fhdw.bfwi412a.geopfad;
 
 import android.app.ActionBar;
-import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
-import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.ViewPager;
 
-public class ActivityMainGUI implements TabListener {
+public class ActivityMainGUI {
 
 	ViewPager viewPager;
 	final ActionBar mActionBar;
+	ActionBar.Tab mTab1;
+	ActionBar.Tab mTab2;	
 	
 	public ActivityMainGUI (ActivityMain act)
 	{
@@ -22,7 +23,7 @@ public class ActivityMainGUI implements TabListener {
 		mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0979BB")));
 		mActionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#E6E6E6")));
 		mActionBar.setIcon(R.drawable.actionbar_icon_white);
-		addTabs(mActionBar);
+		initializeTabs(mActionBar);
 	}
 
 	public ViewPager getViewPager() {
@@ -33,32 +34,25 @@ public class ActivityMainGUI implements TabListener {
 		return mActionBar;
 	}
 
-	private void addTabs (ActionBar actionBar) {
-		ActionBar.Tab tab1 = actionBar.newTab();
-		tab1.setText("Karte");
-		tab1.setTabListener(this);
-		
-		ActionBar.Tab tab2=actionBar.newTab();
-		tab2.setText("Liste");
-		tab2.setTabListener(this);
-		
-		actionBar.addTab(tab1);
-		actionBar.addTab(tab2);
+	public ActionBar.Tab getTab1() {
+		return mTab1;
 	}
 
-	@Override
-	public void onTabSelected(Tab tab, FragmentTransaction ft) {
-		viewPager.setCurrentItem(tab.getPosition());
+	public ActionBar.Tab getTab2() {
+		return mTab2;
 	}
 
-	@Override
-	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+	private void initializeTabs (ActionBar actionBar) {
+		mTab1 = actionBar.newTab();
+		mTab1.setText("Karte");
 		
-	}
-
-	@Override
-	public void onTabReselected(Tab tab, FragmentTransaction ft) {
-		
+		mTab2=actionBar.newTab();
+		mTab2.setText("Liste");
 	}
 	
+	public void addTabs() {
+		mActionBar.addTab(mTab1);
+		mActionBar.addTab(mTab2);
+	}
+
 }
