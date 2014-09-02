@@ -22,11 +22,8 @@ import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import org.xmlpull.v1.XmlSerializer;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -44,7 +41,6 @@ public class AddLocation extends Activity {
 
 		static final int IMAGE_URL = 100;
 		static final File ORTE_XML = new File(Environment.getExternalStorageDirectory().getPath() + "/orte.xml");
-		ActionBar mActionBar;
 		ListFragmentGUI mListFragmentGUI;
 		
 		@Override
@@ -61,10 +57,6 @@ public class AddLocation extends Activity {
 			final EditText mEtLat = (EditText) findViewById(R.id.etxtAddLocationLatitude);
 			final EditText mEtLng = (EditText) findViewById(R.id.etxtAddLocationLongitude);
 			final TextView imageUrl = (TextView) findViewById(R.id.bildurl);
-			
-			mActionBar = this.getActionBar();
-			mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0979BB")));
-			mActionBar.setIcon(R.drawable.actionbar_icon_white);
 			
 			
 			btnCoordination.setOnClickListener(new View.OnClickListener() {

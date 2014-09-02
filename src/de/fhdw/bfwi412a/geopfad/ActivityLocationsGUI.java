@@ -3,8 +3,6 @@ package de.fhdw.bfwi412a.geopfad;
 import android.app.ActionBar;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -50,9 +48,6 @@ public class ActivityLocationsGUI {
 		
 		mBtnNavigation = (Button) mActLoc.findViewById(R.id.btnNavigation);
 		mActionBar = mActLoc.getActionBar();
-		mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0979BB")));
-		mActionBar.setIcon(R.drawable.actionbar_icon_white);
-		mActionBar.setDisplayHomeAsUpEnabled(true);
 		scalePictures();
 	}
 
