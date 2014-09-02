@@ -90,6 +90,7 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 		mIntent.putExtra("imageUrl", mOrte.get(position).getImgUrl());
 		mIntent.putExtra("imageUrl2", mOrte.get(position).getImgUrl2());
 		mIntent.putExtra("imageUrl3", mOrte.get(position).getImgUrl3());
+		mIntent.putExtra("extImageUrl", mOrte.get(position).getExtImgUrl());
 		mIntent.putExtra("about", mOrte.get(position).getAbout());
 		mIntent.putExtra("latitude", mOrte.get(position).getLat());
 		mIntent.putExtra("longitude", mOrte.get(position).getLng());
