@@ -112,13 +112,13 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 
 	@Override
 	public void onProviderEnabled(String provider) {
-		Toast.makeText(this, provider + " wurde aktiviert",
+		Toast.makeText(this, provider.toUpperCase() + " wurde aktiviert",
         Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
 	public void onProviderDisabled(String provider) {
-		Toast.makeText(this, "Bitte " + provider + " aktivieren",
+		Toast.makeText(this, "Bitte " + provider.toUpperCase() + " aktivieren",
         Toast.LENGTH_SHORT).show();
 	}
 
