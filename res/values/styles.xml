@@ -18,6 +18,7 @@
     	<item name="android:buttonStyle">@style/RobotoButtonStyle</item>
     	<item name="android:actionBarTabTextStyle">@style/ActionBarTabTextStyle</item>
     	<item name="android:actionBarTabStyle">@style/ActionBarTabStyle</item>
+    	<item name="android:actionBarStyle">@style/MyActionBar</item>
     </style>
     
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
@@ -37,4 +38,12 @@
         <item name="android:background">@drawable/tab_indicator_ab_geopfad</item>
     </style>
 
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/blue</item>
+        <item name="android:titleTextStyle">@style/HoloTitleText</item>
+    </style>
+    <style name="HoloTitleText" parent="@android:TextAppearance.Holo">
+        <item name="android:textColor">@color/actionbar_text</item> 
+    </style>
+    
 </resources>

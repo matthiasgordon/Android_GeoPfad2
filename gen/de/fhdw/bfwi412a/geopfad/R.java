@@ -803,6 +803,8 @@ containing a value of this type.
         /**  Application theme. 
          */
         public static final int AppTheme=0x7f060006;
+        public static final int HoloTitleText=0x7f06000c;
+        public static final int MyActionBar=0x7f06000b;
         public static final int RobotoButtonStyle=0x7f060008;
         public static final int RobotoTextViewStyle=0x7f060007;
         public static final int Theme_IAPTheme=0x7f060000;

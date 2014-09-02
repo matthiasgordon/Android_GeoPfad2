@@ -389,6 +389,8 @@ int style ActionBarTabStyle 0x7f06000a
 int style ActionBarTabTextStyle 0x7f060009
 int style AppBaseTheme 0x7f060005
 int style AppTheme 0x7f060006
+int style HoloTitleText 0x7f06000c
+int style MyActionBar 0x7f06000b
 int style RobotoButtonStyle 0x7f060008
 int style RobotoTextViewStyle 0x7f060007
 int style Theme_IAPTheme 0x7f060000
