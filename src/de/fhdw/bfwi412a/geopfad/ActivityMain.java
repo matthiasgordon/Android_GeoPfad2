@@ -16,6 +16,7 @@ import android.support.v4.app.FragmentActivity;
 public class ActivityMain extends FragmentActivity {
 	
 	private ActivityMainGUI mGUI;
+	private ActivityMainData mData;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class ActivityMain extends FragmentActivity {
 	}
 	
 	private void initData () {
-		
+		mData = new ActivityMainData(this);
 	}
 
 	private void initGUI () {
@@ -37,7 +38,7 @@ public class ActivityMain extends FragmentActivity {
 		 * The FragmentAdapter has to been set on the ViewPager so that it knows which Fragments
 		 * to show.
 		 */
-		mGUI.getViewPager().setAdapter(new FragmentAdapter (getSupportFragmentManager()));
+		mGUI.getViewPager().setAdapter(new FragmentAdapter (getSupportFragmentManager(), mData.getLocationName()));
 	}
 	
 	private void initApplicationLogic () {

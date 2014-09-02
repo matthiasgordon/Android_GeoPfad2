@@ -11,9 +11,16 @@ public class MapFragment extends Fragment {
 	MapFragmentData mData;
 	MapFragmentGUI mGUI;
 	MapFragmentApplicationLogic mApplicationLogic;
+	String mLocationName;
+	boolean mIsFromIntent;
 	
-	public MapFragment () {
-		
+	public MapFragment(){
+		mIsFromIntent = false;
+	}
+	
+	public MapFragment (String MapData) {
+		mLocationName = MapData;
+		mIsFromIntent = true;
 	}
 	
 	@Override
@@ -38,8 +45,9 @@ public class MapFragment extends Fragment {
 	}
 
 	private void initGUI (View view) {
-		mGUI = new MapFragmentGUI(this, view);
-		mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), 0, mData.getVisitStatus());
+		mGUI = new MapFragmentGUI(this, view, mLocationName, mIsFromIntent);
+		mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), 0, 
+				mData.getVisitStatus(), mIsFromIntent);
 	}
 	
 	private void initApplicationLogic () {
@@ -47,6 +55,6 @@ public class MapFragment extends Fragment {
 	}
 	
 	private void initEventToListenerMapping () {
-		new MapFragmentEventToListener(mGUI, mApplicationLogic);
+		new MapFragmentEventToListener(mGUI, mApplicationLogic, mIsFromIntent);
 	}
 }

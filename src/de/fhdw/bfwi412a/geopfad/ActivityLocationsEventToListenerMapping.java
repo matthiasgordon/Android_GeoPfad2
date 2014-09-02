@@ -16,6 +16,7 @@ public class ActivityLocationsEventToListenerMapping implements OnClickListener,
 		mAppLogic = appLogic;
 		mGUI.getBtnNavigation().setOnClickListener(this);
 		mGUI.getBtnVisit().setOnClickListener(this);
+		mGUI.getBtnShowOnMap().setOnClickListener(this);
 		mAppLogic.getLocationManager().requestLocationUpdates(mAppLogic.getmProvider(), 400, 1, this);
 	}
 	
@@ -27,6 +28,9 @@ public class ActivityLocationsEventToListenerMapping implements OnClickListener,
 			break;
 		case R.id.btnVisit:
 			mAppLogic.changeVisitStatus();
+			break;
+		case R.id.btnShowOnMap:
+			mAppLogic.showOnMap();
 			break;
 		}
 	}

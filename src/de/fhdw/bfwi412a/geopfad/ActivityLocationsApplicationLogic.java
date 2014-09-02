@@ -88,4 +88,11 @@ public class ActivityLocationsApplicationLogic {
 		boolean enabled = service.isProviderEnabled(LocationManager.GPS_PROVIDER);
 		return enabled;
 	}
+
+	public void showOnMap() {
+		String mLocationName = mData.getTitle();
+		Intent intent = new Intent(mData.getActivity(), ActivityMain.class);
+		intent.putExtra("Ortsname", mLocationName);
+		mActivity.startActivity(intent);
+	}
 }

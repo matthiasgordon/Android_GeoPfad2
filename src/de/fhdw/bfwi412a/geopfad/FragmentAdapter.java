@@ -11,9 +11,14 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 class FragmentAdapter extends FragmentPagerAdapter
 {
-
+	String mMapData;
 	public FragmentAdapter(FragmentManager fm) {
 		super(fm);
+	}
+	
+	public FragmentAdapter(FragmentManager fm, String MapData) {
+		super(fm);
+		mMapData = MapData;
 	}
 
 	/**The method is passing the fragment depending on the fragmentID
@@ -27,8 +32,12 @@ class FragmentAdapter extends FragmentPagerAdapter
 		Fragment fragment=null;
 		if(fragmentID == 0)
 		{
-			fragment=new MapFragment();
-		}
+			if(mMapData!=null){
+			fragment=new MapFragment(mMapData);
+			}
+			else{
+				fragment=new MapFragment();
+			}		}
 		
 		if(fragmentID == 1)
 		{

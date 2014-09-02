@@ -24,6 +24,7 @@ public class ActivityLocationsGUI {
 	TextView mDistance;
 	CheckBox mBtnVisit;
 	Button mBtnNavigation;
+	Button mBtnShowOnMap;
 	final ActionBar mActionBar;
 
 	public ActivityLocationsGUI(ActivityLocations actloc, ActivityLocationsData data) {
@@ -37,6 +38,7 @@ public class ActivityLocationsGUI {
 		mVisitStatus = (TextView) mActLoc.findViewById(R.id.txtVisitStatus);
 		mDistance = (TextView) mActLoc.findViewById(R.id.txtDistance);
 		mBtnVisit = (CheckBox) mActLoc.findViewById(R.id.btnVisit);
+		mBtnShowOnMap = (Button) mActLoc.findViewById(R.id.btnShowOnMap);
 		
 		mVisitStatus.setText(mData.getVisitStatus().getString(mData.mVisitKey, "Nicht besucht."));
 		if(mVisitStatus.getText().toString().equals("Nicht besucht.")){
@@ -90,6 +92,10 @@ public class ActivityLocationsGUI {
 		return mBtnNavigation;
 	}
 	
+	public Button getBtnShowOnMap() {
+		return mBtnShowOnMap;
+	}
+
 	public void scalePictures() {
 		Bitmap picture = null;
 		if(mData.getImageUrl() != null){
@@ -118,7 +124,7 @@ public class ActivityLocationsGUI {
 		}
 		if(mData.getVisitStatus() != null){
 		mVisitStatus.setText(mData.getVisitStatus()
-				.getString(mData.getVisitKey(), "Nein"));
+				.getString(mData.getVisitKey(), "Nicht besucht."));
 		}
 	}	
 }

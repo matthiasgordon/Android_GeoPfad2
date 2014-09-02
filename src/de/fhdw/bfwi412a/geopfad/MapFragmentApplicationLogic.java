@@ -17,7 +17,10 @@ public class MapFragmentApplicationLogic {
 	}
 	
 	public void changeMarkers(int id){
-		mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), id, mData.getVisitStatus());
+		if(id != -1)
+			mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), id, mData.getVisitStatus(),false);
+		else
+			mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), id, mData.getVisitStatus(),true);
 	}
 	
 	public void onMarkerClicked(Marker mMarker){
