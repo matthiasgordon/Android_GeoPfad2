@@ -6,6 +6,8 @@ import android.content.Intent;
 
 public class ListFragmentApplicationLogic {
 
+	public final int ADD_LOCATION = 100;
+	
 	private ListFragment mFrag;
 	private ListFragmentGUI mGUI;
 	private ListFragmentData mData;
@@ -36,7 +38,7 @@ public class ListFragmentApplicationLogic {
 	public void addLocation() {
 		Intent intent = new Intent(mFrag.getActivity(), AddLocation.class);
 		intent.putExtra("listLength", String.valueOf(mGUI.getmListLength()+1));
-		mFrag.startActivity(intent);
+		mFrag.startActivityForResult(intent, ADD_LOCATION);
 	}
 	
 }

@@ -40,4 +40,13 @@ public class ActivityLocations extends Activity {
 		new ActivityLocationsEventToListenerMapping(mGUI, mAppLogic);
 	}
 	
+	@Override
+	public void onDestroy() {
+	    super.onDestroy();
+
+	    mGUI.mImageUrl.setImageBitmap(null);
+	    mGUI.mImageUrl2.setImageBitmap(null);
+	    mGUI.mImageUrl3.setImageBitmap(null);
+	    mGUI.mExtImageUrl.setImageBitmap(null);
+	}
 }

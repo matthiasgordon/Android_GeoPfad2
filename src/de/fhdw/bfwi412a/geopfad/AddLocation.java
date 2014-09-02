@@ -52,7 +52,6 @@ public class AddLocation extends Activity {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.add_location);
 			
-			final String xmlFile = "neueOrte";
 			Button btnAnlegen = (Button)findViewById(R.id.btnAnlegen);
 			Button btnbildurl = (Button)findViewById(R.id.btnbildurl);
 			Button btnCoordination = (Button)findViewById(R.id.btnAddLocationCoordination);
@@ -264,4 +263,11 @@ public class AddLocation extends Activity {
 		    }
 		  }
 		} 
+		
+		@Override
+		public void finish() {
+		  // Activity finished ok, return the data
+		  setResult(RESULT_OK);
+		  super.finish();
+		}
 }

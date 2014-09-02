@@ -90,23 +90,25 @@ public class ActivityLocationsGUI {
 	}
 	
 	public void scalePictures() {
+		Bitmap picture = null;
 		if(mData.getImageUrl() != null){
-			Bitmap picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
+			picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
 					.getIdentifier(mData.getImageUrl(), "drawable", mActLoc.getPackageName()), mActLoc, "location");
 			mImageUrl.setImageBitmap(picture);
 		}
 		if(mData.getImageUrl2() != null){
-			Bitmap picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
+			picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
 					.getIdentifier(mData.getImageUrl2(), "drawable", mActLoc.getPackageName()), mActLoc, "location");
 			mImageUrl2.setImageBitmap(picture);
 		}
 		if(mData.getImageUrl3() != null){
-			Bitmap picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
+			picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
 					.getIdentifier(mData.getImageUrl3(), "drawable", mActLoc.getPackageName()), mActLoc, "location");
 			mImageUrl3.setImageBitmap(picture);
+			
 		}
 		if(mData.getExtImageUrl() != null){	
-		Bitmap picture = ScalingUtilities.fitScaleExtern(mData.getExtImageUrl(), mActLoc, "location");
+		picture = ScalingUtilities.fitScaleExtern(mData.getExtImageUrl(), mActLoc, "location");
         Log.v("Path", mData.getExtImageUrl());
 		mExtImageUrl.setImageBitmap(picture);
 		}
@@ -117,5 +119,6 @@ public class ActivityLocationsGUI {
 		mVisitStatus.setText(mData.getVisitStatus()
 				.getString(mData.getVisitKey(), "Nein"));
 		}
+		
 	}	
 }

@@ -3,7 +3,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +18,6 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 	private List<Ort> orte = null;
 	private  int layoutResourceId;
 	private DistanceCalculator mDistanceCalc;
-	private Ort ort;
 		
 		
 	public OrteAdapter(Context context, int layoutResourceId, List<Ort> orte) {
@@ -79,26 +78,10 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 			int id;
 			
 			if(ort.getImgUrl() != null){
-				long zstVorher;
-				long zstNachher;
-
-				zstVorher = System.currentTimeMillis();
-				Bitmap mOrtBitmap = ScalingUtilities.fitScale(context.getResources(),context.getResources().getIdentifier("thumb_"+ort.getImgUrl(), "drawable", context.getPackageName()), context, "list");
-				holder.imgIcon.setImageBitmap(mOrtBitmap);
-				zstNachher = System.currentTimeMillis();
-				System.out.println("Zeit benötigt: " + (zstNachher - zstVorher) + " milli");
-				System.out.println("Zeit benötigt: " + ((zstNachher - zstVorher)/1000) + " sec");
+				new AdapterAsyncTask(context,holder,ort).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "intern");      
 			}
 			else if(ort.getExtImgUrl() != null) {
-				long zstVorher;
-				long zstNachher;
-
-				zstVorher = System.currentTimeMillis();
-				Bitmap mOrtBitmap = ScalingUtilities.fitScaleExtern(ort.getExtImgUrl(), context, "list");
-				holder.imgIcon.setImageBitmap(mOrtBitmap);
-				zstNachher = System.currentTimeMillis();
-				System.out.println("Zeit benötigt: " + (zstNachher - zstVorher) + " milli");
-				System.out.println("Zeit benötigt: " + ((zstNachher - zstVorher)/1000) + " sec");
+				new AdapterAsyncTask(context,holder,ort).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "extern");
 			}
 			else {
 				id = context.getResources().getIdentifier("thumb_station1bild4", "drawable", context.getPackageName());
@@ -109,12 +92,9 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 
 		}
 		
-	static class OrtHolder {
+	class OrtHolder {
 		ImageView imgIcon;
 		TextView txtOrtName;
 		TextView txtOrtEntfernung;
 	}
-
-		
-
 }

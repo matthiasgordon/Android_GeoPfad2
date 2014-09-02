@@ -1,10 +1,7 @@
 package de.fhdw.bfwi412a.geopfad;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,9 +14,6 @@ import android.widget.SearchView;
 
 public class ListFragment extends Fragment {
 	
-	static final int requestCode = 100;
-	
-
 	ListFragmentData mData;
 	ListFragmentGUI mGUI;
 	ListFragmentApplicationLogic mAppLogic;
@@ -38,10 +32,7 @@ public class ListFragment extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
-		initData();
-		initGUI(getView());
-		initApplicationLogic();
-		initEventToListenerMapping();
+		
 	}
 
 	@Override
@@ -84,5 +75,15 @@ public class ListFragment extends Fragment {
 	private void initEventToListenerMapping() {
 		mEventToListenerMapping = new ListFragmentEventToListenerMapping(this, mData, mGUI, mAppLogic);
 	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+	  if (requestCode == mAppLogic.ADD_LOCATION) {
+		initData();
+		initGUI(getView());
+		initApplicationLogic(); 
+		initEventToListenerMapping();
+	  }
+	} 
 	
 }
