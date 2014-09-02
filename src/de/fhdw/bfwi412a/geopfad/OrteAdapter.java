@@ -49,8 +49,8 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 				holder = new OrtHolder();
 				holder.imgIcon = (ImageView)row.findViewById(R.id.imgIcon);
 				holder.txtOrtName = (TextView)row.findViewById(R.id.txtOrtName);
-				
 				holder.txtOrtEntfernung = (TextView)row.findViewById(R.id.txtOrtEntfernung);
+				holder.txtOrtID = (TextView)row.findViewById(R.id.txtOrtID);
 				
 				row.setTag(holder);
 			}
@@ -61,6 +61,7 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 			
 			Ort ort = orte.get(position);
 			holder.txtOrtName.setText(ort.getName());
+			holder.txtOrtID.setText(ort.getId());
 			
 			Double distance = mDistanceCalc.getDistance(ort.getLat(), ort.getLng(), context);
 			if(distance != 0 && distance != -1) {
@@ -96,5 +97,6 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 		ImageView imgIcon;
 		TextView txtOrtName;
 		TextView txtOrtEntfernung;
+		TextView txtOrtID;
 	}
 }

@@ -27,7 +27,7 @@ public class ListFragmentEventToListenerMapping implements OnItemClickListener, 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-		mAppLogic.showDetailView(position);
+		mAppLogic.showDetailView(view);
 	}
 
 	@Override

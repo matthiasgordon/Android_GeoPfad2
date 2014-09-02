@@ -28,12 +28,6 @@ public class ListFragment extends Fragment {
 		initEventToListenerMapping();
 		return mView;
 	}
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-		
-	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
