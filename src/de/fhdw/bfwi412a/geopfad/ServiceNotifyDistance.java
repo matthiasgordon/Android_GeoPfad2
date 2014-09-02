@@ -16,11 +16,16 @@ import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
+/**
+ * Class implemented by: Matthias Gordon
+ */
+
 public class ServiceNotifyDistance extends Service implements LocationListener {
 
 	NotificationManager mManager;
 	PendingIntent mContentIntent;
 	LocationManager mLocationManager;
+	private IntentBuilder mIntentBuilder;
 	private String mProvider;
 	Criteria mCriteria;
 	Intent mIntent;
@@ -34,17 +39,20 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 		return null;
 	}
 
+	/**
+	 * 
+	 */
 	@Override
-
 	public void onCreate() {
 		mContext = this;
 		mDistCalc = new DistanceCalculator();
+		mIntentBuilder = new IntentBuilder();
 		mManager = (NotificationManager) this.getSystemService(NOTIFICATION_SERVICE);
 		mOrte = Orte_DOM_Parser.getOrteFromFile(this);
-		super.onCreate();
 		mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		mCriteria = new Criteria();
 		mProvider = mLocationManager.getBestProvider(mCriteria, false);
+		super.onCreate();
 	}
 
 	@Override
@@ -61,43 +69,30 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 	}
 
 	public void getDistanceForEachLocation() {
-		double mDistance;
+		double distance;
 		for(int i=0;i<mOrte.size();i++) {
-			mDistance = mDistCalc.getDistance(mOrte.get(i).getLat(), mOrte.get(i).getLng(), mContext);
-			if(mDistance <= 50 && mDistance != -1) {
+			distance = mDistCalc.getDistance(mOrte.get(i).getLat(), mOrte.get(i).getLng(), mContext);
+			if(distance <= 50 && distance != -1) {
 				mPosition = i;
-				Notification notification = buildNotification(mOrte.get(i).getName(), mPosition);
+				String distanceText = String.valueOf(Math.rint(distance*100)/100);
+				Notification notification = buildNotification(mOrte.get(i).getName(), mPosition, distanceText);
 				mManager.notify(8, notification);
 			}
 		}
 	}
 
-	public Notification buildNotification(String ortsName, int position) {
-		mContentIntent = PendingIntent.getActivity(this, 0, setUpIntent(position), PendingIntent.FLAG_CANCEL_CURRENT);
+	public Notification buildNotification(String ortsName, int position, String distanceText) {
+		mContentIntent = PendingIntent.getActivity(this, 0, mIntentBuilder.buildIntentForActivityLocations
+				(mContext, mOrte, position), PendingIntent.FLAG_CANCEL_CURRENT);
 		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
 		mBuilder.setAutoCancel(true);
 		mBuilder.setSmallIcon(R.drawable.ic_launcher);
-		mBuilder.setContentTitle("Ein Ort ist in der Naehe");
-		mBuilder.setContentText("Folgender Ort ist in der Naehe: " + ortsName);
+		mBuilder.setContentTitle( ortsName + " ist in der NŠhe.");
+		mBuilder.setContentText("Luftlinie zum Ort: " + distanceText + "m.");
 		mBuilder.setContentIntent(mContentIntent);
 		Notification mNotification = mBuilder.build();
 		return mNotification;
 	}
-
-	public Intent setUpIntent(int position) {
-		mIntent = new Intent (this, ActivityLocations.class);
-		mIntent.putExtra("Ortname", mOrte.get(position).getName());
-		mIntent.putExtra("imageUrl", mOrte.get(position).getImgUrl());
-		mIntent.putExtra("imageUrl2", mOrte.get(position).getImgUrl2());
-		mIntent.putExtra("imageUrl3", mOrte.get(position).getImgUrl3());
-		mIntent.putExtra("extImageUrl", mOrte.get(position).getExtImgUrl());
-		mIntent.putExtra("about", mOrte.get(position).getAbout());
-		mIntent.putExtra("latitude", mOrte.get(position).getLat());
-		mIntent.putExtra("longitude", mOrte.get(position).getLng());
-		mIntent.putExtra("visitKey", mOrte.get(position).getVisitKey());
-		return mIntent;
-	}
-
 
 	@Override
 	public void onLocationChanged(Location location) {

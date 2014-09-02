@@ -8,10 +8,12 @@ public class MapFragmentApplicationLogic {
 	
 	MapFragmentData mData;
 	MapFragmentGUI mGUI;
+	private IntentBuilder mIntentBuilder;
 	
 	public MapFragmentApplicationLogic(MapFragmentData data, MapFragmentGUI gui) {
 		mData = data;
 		mGUI = gui;
+		mIntentBuilder = new IntentBuilder();
 	}
 	
 	public void changeMarkers(int id){
@@ -19,20 +21,23 @@ public class MapFragmentApplicationLogic {
 	}
 	
 	public void onMarkerClicked(Marker mMarker){
+		int i=0;
 		for (Ort curOrt : mData.getOrte()){
 			if(curOrt.getName().equals(mMarker.getTitle())){
-				Intent intent = new Intent(mData.getActivity(), ActivityLocations.class);
-				intent.putExtra("Ortname", curOrt.getName());
-				intent.putExtra("imageUrl", curOrt.getImgUrl());
-				intent.putExtra("imageUrl2", curOrt.getImgUrl2());
-				intent.putExtra("imageUrl3", curOrt.getImgUrl3());
-				intent.putExtra("about", curOrt.getAbout());
-				intent.putExtra("latitude", curOrt.getLat());
-				intent.putExtra("longitude", curOrt.getLng());
-				intent.putExtra("visitKey", curOrt.getVisitKey());
+				Intent intent = mIntentBuilder.buildIntentForActivityLocations(mData.getActivity(), mData.getOrte(), i);
+//				Intent intent = new Intent(mData.getActivity(), ActivityLocations.class);
+//				intent.putExtra("Ortname", curOrt.getName());
+//				intent.putExtra("imageUrl", curOrt.getImgUrl());
+//				intent.putExtra("imageUrl2", curOrt.getImgUrl2());
+//				intent.putExtra("imageUrl3", curOrt.getImgUrl3());
+//				intent.putExtra("about", curOrt.getAbout());
+//				intent.putExtra("latitude", curOrt.getLat());
+//				intent.putExtra("longitude", curOrt.getLng());
+//				intent.putExtra("visitKey", curOrt.getVisitKey());
 				
 				mData.getActivity().startActivity(intent);
 			}
+			i++;
 		}
 	}
 }

@@ -1,11 +1,14 @@
-//Class implemented by: Matthias Gordon
-
 package de.fhdw.bfwi412a.geopfad;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+/**
+ * Class implemented by: Matthias Gordon
+ * The class extends a FragmentPagerAdapter which sets the right fragments
+ * to the ViewPager
+ */
 class FragmentAdapter extends FragmentPagerAdapter
 {
 
@@ -13,9 +16,12 @@ class FragmentAdapter extends FragmentPagerAdapter
 		super(fm);
 	}
 
-	//Passing the fragment depending on the fragmentID
-	//ID 0 = MapFragment ---> the left fragment
-	//ID 1 = ListFragment ---> the right fragment
+	/**The method is passing the fragment depending on the fragmentID
+	 * ID 0 = MapFragment ---> the left fragment
+	 * ID 1 = ListFragment ---> the right fragment
+	 * @param fragmentID the ID of the ViewPager page
+	 * @return fragment the fragment that belongs to the page
+	 */
 	@Override
 	public Fragment getItem(int fragmentID) {
 		Fragment fragment=null;
@@ -31,7 +37,10 @@ class FragmentAdapter extends FragmentPagerAdapter
 		return fragment;
 	}
 
-	//Passing the count of fragment
+	/**
+	 * The method passes the number of fragments to the FragmentPagerAdapter
+	 * @return number of fragments
+	 */
 	@Override
 	public int getCount() {
 		return 2;

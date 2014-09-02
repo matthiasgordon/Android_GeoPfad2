@@ -1,33 +1,37 @@
-//Class implemented by: Matthias Gordon
-
 package de.fhdw.bfwi412a.geopfad;
 
 import android.app.ActionBar;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.ViewPager;
+
+/**
+ * Class implemented by: Matthias Gordon
+ */
 
 public class ActivityMainGUI {
 
-	ViewPager viewPager;
+	ViewPager mViewPager;
 	final ActionBar mActionBar;
 	ActionBar.Tab mTab1;
 	ActionBar.Tab mTab2;	
 	
 	public ActivityMainGUI (ActivityMain act)
 	{
-		viewPager=(ViewPager) act.findViewById(R.id.pager);
+		/**
+		 * The ViewPager enables the possibility to swipe between the two fragments.
+		 */
+		mViewPager=(ViewPager) act.findViewById(R.id.pager);
 		
+		/**
+		 * The ActionBar of the Activity is that to "Navigation-Mode-Tabs" which enables
+		 * the possibility to add a tab-navigation.
+		 */
 		mActionBar = act.getActionBar();
 		mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0979BB")));
-		mActionBar.setStackedBackgroundDrawable(new ColorDrawable(Color.parseColor("#E6E6E6")));
-		mActionBar.setIcon(R.drawable.actionbar_icon_white);
 		initializeTabs(mActionBar);
 	}
 
 	public ViewPager getViewPager() {
-		return viewPager;
+		return mViewPager;
 	}
 	
 	public ActionBar getActionBar() {
@@ -42,6 +46,10 @@ public class ActivityMainGUI {
 		return mTab2;
 	}
 
+	/**
+	 * Two tabs are initialized and the names of them is being set.
+	 * @param actionBar the ActionBar of the activity
+	 */
 	private void initializeTabs (ActionBar actionBar) {
 		mTab1 = actionBar.newTab();
 		mTab1.setText("Karte");
@@ -50,9 +58,14 @@ public class ActivityMainGUI {
 		mTab2.setText("Liste");
 	}
 	
-	public void addTabs() {
-		mActionBar.addTab(mTab1);
-		mActionBar.addTab(mTab2);
+	/**
+	 * This method adds the tabs to the ActionBar. It has to be called after the TabListener
+	 * is set onto the tabs. Thats the reason why it is called in the EventToListener-Class.
+	 * @param actionBar the ActionBar of the activity
+	 */
+	public void addTabs(ActionBar actionBar) {
+		actionBar.addTab(mTab1);
+		actionBar.addTab(mTab2);
 	}
 
 }
