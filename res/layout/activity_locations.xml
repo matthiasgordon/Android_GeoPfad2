@@ -11,7 +11,7 @@
 		android:gravity="center"
 		android:orientation="vertical" >
 		
-			// HorizontalScrollview
+			
 			<HorizontalScrollView
 							android:id="@+id/HorizontalScrollView01"
 							android:layout_height="match_parent"
@@ -66,13 +66,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:gravity="right" >
-			
-				<TextView
-					android:id="@+id/txtVisitText"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Schon besucht?"
-					android:textSize="15sp" />
+
 			
 				<TextView
 					android:id="@+id/txtVisitStatus"
@@ -83,11 +77,11 @@
 					android:text=""
 					android:textSize="15sp" />
 				
-				<Button
+				<CheckBox
 					android:id="@+id/btnVisit"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="besucht / nicht besucht"
+					android:text=""
 					android:textSize="15sp" />
 			</TableRow>
 			

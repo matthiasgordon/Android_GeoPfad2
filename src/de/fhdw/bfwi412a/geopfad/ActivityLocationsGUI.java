@@ -1,11 +1,13 @@
 package de.fhdw.bfwi412a.geopfad;
 
 import android.app.ActionBar;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,15 +16,15 @@ public class ActivityLocationsGUI {
 	ActivityLocationsApplicationLogic mAppLogic;
 	ActivityLocations mActLoc;
 	ActivityLocationsData mData;
+	SharedPreferences VisitStatus;
 	TextView mAbout;
 	ImageView mImageUrl;
 	ImageView mImageUrl2;
 	ImageView mImageUrl3;
 	ImageView mExtImageUrl;
-	TextView mVisitText;
 	TextView mVisitStatus;
 	TextView mDistance;
-	Button mBtnVisit;
+	CheckBox mBtnVisit;
 	Button mBtnNavigation;
 	final ActionBar mActionBar;
 
@@ -34,10 +36,18 @@ public class ActivityLocationsGUI {
 		mImageUrl2 = (ImageView) mActLoc.findViewById(R.id.imageView2);
 		mImageUrl3 = (ImageView) mActLoc.findViewById(R.id.imageView3);
 		mExtImageUrl = (ImageView) mActLoc.findViewById(R.id.extImageView);
-		mVisitText = (TextView) mActLoc.findViewById(R.id.txtVisitText);
 		mVisitStatus = (TextView) mActLoc.findViewById(R.id.txtVisitStatus);
 		mDistance = (TextView) mActLoc.findViewById(R.id.txtDistance);
-		mBtnVisit = (Button) mActLoc.findViewById(R.id.btnVisit);
+		mBtnVisit = (CheckBox) mActLoc.findViewById(R.id.btnVisit);
+		
+		mVisitStatus.setText(mData.getVisitStatus().getString(mData.mVisitKey, "Nicht besucht."));
+		if(mVisitStatus.getText().toString().equals("Nicht besucht.")){
+			mBtnVisit.setChecked(false);
+		}
+		else{
+			mBtnVisit.setChecked(true);
+		}
+		
 		mBtnNavigation = (Button) mActLoc.findViewById(R.id.btnNavigation);
 		mActionBar = mActLoc.getActionBar();
 		mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0979BB")));
@@ -68,10 +78,6 @@ public class ActivityLocationsGUI {
 	public ImageView getmExtImageUrl() {
 		return mExtImageUrl;
 	}
-
-	public TextView getVisitText() {
-		return mVisitText;
-	}
 	
 	public TextView getVisitStatus() {
 		return mVisitStatus;
@@ -81,7 +87,7 @@ public class ActivityLocationsGUI {
 		return mDistance;
 	}
 	
-	public Button getBtnVisit(){
+	public CheckBox getBtnVisit(){
 		return mBtnVisit;
 	}
 
@@ -112,13 +118,13 @@ public class ActivityLocationsGUI {
         Log.v("Path", mData.getExtImageUrl());
 		mExtImageUrl.setImageBitmap(picture);
 		}
-		if(mData.getAbout() != null){
-		mAbout.setText(mData.getAbout());
-		}
-		if(mData.getVisitStatus() != null){
-		mVisitStatus.setText(mData.getVisitStatus()
-				.getString(mData.getVisitKey(), "Nein"));
-		}
-		
+//		if(mData.getAbout() != null){
+//		mAbout.setText(mData.getAbout());
+//		}
+//		if(mData.getVisitStatus() != null){
+//		mVisitStatus.setText(mData.getVisitStatus()
+//				.getString(mData.getVisitKey(), "Nein"));
+//		}
+//		
 	}	
 }

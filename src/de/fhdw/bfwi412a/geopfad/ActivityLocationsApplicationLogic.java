@@ -51,15 +51,21 @@ public class ActivityLocationsApplicationLogic {
 		SharedPreferences visitStatus = mData.getVisitStatus();
 		SharedPreferences.Editor editor = visitStatus.edit();
 		
-		if(visitStatus.getString(mData.getVisitKey(), "nein").equals("nein")){
-			editor.putString(mData.mVisitKey, "ja");
+		if(visitStatus.getString(mData.getVisitKey(), "Nicht besucht.").equals("Nicht besucht.")){
+			editor.putString(mData.mVisitKey, "Bereits besucht.");
 			editor.commit();
 		}
 		else{
-			editor.putString(mData.mVisitKey, "nein");
+			editor.putString(mData.mVisitKey, "Nicht besucht.");
 			editor.commit();
 		}
-		mGUI.getVisitStatus().setText(visitStatus.getString(mData.mVisitKey, "Nein"));
+		mGUI.getVisitStatus().setText(visitStatus.getString(mData.mVisitKey, "Nicht besucht."));
+		if(visitStatus.getString(mData.mVisitKey, "Nicht besucht.").equals("Nicht besucht.")){
+			mGUI.mBtnVisit.setChecked(false);
+		}
+		else{
+			mGUI.mBtnVisit.setChecked(true);
+		}
 	}
 	
 	public void setDistance() {
