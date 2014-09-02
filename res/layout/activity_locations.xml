@@ -103,7 +103,7 @@
 					android:id="@+id/txtDescription"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="Abstand zum Ort:"
+					android:text="Luftlinie zum Ort:"
 					android:textSize="15sp" />
 			
 				<TextView
