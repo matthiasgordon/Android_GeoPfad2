@@ -16,20 +16,16 @@ import android.widget.Toast;
 
 @SuppressLint("SdCardPath") 
 public class FileChooser extends ListActivity {
-	    
 		//create a current directory variable
 		private File currentDir;
 	    private FileArrayAdapter adapter;
 	    private String url;
-	   
 	    // Called when the activity is first created
 	    @Override
 	    public void onCreate(Bundle savedInstanceState) {
-	    	
 	        super.onCreate(savedInstanceState);
 	        currentDir = new File("/sdcard/");
 	        fill(currentDir);
-	        
 	    }
 	    
 	    //The first method is called fill. The purpose of fill is to get all the files and folder for the current directory we are in
@@ -42,17 +38,17 @@ public class FileChooser extends ListActivity {
 	    void fill(File f)
 	    {
 	        File[]dirs = f.listFiles();
-	         this.setTitle("Aktueller Ordner: "+f.getName());
-	         List<FileChooserOption>dir = new ArrayList<FileChooserOption>();
-	         List<FileChooserOption>fls = new ArrayList<FileChooserOption>();
+	         this.setTitle("Aktueller Ordner: "+f.getName()); //zeigt den Aktuellen Ordner an
+	         List<FileChooserOption>dir = new ArrayList<FileChooserOption>(); //array der Ordner
+	         List<FileChooserOption>fls = new ArrayList<FileChooserOption>(); //array der Dateien
 	         try{
 	             for(File ff: dirs)
 	             {
 	                if(ff.isDirectory())
-	                    dir.add(new FileChooserOption(ff.getName(),"Folder",ff.getAbsolutePath()));
+	                    dir.add(new FileChooserOption(ff.getName(),"Ordner",ff.getAbsolutePath())); 
 	                else
 	                {
-	                    fls.add(new FileChooserOption(ff.getName(),"File Size: "+ff.length(),ff.getAbsolutePath()));
+	                    fls.add(new FileChooserOption(ff.getName(),"Dateigröße: "+ff.length()+ " Bytes",ff.getAbsolutePath()));
 	                }
 	             }
 	         }catch(Exception e)
@@ -63,7 +59,7 @@ public class FileChooser extends ListActivity {
 	         Collections.sort(fls);
 	         dir.addAll(fls);
 	         if(!f.getName().equalsIgnoreCase("sdcard"))
-	         dir.add(0,new FileChooserOption("..","Parent Directory",f.getParent()));
+	         dir.add(0,new FileChooserOption("..","Ordnerebene hoch",f.getParent()));
 	         adapter = new FileArrayAdapter(FileChooser.this,R.layout.file_view,dir);
 	         //ListView lv= (ListView) findViewById(R.id.listView1);
 	         this.setListAdapter(adapter);
@@ -75,7 +71,7 @@ public class FileChooser extends ListActivity {
 	        // TODO Auto-generated method stub
 	        super.onListItemClick(l, v, position, id);
 	        FileChooserOption o = adapter.getItem(position);
-	        if(o.getData().equalsIgnoreCase("folder")||o.getData().equalsIgnoreCase("parent directory")){
+	        if(o.getData().equalsIgnoreCase("Ordner")||o.getData().equalsIgnoreCase("Ordnerebene hoch")){
 	                currentDir = new File(o.getPath());
 	                fill(currentDir);
 	        }
@@ -88,7 +84,7 @@ public class FileChooser extends ListActivity {
 	    }
 	    private void onFileClick(FileChooserOption o)
 	    {
-	        Toast.makeText(this, "File Clicked: "+o.getName(), Toast.LENGTH_SHORT).show();
+	        Toast.makeText(this, "Datei: "+o.getName()+" ausgewaehlt", Toast.LENGTH_SHORT).show();
 	    	url = o.getPath();
 //	    	TextView text1 = (TextView)findViewById(R.id.textView1);
 //	    	text1.setText(url);
@@ -100,7 +96,6 @@ public class FileChooser extends ListActivity {
 	    	/*Intent intent = new Intent(FileChooser.this, MainActivity.class);
 			startActivity(intent);*/
 	    }
-
 	    //getters an setters
 		public void setCurrentDir(File currentDir) {
 			this.currentDir = currentDir;
@@ -113,7 +108,6 @@ public class FileChooser extends ListActivity {
 		public String getUrl() {
 			return url;
 		}
-		
 		@Override
 		public void finish() {
 		  // Prepare data intent 
