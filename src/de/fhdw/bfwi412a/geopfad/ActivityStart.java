@@ -3,6 +3,9 @@ package de.fhdw.bfwi412a.geopfad;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 public class ActivityStart extends Activity {
 	
@@ -20,14 +23,34 @@ public class ActivityStart extends Activity {
 	}
 	
 	@Override
-	protected void onResume() {
-		initData();
-		initGUI();
-		initApplicationLogic();
-		initEventToListenerMapping();	
-
-		super.onResume();
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.start_actionbar_menu, menu);
+		return super.onCreateOptionsMenu(menu);
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+	    case R.id.refreshWeatherData:
+	      initData();
+	      initGUI();
+	      initApplicationLogic();
+	      initEventToListenerMapping();
+	      break;
+	    }
+		return super.onOptionsItemSelected(item);
+	}
+	
+//	@Override
+//	protected void onResume() {
+//		initData();
+//		initGUI();
+//		initApplicationLogic();
+//		initEventToListenerMapping();	
+//
+//		super.onResume();
+//	}
 	
 	@Override
 	protected void onDestroy() {

@@ -1,6 +1,7 @@
 package de.fhdw.bfwi412a.geopfad;
 
 import android.app.ActionBar;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
@@ -11,7 +12,6 @@ import android.widget.TextView;
 public class ActivityStartGUI {
 
 	ActivityStartData mData;
-	final ActionBar mActionBar;
 	TextView mTemperature;
 	TextView mLocation;
 	ImageView mSchneckenBild;
@@ -21,10 +21,6 @@ public class ActivityStartGUI {
 	
 	public ActivityStartGUI(ActivityStart act, ActivityStartData data) {
 		mData = data;
-		mActionBar = act.getActionBar();
-		mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#0979BB")));
-		mActionBar.setIcon(R.drawable.actionbar_icon_white);
-		
 		mTemperature = (TextView) act.findViewById(R.id.currDegree);
 		mCurrWeather = (ImageView) act.findViewById(R.id.imgWeather);
 		mLocation = (TextView) act.findViewById(R.id.Location);
@@ -32,8 +28,13 @@ public class ActivityStartGUI {
 		mToActivityMainButton = (Button) act.findViewById(R.id.ToActivityMainButton);
 		
 		mSchneckenBild = (ImageView) act.findViewById(R.id.schneckeView);
-		mSchneckenBild.setImageResource(act.getResources()
-		.getIdentifier(getImageUrl(mData.getAchievements()), "drawable", act.getPackageName()));
+//		mSchneckenBild.setImageResource(act.getResources()
+//		.getIdentifier(getImageUrl(mData.getAchievements()), "drawable", act.getPackageName()));
+		Bitmap picture = null;
+		picture = ScalingUtilities.fitScale(act.getResources(),act.getResources()
+						.getIdentifier(getImageUrl(mData.getAchievements()), "drawable", 
+								act.getPackageName()), act, "schnecke");
+		mSchneckenBild.setImageBitmap(picture);
 		
 		btnWeather = (Button) act.findViewById(R.id.btnWeather);
 		if(mTemperature != null && mCurrWeather != null){	

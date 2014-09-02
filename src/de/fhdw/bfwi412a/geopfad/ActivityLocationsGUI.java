@@ -118,13 +118,12 @@ public class ActivityLocationsGUI {
         Log.v("Path", mData.getExtImageUrl());
 		mExtImageUrl.setImageBitmap(picture);
 		}
-//		if(mData.getAbout() != null){
-//		mAbout.setText(mData.getAbout());
-//		}
-//		if(mData.getVisitStatus() != null){
-//		mVisitStatus.setText(mData.getVisitStatus()
-//				.getString(mData.getVisitKey(), "Nein"));
-//		}
-//		
+		if(mData.getAbout() != null){
+		mAbout.setText(mData.getAbout());
+		}
+		if(mData.getVisitStatus() != null){
+		mVisitStatus.setText(mData.getVisitStatus()
+				.getString(mData.getVisitKey(), "Nein"));
+		}
 	}	
 }

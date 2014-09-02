@@ -105,6 +105,13 @@ public class ScalingUtilities {
 		 		mDstWidth = mTotalwidth;
 		        mDstHeight = mTotalheight;
 		 	}
+		 	
+		 	if(destination.equals("schnecke")){
+		 		mDstWidth = mTotalwidth - 200;
+		        mDstHeight = mTotalheight - 200;
+//		 		mDstWidth = mTotalwidth - context.getResources().getDimensionPixelSize(R.dimen.start_padding);
+//		        mDstHeight = mDstWidth - context.getResources().getDimensionPixelSize(R.dimen.start_padding);
+		 	}
 		    // Part 1: Decode image
 		    Bitmap unscaledBitmap = ScalingUtilities.decodeResource(res, resId,mDstWidth, mDstHeight, ScalingLogic.FIT);
 		
