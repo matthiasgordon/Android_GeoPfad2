@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -25,6 +26,9 @@ import android.widget.Toast;
  */
 public class ServiceNotifyDistance extends Service implements LocationListener {
 
+	public static final String PREFS_NAME = "MYPrefernceFile";
+	private SharedPreferences mVisitStatus;
+	
 	NotificationManager mManager;
 	PendingIntent mContentIntent;
 	LocationManager mLocationManager;
@@ -96,7 +100,10 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 				String distanceText = String.valueOf(Math.rint(distance*100)/100);
 				Notification notification = buildNotification(mOrte.get(i).getName(), mPosition, distanceText);
 				mManager.notify(i, notification);
-				mOrte.get(i).setVisitKey("Bereits besucht.");
+				mVisitStatus = getSharedPreferences(PREFS_NAME, 0);
+				SharedPreferences.Editor editor = mVisitStatus.edit();
+				editor.putString(mOrte.get(i).getVisitKey(), this.getResources().getString(R.string.visited));
+				editor.commit();
 			}
 		}
 	}
