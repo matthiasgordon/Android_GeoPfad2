@@ -28,16 +28,6 @@ public class MapFragmentApplicationLogic {
 		for (Ort curOrt : mData.getOrte()){
 			if(curOrt.getName().equals(mMarker.getTitle())){
 				Intent intent = mIntentBuilder.buildIntentForActivityLocations(mData.getActivity(), mData.getOrte(), i);
-//				Intent intent = new Intent(mData.getActivity(), ActivityLocations.class);
-//				intent.putExtra("Ortname", curOrt.getName());
-//				intent.putExtra("imageUrl", curOrt.getImgUrl());
-//				intent.putExtra("imageUrl2", curOrt.getImgUrl2());
-//				intent.putExtra("imageUrl3", curOrt.getImgUrl3());
-//				intent.putExtra("about", curOrt.getAbout());
-//				intent.putExtra("latitude", curOrt.getLat());
-//				intent.putExtra("longitude", curOrt.getLng());
-//				intent.putExtra("visitKey", curOrt.getVisitKey());
-				
 				mData.getActivity().startActivity(intent);
 			}
 			i++;

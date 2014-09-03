@@ -777,7 +777,9 @@ containing a value of this type.
          */
         public static final int common_signin_button_text_long=0x7f07001e;
         public static final int empty_listview=0x7f07002b;
+        public static final int notvisited=0x7f07002e;
         public static final int search_actionbar=0x7f07002c;
+        public static final int visited=0x7f07002d;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

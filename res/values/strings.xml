@@ -18,5 +18,7 @@
     <string name="which_places">Welche Orte sollen angezeigt werden?</string>
     <string name="add_location">Add Location</string>
     <string name="empty_listview">Keine Orte gefunden.</string>
-    <string name="search_actionbar">Suchen</string>    
+    <string name="search_actionbar">Suchen</string>
+    <string name="visited">Besucht</string>
+    <string name="notvisited">Nicht besucht</string>    
 </resources>

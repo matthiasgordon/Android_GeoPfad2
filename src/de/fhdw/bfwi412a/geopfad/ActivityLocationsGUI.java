@@ -40,8 +40,9 @@ public class ActivityLocationsGUI {
 		mBtnVisit = (CheckBox) mActLoc.findViewById(R.id.btnVisit);
 		mBtnShowOnMap = (Button) mActLoc.findViewById(R.id.btnShowOnMap);
 		
-		mVisitStatus.setText(mData.getVisitStatus().getString(mData.mVisitKey, "Nicht besucht."));
-		if(mVisitStatus.getText().toString().equals("Nicht besucht.")){
+		mVisitStatus.setText(mData.getVisitStatus()
+				.getString(mData.mVisitKey, mActLoc.getResources().getString(R.string.notvisited)));
+		if(mVisitStatus.getText().toString().equals(mActLoc.getResources().getString(R.string.notvisited))){
 			mBtnVisit.setChecked(false);
 		}
 		else{
@@ -124,7 +125,7 @@ public class ActivityLocationsGUI {
 		}
 		if(mData.getVisitStatus() != null){
 		mVisitStatus.setText(mData.getVisitStatus()
-				.getString(mData.getVisitKey(), "Nicht besucht."));
+				.getString(mData.getVisitKey(), mActLoc.getResources().getString(R.string.notvisited)));
 		}
 	}	
 }

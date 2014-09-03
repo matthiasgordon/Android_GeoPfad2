@@ -47,7 +47,7 @@ public class ActivityStartData {
 		for (Ort currOrt : orte){
 			String visited = mActivity.getSharedPreferences(PREFS_NAME, 0)
 					.getString(currOrt.getVisitKey(),"Fehler");
-			if(visited.equals("Bereits besucht.")){
+			if(visited.equals(mActivity.getResources().getString(R.string.visited))){
 				test.add(visited);
 			}
 		}

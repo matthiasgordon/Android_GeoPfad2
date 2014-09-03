@@ -391,7 +391,9 @@ int string common_google_play_services_update_title 0x7f070012
 int string common_signin_button_text 0x7f07001d
 int string common_signin_button_text_long 0x7f07001e
 int string empty_listview 0x7f07002b
+int string notvisited 0x7f07002e
 int string search_actionbar 0x7f07002c
+int string visited 0x7f07002d
 int string wallet_buy_button_place_holder 0x7f07001f
 int string which_places 0x7f070029
 int style ActionBarTabStyle 0x7f06000a

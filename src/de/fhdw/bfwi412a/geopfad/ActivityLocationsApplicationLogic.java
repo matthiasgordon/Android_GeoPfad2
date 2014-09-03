@@ -50,17 +50,19 @@ public class ActivityLocationsApplicationLogic {
 	public void changeVisitStatus(){
 		SharedPreferences visitStatus = mData.getVisitStatus();
 		SharedPreferences.Editor editor = visitStatus.edit();
+		String visited = mActivity.getResources().getString(R.string.visited);
+		String notvisited = mActivity.getResources().getString(R.string.notvisited);
 		
-		if(visitStatus.getString(mData.getVisitKey(), "Nicht besucht.").equals("Nicht besucht.")){
-			editor.putString(mData.mVisitKey, "Bereits besucht.");
+		if(visitStatus.getString(mData.getVisitKey(), notvisited).equals(notvisited)){
+			editor.putString(mData.mVisitKey, visited);
 			editor.commit();
 		}
 		else{
-			editor.putString(mData.mVisitKey, "Nicht besucht.");
+			editor.putString(mData.mVisitKey, notvisited);
 			editor.commit();
 		}
 		mGUI.getVisitStatus().setText(visitStatus.getString(mData.mVisitKey, "Nicht besucht."));
-		if(visitStatus.getString(mData.mVisitKey, "Nicht besucht.").equals("Nicht besucht.")){
+		if(visitStatus.getString(mData.mVisitKey, notvisited).equals(notvisited)){
 			mGUI.mBtnVisit.setChecked(false);
 		}
 		else{

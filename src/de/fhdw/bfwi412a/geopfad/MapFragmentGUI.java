@@ -50,11 +50,6 @@ public class MapFragmentGUI {
 		mSpinner = (Spinner) view.findViewById(R.id.spinner1);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String> (mfrag.getActivity(),android.R.layout.simple_spinner_dropdown_item, liste);
 		  mSpinner.setAdapter(adapter);
-		
-//		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(mfrag.getActivity(),
-//		R.array.string_spinner, android.R.layout.simple_spinner_item);
-//		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//		mSpinner.setAdapter(adapter);
 	}
 
 	public GoogleMap getMap() {
@@ -94,7 +89,8 @@ public class MapFragmentGUI {
 			break;
 		case 1:
 			for (Ort curOrt : mOrte){
-				if(mVisitStatus.getString(curOrt.getVisitKey(), "nein").equals("ja")){
+				if(mVisitStatus.getString(curOrt.getVisitKey(), mFragment.getResources().getString(R.string.notvisited))
+						.equals(mFragment.getResources().getString(R.string.visited))){
 				mMap.addMarker(new MarkerOptions().position(new LatLng(curOrt.getLat(), curOrt.getLng()))
 						.title(curOrt.getName()))
 						.setIcon(mMarkerIcon);
@@ -103,7 +99,8 @@ public class MapFragmentGUI {
 			break;
 		case 2:
 			for (Ort curOrt : mOrte){
-				if(mVisitStatus.getString(curOrt.getVisitKey(), "nein").equals("nein")){
+				if(mVisitStatus.getString(curOrt.getVisitKey(), mFragment.getResources().getString(R.string.notvisited))
+						.equals(mFragment.getResources().getString(R.string.notvisited))){
 				mMap.addMarker(new MarkerOptions().position(new LatLng(curOrt.getLat(), curOrt.getLng()))
 						.title(curOrt.getName()))
 						.setIcon(mMarkerIcon);
