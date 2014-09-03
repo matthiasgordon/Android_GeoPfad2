@@ -12,59 +12,18 @@ public class ActivityStartData {
 	
 	private ActivityStart mActivity;
 	List<Ort> mOrte;
-	int mAchievements;
 	List <Weather> mWeatherData;
+	int mAchievements;
 	boolean LoadWeatherDataSuccess = true;
 	
 	public ActivityStartData(ActivityStart act) {
 		mActivity = act;
 		mOrte = Orte_DOM_Parser.getOrteFromFile(act);
 		mAchievements = countAchievements(mOrte);
-		mWeatherData = getCurrWeather();
-		
-	}
-
-	private List<Weather> getCurrWeather() {
-	    HandleXML obj; 
-	    List <Weather> weatherData = new ArrayList<Weather>();
-	    
-		obj = new HandleXML("http://weather.yahooapis.com/forecastrss?w=638139&u=c");
-	    obj.fetchXML();
-	      while(obj.parsingComplete);
-	    for(int i=0; i < obj.getWeatherCodes().size(); i++){
-	    	Weather currWeather = new Weather();
-	
-	    	currWeather.setDate(obj.getWeatherDates().get(i));
-	    	currWeather.setTemperatureHigh(obj.getWeatherTempsHigh().get(i));
-	    	currWeather.setTemperatureLow(obj.getWeatherTempsLow().get(i));
-	    	currWeather.setWeatherCode(obj.getWeatherCodes().get(i));
-	    	weatherData.add(currWeather);
-	    }
-	    LoadWeatherDataSuccess = obj.isInternetAcces();
-		return weatherData;
-	}
-
-	private int countAchievements(List <Ort> orte){
-		List <String> test = new ArrayList <String>();
-		for (Ort currOrt : orte){
-			String visited = mActivity.getSharedPreferences(PREFS_NAME, 0)
-					.getString(currOrt.getVisitKey(),"Fehler");
-			if(visited.equals("Bereits besucht.")){
-				test.add(visited);
-			}
-		}
-		
-		return test.size();
-	}
-	
-	public boolean isOnline() {
-	    ConnectivityManager cm =
-	        (ConnectivityManager) mActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
-	    NetworkInfo netInfo = cm.getActiveNetworkInfo();
-	    if (netInfo != null && netInfo.isConnectedOrConnecting()) {
-	        return true;
-	    }
-	    return false;
+		WeatherBGPullParser parser = new WeatherBGPullParser();
+		mWeatherData = parser.getWeatherData();
+		if(mWeatherData == null)
+			LoadWeatherDataSuccess = false;
 	}
 	
 	public ActivityStart getActivity() {
@@ -85,5 +44,17 @@ public class ActivityStartData {
 
 	public boolean isLoadWeatherDataSuccess() {
 		return LoadWeatherDataSuccess;
+	}
+	
+	private int countAchievements(List <Ort> orte){
+		List <String> test = new ArrayList <String>();
+		for (Ort currOrt : orte){
+			String visited = mActivity.getSharedPreferences(PREFS_NAME, 0)
+					.getString(currOrt.getVisitKey(),"Fehler");
+			if(visited.equals("Bereits besucht.")){
+				test.add(visited);
+			}
+		}
+		return test.size();
 	}
 }

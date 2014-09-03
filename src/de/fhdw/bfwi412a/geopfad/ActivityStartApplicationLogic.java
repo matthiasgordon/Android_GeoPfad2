@@ -1,7 +1,10 @@
 package de.fhdw.bfwi412a.geopfad;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -26,49 +29,28 @@ public class ActivityStartApplicationLogic {
 		intent.setClass(mData.getActivity(), ActivityMain.class);
 		mData.getActivity().startActivityForResult(intent, REQUESTCODECOUNTERVALUE);
 	}
-
-	public void openWeatherDialog() {
-		if(mData.isOnline() && mData.LoadWeatherDataSuccess){
-			final Dialog dialog = new Dialog(mActivity);
-			dialog.setContentView(R.layout.weather_dialog);
-			dialog.setTitle("Wettervorhersage");
-			
-			for(int i= 1; i<=5; i++){
-				String day = "dialog_day" + i;
-				String image = "imageView" + i;
-				String degreeHigh = "degree_high" + i;
-				String degreeLow = "degree_low" + i;
-							
-				TextView mDay = (TextView) dialog.findViewById(mActivity.getResources()
-						.getIdentifier(day, "id", mActivity.getPackageName()));
-				mDay.setText(mGUI.dayToGerman((mData.getWeatherData().get(i).getDate())));
-			
-				ImageView mImage = (ImageView) dialog.findViewById(mActivity.getResources()
-						.getIdentifier(image, "id", mActivity.getPackageName()));
-				mImage.setImageResource(mActivity.getResources()
-						.getIdentifier("weather_" + mGUI.getWeatherImageName(mData.getWeatherData()
-								.get(i).getWeatherCode()), "drawable", mActivity.getPackageName()));
-				
-				TextView mDegreeHigh = (TextView) dialog.findViewById(mActivity.getResources()
-						.getIdentifier(degreeHigh, "id", mActivity.getPackageName()));
-				mDegreeHigh.setText(mData.getWeatherData().get(i).getTemperatureHigh() + "°C");
-				
-				TextView mDegreeLow = (TextView) dialog.findViewById(mActivity.getResources()
-						.getIdentifier(degreeLow, "id", mActivity.getPackageName()));
-				mDegreeLow.setText(mData.getWeatherData().get(i).getTemperatureLow() + "°C");
-			}
-		
-			Button dialogButton = (Button) dialog.findViewById(R.id.btnStop);
-			// if button is clicked, close the custom dialog
-			dialogButton.setOnClickListener(new OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					dialog.dismiss();
-				}
-			});
 	
+	public boolean isOnline() {
+	    ConnectivityManager cm =
+	        (ConnectivityManager) mActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo netInfo = cm.getActiveNetworkInfo();
+	    if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+	        return true;
+	    }
+	    return false;
+	}
+
+	public void styleWeatherGUI(){
+		if(isOnline() && mData.LoadWeatherDataSuccess)
+			mGUI.fillWeatherGUI();
+		else
+			mGUI.setWeatherError();
+	}
+	
+	public void openWeatherDialog() {
+		if(isOnline() && mData.LoadWeatherDataSuccess){
+			final Dialog dialog = new WeatherForecastDialog(mActivity, mGUI, mData.getWeatherData());
 			dialog.show();
 		}
 	}
-
 }

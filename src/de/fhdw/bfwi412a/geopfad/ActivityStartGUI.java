@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ActivityStartGUI {
-
+	ActivityStart mActivity;
 	ActivityStartData mData;
 	TextView mTemperature;
 	TextView mLocation;
@@ -17,48 +17,57 @@ public class ActivityStartGUI {
 	Button btnWeather;
 	
 	public ActivityStartGUI(ActivityStart act, ActivityStartData data) {
+		mActivity = act;
 		mData = data;
-		mTemperature = (TextView) act.findViewById(R.id.currDegree);
-		mCurrWeather = (ImageView) act.findViewById(R.id.imgWeather);
-		mLocation = (TextView) act.findViewById(R.id.Location);
+		mTemperature = (TextView) mActivity.findViewById(R.id.currDegree);
+		mCurrWeather = (ImageView) mActivity.findViewById(R.id.imgWeather);
+		mLocation = (TextView) mActivity.findViewById(R.id.Location);
+		mToActivityMainButton = (Button) mActivity.findViewById(R.id.ToActivityMainButton);
+		mSchneckenBild = (ImageView) mActivity.findViewById(R.id.schneckeView);
+		setSchneckenView();
+		btnWeather = (Button) mActivity.findViewById(R.id.btnWeather);
+	}
 		
-		mToActivityMainButton = (Button) act.findViewById(R.id.ToActivityMainButton);
-		
-		mSchneckenBild = (ImageView) act.findViewById(R.id.schneckeView);
-//		mSchneckenBild.setImageResource(act.getResources()
-//		.getIdentifier(getImageUrl(mData.getAchievements()), "drawable", act.getPackageName()));
-		Bitmap picture = null;
-		picture = ScalingUtilities.fitScale(act.getResources(),act.getResources()
-						.getIdentifier(getImageUrl(mData.getAchievements()), "drawable", 
-								act.getPackageName()), act, "schnecke");
-		mSchneckenBild.setImageBitmap(picture);
-		
-		btnWeather = (Button) act.findViewById(R.id.btnWeather);
-		if(mTemperature != null && mCurrWeather != null){	
-			if (mData.isOnline() && mData.LoadWeatherDataSuccess){
-				mTemperature.setText(mData.getWeatherData().get(0).getTemperatureHigh() + "°C");
-				mCurrWeather.setImageResource(act.getResources()
-						.getIdentifier("weather_large_" + getWeatherImageName(mData.getWeatherData()
-								.get(0).getWeatherCode()), "drawable", act.getPackageName()));
-			}else{
-				btnWeather.setVisibility(View.INVISIBLE);
-				mCurrWeather.setVisibility(View.INVISIBLE);
-				mLocation.setVisibility(View.INVISIBLE);
-				mTemperature.setText("Kein Internet -> Wetterdaten nicht verfügbar!");
-			}
-		}
+	public TextView getTemperature() {
+		return mTemperature;
+	}
+
+	public ImageView getSchneckenBild() {
+		return mSchneckenBild;
+	}
+
+	public ImageView getCurrWeather() {
+		return mCurrWeather;
 	}
 
 	public Button getToActivityMainButton() {
 		return mToActivityMainButton;
 	}
 
-	public ImageView getSchneckenBild() {
-		return mSchneckenBild;
-	}
-	
 	public Button getBtnWeather() {
 		return btnWeather;
+	}
+
+	public void fillWeatherGUI(){
+		mTemperature.setText(mData.getWeatherData().get(0).getTemperatureHigh() + "°C");
+		mCurrWeather.setImageResource(mActivity.getResources()
+				.getIdentifier("weather_large_" + getWeatherImageName(mData.getWeatherData()
+						.get(0).getWeatherCode()), "drawable", mActivity.getPackageName()));
+	}
+	
+	public void setWeatherError(){
+		btnWeather.setVisibility(View.INVISIBLE);
+		mCurrWeather.setVisibility(View.INVISIBLE);
+		mLocation.setVisibility(View.INVISIBLE);
+		mTemperature.setText("Kein Internet -> Wetterdaten nicht verfügbar!");
+	}
+	
+	public void setSchneckenView(){
+		Bitmap picture = null;
+		picture = ScalingUtilities.fitScale(mActivity.getResources(),mActivity.getResources()
+						.getIdentifier(getImageUrl(mData.getAchievements()), "drawable", 
+								mActivity.getPackageName()), mActivity, "schnecke");
+		mSchneckenBild.setImageBitmap(picture);
 	}
 
 	private String getImageUrl (int achievement){

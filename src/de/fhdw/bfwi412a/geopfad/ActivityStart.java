@@ -42,16 +42,6 @@ public class ActivityStart extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-//	@Override
-//	protected void onResume() {
-//		initData();
-//		initGUI();
-//		initApplicationLogic();
-//		initEventToListenerMapping();	
-//
-//		super.onResume();
-//	}
-	
 	@Override
 	protected void onDestroy() {
 		stopService(new Intent(this, ServiceNotifyDistance.class));
@@ -69,10 +59,10 @@ public class ActivityStart extends Activity {
 	
 	private void initApplicationLogic() {
 		mAppLogic = new ActivityStartApplicationLogic(this,mGUI,mData);
+		mAppLogic.styleWeatherGUI();
 	}
 	
 	private void initEventToListenerMapping() {
 		new ActivityStartEventToListenerMapping(mGUI, mAppLogic);
 	}
-
 }
