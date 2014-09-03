@@ -35,12 +35,13 @@ public class WeatherForecastDialog extends Dialog implements android.view.View.O
 						
 			TextView mDay = (TextView) this.findViewById(mContext.getResources()
 					.getIdentifier(day, "id", mContext.getPackageName()));
-			mDay.setText(mGUI.dayToGerman((WeatherData.get(i).getDate())));
+			WeatherDataTransform mTransformer= new WeatherDataTransform();
+			mDay.setText(mTransformer.dayToGerman((WeatherData.get(i).getDate())));
 		
 			ImageView mImage = (ImageView) this.findViewById(mContext.getResources()
 					.getIdentifier(image, "id", mContext.getPackageName()));
 			mImage.setImageResource(mContext.getResources()
-					.getIdentifier("weather_" + mGUI.getWeatherImageName(WeatherData.get(i)
+					.getIdentifier("weather_" + mTransformer.getWeatherImageName(WeatherData.get(i)
 							.getWeatherCode()), "drawable", mContext.getPackageName()));
 			
 			TextView mDegreeHigh = (TextView) this.findViewById(mContext.getResources()

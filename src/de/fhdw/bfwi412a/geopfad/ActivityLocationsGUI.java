@@ -39,7 +39,6 @@ public class ActivityLocationsGUI {
 		mDistance = (TextView) mActLoc.findViewById(R.id.txtDistance);
 		mBtnVisit = (CheckBox) mActLoc.findViewById(R.id.btnVisit);
 		mBtnShowOnMap = (Button) mActLoc.findViewById(R.id.btnShowOnMap);
-		
 		mVisitStatus.setText(mData.getVisitStatus()
 				.getString(mData.mVisitKey, mActLoc.getResources().getString(R.string.notvisited)));
 		if(mVisitStatus.getText().toString().equals(mActLoc.getResources().getString(R.string.notvisited))){
@@ -48,7 +47,6 @@ public class ActivityLocationsGUI {
 		else{
 			mBtnVisit.setChecked(true);
 		}
-		
 		mBtnNavigation = (Button) mActLoc.findViewById(R.id.btnNavigation);
 		mActionBar = mActLoc.getActionBar();
 		scalePictures();

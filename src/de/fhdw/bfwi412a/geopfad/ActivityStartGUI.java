@@ -50,8 +50,9 @@ public class ActivityStartGUI {
 
 	public void fillWeatherGUI(){
 		mTemperature.setText(mData.getWeatherData().get(0).getTemperatureHigh() + "°C");
+		WeatherDataTransform mTransformer= new WeatherDataTransform();
 		mCurrWeather.setImageResource(mActivity.getResources()
-				.getIdentifier("weather_large_" + getWeatherImageName(mData.getWeatherData()
+				.getIdentifier("weather_large_" + mTransformer.getWeatherImageName(mData.getWeatherData()
 						.get(0).getWeatherCode()), "drawable", mActivity.getPackageName()));
 	}
 	
@@ -136,128 +137,4 @@ public class ActivityStartGUI {
 			return imageUrl;
 	}
 	
-	public String dayToGerman(String day){
-		String gDay="";
-		if(day.equals("Mon"))
-			gDay="Mo";
-		if(day.equals("Tue"))
-			gDay="Di";
-		if(day.equals("Wed"))
-			gDay="Mi";
-		if(day.equals("Thu"))
-			gDay="Do";
-		if(day.equals("Fri"))
-			gDay="Fr";
-		if(day.equals("Sat"))
-			gDay="Sa";
-		if(day.equals("Sun"))
-			gDay="So";
-		
-		return gDay;
-	}
-	
-	public String getWeatherImageName(String weathercode){
-		String imageName="";
-		
-		if(weathercode.equals("0"))
-			imageName="thunderstorm";
-		if(weathercode.equals("1"))
-			imageName="thunderstorm";
-		if(weathercode.equals("2"))
-			imageName="thunderstorm";
-		if(weathercode.equals("3"))
-			imageName="thunderstorm";
-		if(weathercode.equals("4"))
-			imageName="thunderstorm";
-		if(weathercode.equals("5"))
-			imageName="rain_snow";
-		if(weathercode.equals("6"))
-			imageName="rain_snow";
-		if(weathercode.equals("7"))
-			imageName="rain_snow";
-		if(weathercode.equals("8"))
-			imageName="drizzle";
-		if(weathercode.equals("9"))
-			imageName="drizzle";
-		if(weathercode.equals("10"))
-			imageName="drizzle";
-		if(weathercode.equals("11"))
-			imageName="drizzle";
-		if(weathercode.equals("12"))
-			imageName="drizzle";
-		if(weathercode.equals("13"))
-			imageName="flurries";
-		if(weathercode.equals("14"))
-			imageName="flurries";
-		if(weathercode.equals("15"))
-			imageName="snow";
-		if(weathercode.equals("16"))
-			imageName="snow";
-		if(weathercode.equals("17"))
-			imageName="sleet";
-		if(weathercode.equals("18"))
-			imageName="sleet";
-		if(weathercode.equals("19"))
-			imageName="fog";
-		if(weathercode.equals("20"))
-			imageName="fog";
-		if(weathercode.equals("21"))
-			imageName="fog";
-		if(weathercode.equals("22"))
-			imageName="fog";
-		if(weathercode.equals("23"))
-			imageName="cloudy";
-		if(weathercode.equals("24"))
-			imageName="cloudy";
-		if(weathercode.equals("25"))
-			imageName="cloudy";
-		if(weathercode.equals("26"))
-			imageName="cloudy";
-		if(weathercode.equals("27"))
-			imageName="mostly_cloudy";
-		if(weathercode.equals("28"))
-			imageName="mostly_cloudy";
-		if(weathercode.equals("29"))
-			imageName="partly_cloudy";
-		if(weathercode.equals("29"))
-			imageName="partly_cloudy";
-		if(weathercode.equals("30"))
-			imageName="partly_cloudy";
-		if(weathercode.equals("31"))
-			imageName="clear";
-		if(weathercode.equals("32"))
-			imageName="clear";
-		if(weathercode.equals("33"))
-			imageName="clear";
-		if(weathercode.equals("34"))
-			imageName="clear";
-		if(weathercode.equals("35"))
-			imageName="drizzle";
-		if(weathercode.equals("36"))
-			imageName="clear";
-		if(weathercode.equals("37"))
-			imageName="storm";
-		if(weathercode.equals("38"))
-			imageName="storm";
-		if(weathercode.equals("39"))
-			imageName="storm";
-		if(weathercode.equals("40"))
-			imageName="storm";
-		if(weathercode.equals("41"))
-			imageName="snow";
-		if(weathercode.equals("42"))
-			imageName="snow";
-		if(weathercode.equals("43"))
-			imageName="snow";
-		if(weathercode.equals("44"))
-			imageName="partly_cloudy";
-		if(weathercode.equals("45"))
-			imageName="storm";
-		if(weathercode.equals("46"))
-			imageName="snow";
-		if(weathercode.equals("47"))
-			imageName="storm";
-		
-		return imageName;
-	}
 }
