@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ActivityStartApplicationLogic {
 	ActivityStart mActivity;
@@ -41,16 +42,22 @@ public class ActivityStartApplicationLogic {
 	}
 
 	public void styleWeatherGUI(){
-		if(isOnline() && mData.LoadWeatherDataSuccess)
-			mGUI.fillWeatherGUI();
-		else
-			mGUI.setWeatherError();
+		if(mGUI.getTemperature() != null && mGUI.getTemperature() != null){
+			if(isOnline() && mData.LoadWeatherDataSuccess)
+				mGUI.fillWeatherGUI();
+			else
+				mGUI.setWeatherError();
+			}
 	}
 	
 	public void openWeatherDialog() {
 		if(isOnline() && mData.LoadWeatherDataSuccess){
 			final Dialog dialog = new WeatherForecastDialog(mActivity, mGUI, mData.getWeatherData());
 			dialog.show();
+		}
+		else{
+			Toast.makeText(mActivity, "Kein Internet -> Wetterdaten nicht verfügbar!",
+			        Toast.LENGTH_SHORT).show();
 		}
 	}
 }
