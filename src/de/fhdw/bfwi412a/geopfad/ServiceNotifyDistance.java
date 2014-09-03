@@ -18,8 +18,11 @@ import android.widget.Toast;
 
 /**
  * Class implemented by: Matthias Gordon
+ * The class contains a service which is started by the ActivityStart (first activity).
+ * Its purpose is to run in the background and notify the user if he gets near to a location.
+ * The class needs a LocationListener so that it can always measure the distance to the
+ * locations when the user changes his position.
  */
-
 public class ServiceNotifyDistance extends Service implements LocationListener {
 
 	NotificationManager mManager;
@@ -40,6 +43,7 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 	}
 
 	/**
+	 * The method is called when the service is started for the first time in a runtime.
 	 * 
 	 */
 	@Override
@@ -55,6 +59,10 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 		super.onCreate();
 	}
 
+	/**
+	 * This method is called each time the service is started. It requests location updates
+	 * and then calls the method to calculate the distances.
+	 */
 	@Override
 		public int onStartCommand(Intent intent, int flags, int startId) {
 		mLocationManager.requestLocationUpdates(mProvider, 400, 1, this);
@@ -62,12 +70,23 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 		return super.onStartCommand(intent, flags, startId);
 	}
 
+	/**
+	 * This method is called by the onDestroy method of ActivityStart. It gives the system a
+	 * signal that location updates are not longer needed. The reason for this is that GPS
+	 * and comparing distances all the time in the background would drain the battery very
+	 * quickly. 
+	 */
 	@Override
 		public void onDestroy() {
 		mLocationManager.removeUpdates(this);
 		super.onDestroy();
 	}
 
+	/**
+	 * The method calculates each distance for every saved location from the live GPS position
+	 * using the getDistance method of the DistanceCalculor class. If one of the distances is
+	 * less then 50 meter a notification is shown. Also the location gets marked as visited.
+	 */
 	public void getDistanceForEachLocation() {
 		double distance;
 		for(int i=0;i<mOrte.size();i++) {
@@ -76,35 +95,44 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 				mPosition = i;
 				String distanceText = String.valueOf(Math.rint(distance*100)/100);
 				Notification notification = buildNotification(mOrte.get(i).getName(), mPosition, distanceText);
-				mManager.notify(8, notification);
+				mManager.notify(i, notification);
+				mOrte.get(i).setVisitKey("Bereits besucht.");
 			}
 		}
 	}
 
-	public Notification buildNotification(String ortsName, int position, String distanceText) {
+	/**
+	 * The method builds the notification for the getDistanceForEachLocation method.
+	 * @param locationName the name of the location is passed so that it can written in the headline of the notification
+	 * @param position this is the position of the location in the list of locations
+	 * @param distanceText the text with the distance in meters
+	 * @return notification the completed notification which can be passed
+	 */
+	public Notification buildNotification(String locationName, int position, String distanceText) {
 		mContentIntent = PendingIntent.getActivity(this, 0, mIntentBuilder.buildIntentForActivityLocations
 				(mContext, mOrte, position), PendingIntent.FLAG_CANCEL_CURRENT);
 		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
 		mBuilder.setAutoCancel(true);
 		mBuilder.setSmallIcon(R.drawable.ic_launcher);
-		mBuilder.setContentTitle( ortsName + " ist in der NŠhe.");
+		mBuilder.setContentTitle( locationName + " ist in der NŠhe.");
 		mBuilder.setContentText("Luftlinie zum Ort: " + distanceText + "m.");
 		mBuilder.setContentIntent(mContentIntent);
-		Notification mNotification = mBuilder.build();
-		return mNotification;
+		Notification notification = mBuilder.build();
+		return notification;
 	}
 
+	/**
+	 * Whenever the user changes its position the getDistanceForEachLocation method is called.
+	 */
 	@Override
 	public void onLocationChanged(Location location) {
 		getDistanceForEachLocation();
 	}
 
-
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
 		// TODO Auto-generated method stub
 	}
-
 
 	@Override
 	public void onProviderEnabled(String provider) {

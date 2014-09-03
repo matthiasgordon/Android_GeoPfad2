@@ -3,10 +3,6 @@ package de.fhdw.bfwi412a.geopfad;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-
 public class ActivityStartData {
 	public static final String PREFS_NAME = "MYPrefernceFile";
 	
