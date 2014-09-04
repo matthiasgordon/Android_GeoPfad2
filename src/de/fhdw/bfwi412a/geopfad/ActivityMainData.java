@@ -6,17 +6,16 @@ import android.os.Bundle;
 
 /**
  * Class implemented by: Matthias Gordon
- * No data is needed for the ActivityMain.
+ * 
  */
-
 public class ActivityMainData {
 
-	ActivityMain mActivity;
-	String mLocationName;
+	private ActivityMain mAct;
+	private String mLocationName;
 	
-	public ActivityMainData(ActivityMain act){
-		mActivity = act;
-		Intent intent = mActivity.getIntent();
+	public ActivityMainData(ActivityMain act) {
+		mAct = act;
+		Intent intent = mAct.getIntent();
 		Bundle Ortname = intent.getExtras();
 		if(Ortname!=null){
 		mLocationName = Ortname.getString("Ortsname");

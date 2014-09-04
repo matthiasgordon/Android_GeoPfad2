@@ -20,6 +20,15 @@ public class ActivityLocations extends Activity {
 		initEventToListenerMapping();
 	}
 	
+	@Override
+	public void onDestroy() {
+		mGUI.mImageUrl.setImageBitmap(null);
+		mGUI.mImageUrl2.setImageBitmap(null);
+		mGUI.mImageUrl3.setImageBitmap(null);
+		mGUI.mExtImageUrl.setImageBitmap(null);
+		super.onDestroy();
+	}
+	
 	private void initData () {
 		mData = new ActivityLocationsData(this);
 	}
@@ -28,6 +37,15 @@ public class ActivityLocations extends Activity {
 		setContentView(R.layout.activity_locations);
 		mGUI = new ActivityLocationsGUI(this, mData);
 		mGUI.getActionBar().setTitle(mData.getTitle());
+		mGUI.getVisitStatus().setText(mData.getVisitStatus().getString
+				(mData.mVisitKey, this.getResources().getString(R.string.notvisited)));
+		if(mGUI.getVisitStatus().getText().toString().equals(this.getResources().getString(R.string.notvisited))){
+			mGUI.getBtnVisit().setChecked(false);
+		}
+		else{
+			mGUI.getBtnVisit().setChecked(true);
+		}
+		mGUI.scalePictures();
 	}
 	
 	private void initApplicationLogic () {
@@ -38,13 +56,4 @@ public class ActivityLocations extends Activity {
 		new ActivityLocationsEventToListenerMapping(mGUI, mAppLogic);
 	}
 	
-	@Override
-	public void onDestroy() {
-	    super.onDestroy();
-
-	    mGUI.mImageUrl.setImageBitmap(null);
-	    mGUI.mImageUrl2.setImageBitmap(null);
-	    mGUI.mImageUrl3.setImageBitmap(null);
-	    mGUI.mExtImageUrl.setImageBitmap(null);
-	}
 }

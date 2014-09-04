@@ -1,5 +1,6 @@
 package de.fhdw.bfwi412a.geopfad;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
@@ -39,6 +40,13 @@ public class ActivityMain extends FragmentActivity {
 		 * to show.
 		 */
 		mGUI.getViewPager().setAdapter(new FragmentAdapter (getSupportFragmentManager(), mData.getLocationName()));
+		
+		/**
+		 * The ActionBar of the Activity is set to "Navigation-Mode-Tabs" which enables
+		 * the possibility to add a tab-navigation.
+		 */
+		this.getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		mGUI.initializeTabs(this.getActionBar());
 	}
 	
 	private void initApplicationLogic () {
@@ -46,6 +54,6 @@ public class ActivityMain extends FragmentActivity {
 	}
 	
 	private void initEventToListenerMapping () {
-		new ActivityMainEventToListenerMapping(mGUI);
+		new ActivityMainEventToListenerMapping(this, mGUI);
 	}
 }

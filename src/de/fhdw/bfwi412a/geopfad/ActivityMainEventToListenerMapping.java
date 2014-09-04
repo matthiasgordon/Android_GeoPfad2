@@ -16,14 +16,16 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
  */
 public class ActivityMainEventToListenerMapping implements OnPageChangeListener, TabListener {
 	private ActivityMainGUI mGUI;
+	private ActivityMain mAct;
 
-	public ActivityMainEventToListenerMapping(ActivityMainGUI gui)
+	public ActivityMainEventToListenerMapping(ActivityMain act, ActivityMainGUI gui)
 	{
+		mAct = act;
 		mGUI = gui;
 		mGUI.getViewPager().setOnPageChangeListener(this);
 		mGUI.getTab1().setTabListener(this);
 		mGUI.getTab2().setTabListener(this);
-		mGUI.addTabs(mGUI.getActionBar());
+		mGUI.addTabs(mAct.getActionBar());
 	}
 		
 		/**
@@ -32,7 +34,7 @@ public class ActivityMainEventToListenerMapping implements OnPageChangeListener,
 		 */
 		@Override
 		public void onPageSelected(int selectedFragmentID) {
-			mGUI.getActionBar().setSelectedNavigationItem(selectedFragmentID);
+			mAct.getActionBar().setSelectedNavigationItem(selectedFragmentID);
 		}
 		
 		@Override

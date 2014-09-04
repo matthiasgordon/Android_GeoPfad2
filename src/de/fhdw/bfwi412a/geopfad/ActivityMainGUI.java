@@ -9,10 +9,9 @@ import android.support.v4.view.ViewPager;
 
 public class ActivityMainGUI {
 
-	ViewPager mViewPager;
-	final ActionBar mActionBar;
-	ActionBar.Tab mTab1;
-	ActionBar.Tab mTab2;	
+	private ViewPager mViewPager;
+	private ActionBar.Tab mTab1;
+	private ActionBar.Tab mTab2;	
 	
 	public ActivityMainGUI (ActivityMain act)
 	{
@@ -20,22 +19,10 @@ public class ActivityMainGUI {
 		 * The ViewPager enables the possibility to swipe between the two fragments.
 		 */
 		mViewPager=(ViewPager) act.findViewById(R.id.pager);
-		
-		/**
-		 * The ActionBar of the Activity is that to "Navigation-Mode-Tabs" which enables
-		 * the possibility to add a tab-navigation.
-		 */
-		mActionBar = act.getActionBar();
-		mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		initializeTabs(mActionBar);
 	}
 
 	public ViewPager getViewPager() {
 		return mViewPager;
-	}
-	
-	public ActionBar getActionBar() {
-		return mActionBar;
 	}
 
 	public ActionBar.Tab getTab1() {
@@ -50,11 +37,11 @@ public class ActivityMainGUI {
 	 * Two tabs are initialized and the names of them is being set.
 	 * @param actionBar the ActionBar of the activity
 	 */
-	private void initializeTabs (ActionBar actionBar) {
+	public void initializeTabs (ActionBar actionBar) {
 		mTab1 = actionBar.newTab();
 		mTab1.setText("Karte");
 		
-		mTab2=actionBar.newTab();
+		mTab2 = actionBar.newTab();
 		mTab2.setText("Liste");
 	}
 	
