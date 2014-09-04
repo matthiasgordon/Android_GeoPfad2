@@ -6,8 +6,8 @@ import com.google.android.gms.maps.model.Marker;
 
 public class MapFragmentApplicationLogic {
 	
-	MapFragmentData mData;
-	MapFragmentGUI mGUI;
+	private MapFragmentData mData;
+	private MapFragmentGUI mGUI;
 	private IntentBuilder mIntentBuilder;
 	
 	public MapFragmentApplicationLogic(MapFragmentData data, MapFragmentGUI gui) {
@@ -18,9 +18,11 @@ public class MapFragmentApplicationLogic {
 	
 	public void changeMarkers(int id){
 		if(id != -1)
-			mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), id, mData.getVisitStatus(),false);
+			mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), id, 
+					mData.getVisitStatus(),false);
 		else
-			mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), id, mData.getVisitStatus(),true);
+			mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), id, 
+					mData.getVisitStatus(),true);
 	}
 	
 	public void onMarkerClicked(Marker mMarker){

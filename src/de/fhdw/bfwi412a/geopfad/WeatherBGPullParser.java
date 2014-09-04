@@ -8,7 +8,7 @@ import org.xmlpull.v1.XmlPullParser;
 
 public class WeatherBGPullParser {
 
-	private List <Weather> mWeatherData = new ArrayList <Weather>();
+private List <Weather> mWeatherData = new ArrayList <Weather>();
    
 public WeatherBGPullParser(){
 }

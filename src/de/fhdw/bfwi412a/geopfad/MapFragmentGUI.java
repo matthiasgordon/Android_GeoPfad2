@@ -21,35 +21,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
 public class MapFragmentGUI {
-	
-	BitmapDescriptor mMarkerIcon;
-	SupportMapFragment mFragment;
-	GoogleMap mMap;
-	Spinner mSpinner;
-	String mSelLocName;
-	boolean mIsFromIntent;
+	private MapFragment mMFragment;
+	private BitmapDescriptor mMarkerIcon;
+	private SupportMapFragment mFragment;
+	private GoogleMap mMap;
+	private Spinner mSpinner;
+	private String mSelLocName;
 	
 	MapFragmentGUI(MapFragment mfrag, View view, String sellocname, boolean isfromintent){
 		mMarkerIcon = BitmapDescriptorFactory.fromResource(R.drawable.reisszwecke_klein);
-		
+		mMFragment = mfrag;
 		mSelLocName = sellocname;
-		mIsFromIntent = isfromintent;
 		FragmentManager mFragmentManager = mfrag.getActivity().getSupportFragmentManager();
 		if(mFragment == null){
 			mFragment = (SupportMapFragment) mFragmentManager.findFragmentById(R.id.map);
 		}
 		mMap = mFragment.getMap();
-
-		String[] arrayList = mfrag.getResources().getStringArray(R.array.string_spinner);
-		List <String> liste = new ArrayList<String> ();
-		for(int i=0; i<arrayList.length; i++){
-			liste.add(arrayList[i]);
-		}
-		if(mIsFromIntent)
-			liste.add(0, mSelLocName);
 		mSpinner = (Spinner) view.findViewById(R.id.spinner1);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String> (mfrag.getActivity(),android.R.layout.simple_spinner_dropdown_item, liste);
-		  mSpinner.setAdapter(adapter);
 	}
 
 	public GoogleMap getMap() {
@@ -118,5 +106,17 @@ public class MapFragmentGUI {
 						.title(curOrt.getName())
 						.icon(mMarkerIcon));
 			marker.showInfoWindow();
+	}
+	
+	public void setSpinnerList(boolean isIntent){
+		String[] arrayList = mMFragment.getResources().getStringArray(R.array.string_spinner);
+		List <String> liste = new ArrayList<String> ();
+		for(int i=0; i<arrayList.length; i++){
+			liste.add(arrayList[i]);
+		}
+		if(isIntent)
+			liste.add(0, mSelLocName);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String> (mMFragment.getActivity(),android.R.layout.simple_spinner_dropdown_item, liste);
+		  mSpinner.setAdapter(adapter);
 	}
 }

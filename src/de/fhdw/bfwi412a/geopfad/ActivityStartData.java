@@ -4,22 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityStartData {
-	public static final String PREFS_NAME = "MYPrefernceFile";
+	private static final String PREFS_NAME = "MYPrefernceFile";
 	
 	private ActivityStart mActivity;
-	List<Ort> mOrte;
-	List <Weather> mWeatherData;
-	int mAchievements;
-	boolean LoadWeatherDataSuccess = true;
+	private List<Ort> mOrte;
+	private int mAchievements;
 	
 	public ActivityStartData(ActivityStart act) {
 		mActivity = act;
 		mOrte = Orte_DOM_Parser.getOrteFromFile(act);
 		mAchievements = countAchievements(mOrte);
-//		WeatherBGPullParser parser = new WeatherBGPullParser();
-//		mWeatherData = parser.getWeatherData();
-		if(mWeatherData == null)
-			LoadWeatherDataSuccess = false;
 	}
 	
 	public ActivityStart getActivity() {
@@ -34,14 +28,6 @@ public class ActivityStartData {
 		return mAchievements;
 	}
 
-//	public List<Weather> getWeatherData() {
-//		return mWeatherData;
-//	}
-
-	public boolean isLoadWeatherDataSuccess() {
-		return LoadWeatherDataSuccess;
-	}
-	
 	private int countAchievements(List <Ort> orte){
 		List <String> test = new ArrayList <String>();
 		for (Ort currOrt : orte){

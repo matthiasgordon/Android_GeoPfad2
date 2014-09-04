@@ -7,18 +7,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ActivityStartGUI {
-	ActivityStart mActivity;
-	ActivityStartData mData;
-	TextView mTemperature;
-	TextView mLocation;
-	ImageView mSchneckenBild;
-	ImageView mCurrWeather;
-	Button mToActivityMainButton;
-	Button btnWeather;
+	private ActivityStart mActivity;
+	private TextView mTemperature;
+	private TextView mLocation;
+	private ImageView mSchneckenBild;
+	private ImageView mCurrWeather;
+	private Button mToActivityMainButton;
+	private Button btnWeather;
 	
-	public ActivityStartGUI(ActivityStart act, ActivityStartData data) {
+	public ActivityStartGUI(ActivityStart act) {
 		mActivity = act;
-		mData = data;
 		mTemperature = (TextView) mActivity.findViewById(R.id.currDegree);
 		mCurrWeather = (ImageView) mActivity.findViewById(R.id.imgWeather);
 		mLocation = (TextView) mActivity.findViewById(R.id.Location);
@@ -50,33 +48,19 @@ public class ActivityStartGUI {
 	public Button getBtnWeather() {
 		return btnWeather;
 	}
-//
-//	public void fillWeatherGUI(List<Weather> mResult){
-//		mTemperature.setText(mResult.get(0).getTemperatureHigh() + "°C");
-//		WeatherDataTransform mTransformer= new WeatherDataTransform();
-//		mCurrWeather.setImageResource(mActivity.getResources()
-//				.getIdentifier("weather_large_" + mTransformer.getWeatherImageName(mResult
-//						.get(0).getWeatherCode()), "drawable", mActivity.getPackageName()));
-//	}
-//	
-//	public void fillWeatherGUI(List<Weather> mResult){
-//		mGUI.getTemperature().setText(mResult.get(0).getTemperatureHigh() + "°C");
-//		WeatherDataTransform mTransformer= new WeatherDataTransform();
-//		mGUI.getCurrWeather().setImageResource(mActivity.getResources()
-//				.getIdentifier("weather_large_" + mTransformer.getWeatherImageName(mResult
-//						.get(0).getWeatherCode()), "drawable", mActivity.getPackageName()));
-//	
-	public void setWeatherError(){
+
+	public void setWeatherInternetError(){
 		btnWeather.setVisibility(View.INVISIBLE);
 		mCurrWeather.setVisibility(View.INVISIBLE);
 		mLocation.setVisibility(View.INVISIBLE);
-		mTemperature.setText("Kein Internet -> Wetterdaten nicht verfügbar!");
+		mTemperature.setText(R.string.no_internet);
 	}
 	
-	public void setSchneckenView(String imageUrl){
+	public void setSchneckenView(int achievement){
+		SchneckenImgUrlGenerator imgGenerator = new SchneckenImgUrlGenerator(achievement);
 		Bitmap picture = null;
 		picture = ScalingUtilities.fitScale(mActivity.getResources(),mActivity.getResources()
-						.getIdentifier(imageUrl, "drawable", 
+						.getIdentifier(imgGenerator.getImgUrl(), "drawable", 
 								mActivity.getPackageName()), mActivity, "schnecke");
 		mSchneckenBild.setImageBitmap(picture);
 	}	

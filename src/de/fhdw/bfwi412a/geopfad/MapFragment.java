@@ -18,8 +18,9 @@ public class MapFragment extends Fragment {
 		mIsFromIntent = false;
 	}
 	
-	public MapFragment (String MapData) {
-		mLocationName = MapData;
+	public MapFragment (String intentData) {
+		mLocationName = intentData;
+		if(mLocationName != null)
 		mIsFromIntent = true;
 	}
 	
@@ -48,6 +49,7 @@ public class MapFragment extends Fragment {
 		mGUI = new MapFragmentGUI(this, view, mLocationName, mIsFromIntent);
 		mGUI.styleMap(mData.getRouteCoordinates(), mData.getOrte(), 0, 
 				mData.getVisitStatus(), mIsFromIntent);
+		mGUI.setSpinnerList(mIsFromIntent);
 	}
 	
 	private void initApplicationLogic () {

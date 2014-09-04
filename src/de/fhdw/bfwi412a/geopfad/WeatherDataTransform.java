@@ -1,8 +1,8 @@
 package de.fhdw.bfwi412a.geopfad;
 
 public class WeatherDataTransform {
-	String mImageName;
-	String mGday;
+	private String mImageName;
+	private String mGday;
 	
 	
 	public String dayToGerman(String day){

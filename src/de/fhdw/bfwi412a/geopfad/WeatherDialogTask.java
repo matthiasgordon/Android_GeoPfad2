@@ -9,13 +9,10 @@ import org.xmlpull.v1.XmlPullParserException;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 public class WeatherDialogTask extends AsyncTask<Void, Void, List<Weather>>{
-    Context mContext;
-    WaitDialog mWaitDialog;
+    private Context mContext;
+    private WaitDialog mWaitDialog;
 	
 	public WeatherDialogTask(Context context) {
 		mContext = context;

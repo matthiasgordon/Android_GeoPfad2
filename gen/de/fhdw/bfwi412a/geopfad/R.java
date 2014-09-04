@@ -674,15 +674,17 @@ containing a value of this type.
         public static final int orte=0x7f050000;
     }
     public static final class string {
-        public static final int Button_Map=0x7f070028;
-        public static final int Erklaerung=0x7f070026;
-        public static final int LocationName=0x7f070022;
-        public static final int LocationText=0x7f070023;
+        public static final int Button_Map=0x7f070025;
+        public static final int Erklaerung=0x7f070023;
         public static final int NavigationLocation=0x7f070021;
-        public static final int Wetter=0x7f070027;
-        public static final int Willkommen=0x7f070025;
-        public static final int activity_location=0x7f070024;
-        public static final int add_location=0x7f07002b;
+        public static final int Wetter=0x7f070024;
+        /**  Activity Start 
+         */
+        public static final int Willkommen=0x7f070022;
+        /**  MapFragment 
+         */
+        public static final int activity_location=0x7f070026;
+        public static final int add_location=0x7f07002a;
         public static final int app_name=0x7f070020;
         public static final int auth_client_needs_enabling_title=0x7f070001;
         public static final int auth_client_needs_installation_title=0x7f070002;
@@ -779,16 +781,17 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f07001e;
-        public static final int empty_listview=0x7f07002c;
-        public static final int notvisited=0x7f07002f;
-        public static final int search_actionbar=0x7f07002d;
-        public static final int visited=0x7f07002e;
-        public static final int wait_dialog=0x7f07002a;
+        public static final int empty_listview=0x7f07002b;
+        public static final int no_internet=0x7f070029;
+        public static final int notvisited=0x7f07002e;
+        public static final int search_actionbar=0x7f07002c;
+        public static final int visited=0x7f07002d;
+        public static final int wait_dialog=0x7f070028;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
         public static final int wallet_buy_button_place_holder=0x7f07001f;
-        public static final int which_places=0x7f070029;
+        public static final int which_places=0x7f070027;
     }
     public static final class style {
         public static final int ActionBarTabStyle=0x7f06000a;

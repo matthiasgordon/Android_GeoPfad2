@@ -11,16 +11,15 @@ import android.widget.TextView;
 
 public class WeatherForecastDialog extends Dialog implements android.view.View.OnClickListener{
 
-	ActivityStartGUI mGUI;
-	List <Weather> WeatherData;
-	Context mContext;
-	
+	private Context mContext;
+	private List <Weather> WeatherData;
+
 	public WeatherForecastDialog(Context context, List <Weather> data) {
 		super(context);
 		mContext = context;
+		WeatherData = data;
 		setContentView(R.layout.weather_dialog);
 		setTitle("Wettervorhersage");
-		WeatherData = data;
 		loadDataAndFillGUI();
 	}
 	

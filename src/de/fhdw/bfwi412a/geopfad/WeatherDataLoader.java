@@ -15,27 +15,27 @@ public class WeatherDataLoader {
 	
     public List <Weather> loadXmlFromNetwork(String urlString) throws XmlPullParserException, IOException {
         InputStream stream = null;
-        List<Weather> test = new ArrayList<Weather>();
+        List<Weather> parsedWeatherData = new ArrayList<Weather>();
         try {
             stream = downloadUrl(urlString);
+            
             XmlPullParserFactory mXmlFactoryObject = XmlPullParserFactory.newInstance();
             XmlPullParser myparser = mXmlFactoryObject.newPullParser();
-
-            myparser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES
-            , false);
+            myparser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             myparser.setInput(stream, null);
             
             WeatherBGPullParser mParser = new WeatherBGPullParser();
             mParser.parseXMLAndStoreIt(myparser);
+            
             stream.close();
-            test =mParser.getWeatherData();
+            parsedWeatherData = mParser.getWeatherData();
 
         } finally {
             if (stream != null) {
                 stream.close();
             }
         }
-        return test;       
+        return parsedWeatherData;       
     }
 
     private InputStream downloadUrl(String urlString) throws IOException {
@@ -50,5 +50,4 @@ public class WeatherDataLoader {
         InputStream stream = conn.getInputStream();
         return stream;
     }
-
 }

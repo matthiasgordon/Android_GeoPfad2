@@ -38,6 +38,5 @@ public class MapFragmentData {
 
 	public SharedPreferences getVisitStatus() {
 		return mVisitStatus;
-	}
-	
+	}	
 }

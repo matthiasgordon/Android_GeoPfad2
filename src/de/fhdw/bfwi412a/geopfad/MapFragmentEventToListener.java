@@ -36,9 +36,6 @@ public class MapFragmentEventToListener implements OnItemSelectedListener, OnInf
 			else
 				mAppLogic.changeMarkers(-1);
 		}
-//		if(arg2 == 0 && !mIsFromIntent)
-//		arg2 = arg2 +1;
-//		mAppLogic.changeMarkers(arg2);
 	}
 
 	@Override

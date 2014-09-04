@@ -10,13 +10,11 @@ import android.os.AsyncTask;
 import android.view.View;
 
 public class WeatherCurrTask extends AsyncTask<Void, Void, List<Weather>> {
-    ActivityStart mActivity;
-    ActivityStartData mData; 
-    ActivityStartGUI mGUI;
+    private ActivityStart mActivity; 
+    private ActivityStartGUI mGUI;
 	
-	public WeatherCurrTask(ActivityStart activityStart, ActivityStartData data, ActivityStartGUI gui) {
+	public WeatherCurrTask(ActivityStart activityStart, ActivityStartGUI gui) {
 		mActivity = activityStart;
-		mData = data;
 		mGUI = gui;
 	}
 
@@ -68,7 +66,7 @@ public class WeatherCurrTask extends AsyncTask<Void, Void, List<Weather>> {
 			mGUI.getCurrWeather().setVisibility(View.INVISIBLE);
 			mGUI.getLocation().setVisibility(View.INVISIBLE);
 			mGUI.getBtnWeather().setVisibility(View.INVISIBLE);
-			mGUI.mTemperature.setText("Wetterdaten werden geladen..");
+			mGUI.getTemperature().setText("Wetterdaten werden geladen..");
 		}
 	}
 }
