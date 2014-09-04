@@ -1,6 +1,5 @@
 package de.fhdw.bfwi412a.geopfad;
 
-import android.app.ActionBar;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.util.Log;
@@ -25,7 +24,6 @@ public class ActivityLocationsGUI {
 	CheckBox mBtnVisit;
 	Button mBtnNavigation;
 	Button mBtnShowOnMap;
-	final ActionBar mActionBar;
 
 	public ActivityLocationsGUI(ActivityLocations actloc, ActivityLocationsData data) {
 		mActLoc = actloc;
@@ -40,11 +38,6 @@ public class ActivityLocationsGUI {
 		mBtnVisit = (CheckBox) mActLoc.findViewById(R.id.btnVisit);
 		mBtnShowOnMap = (Button) mActLoc.findViewById(R.id.btnShowOnMap);
 		mBtnNavigation = (Button) mActLoc.findViewById(R.id.btnNavigation);
-		mActionBar = mActLoc.getActionBar();
-	}
-
-	public ActionBar getActionBar() {
-		return mActionBar;
 	}
 
 	public TextView getAbout() {

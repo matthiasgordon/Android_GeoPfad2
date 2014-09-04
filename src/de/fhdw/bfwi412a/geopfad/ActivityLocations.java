@@ -36,7 +36,7 @@ public class ActivityLocations extends Activity {
 	private void initGUI () {
 		setContentView(R.layout.activity_locations);
 		mGUI = new ActivityLocationsGUI(this, mData);
-		mGUI.getActionBar().setTitle(mData.getTitle());
+		this.getActionBar().setTitle(mData.getTitle());
 		mGUI.getVisitStatus().setText(mData.getVisitStatus().getString
 				(mData.mVisitKey, this.getResources().getString(R.string.notvisited)));
 		if(mGUI.getVisitStatus().getText().toString().equals(this.getResources().getString(R.string.notvisited))){
