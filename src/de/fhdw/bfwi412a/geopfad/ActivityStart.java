@@ -23,6 +23,12 @@ public class ActivityStart extends Activity {
 	}
 	
 	@Override
+	protected void onStart() {
+		super.onStart();
+		
+	}
+	
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.start_actionbar_menu, menu);
@@ -55,11 +61,17 @@ public class ActivityStart extends Activity {
 	private void initGUI() {
 		setContentView(R.layout.activity_start);
 		mGUI = new ActivityStartGUI(this, mData);
+		InternetConnectionCheck connected = new InternetConnectionCheck(this);
+		if(connected.isConnected()){
+			WeatherCurrTask loader = new WeatherCurrTask(this, mData, mGUI);
+			loader.execute();
+		}else
+			mGUI.setWeatherError();
 	}
 	
 	private void initApplicationLogic() {
 		mAppLogic = new ActivityStartApplicationLogic(this,mGUI,mData);
-		mAppLogic.styleWeatherGUI();
+		mAppLogic.fillSchneckenView();
 	}
 	
 	private void initEventToListenerMapping() {

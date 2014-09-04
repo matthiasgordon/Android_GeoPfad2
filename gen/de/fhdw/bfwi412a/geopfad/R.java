@@ -560,15 +560,15 @@ containing a value of this type.
         public static final int TextView01=0x7f090038;
         public static final int TextView02=0x7f090039;
         public static final int ToActivityMainButton=0x7f090026;
-        public static final int action_search=0x7f09005a;
-        public static final int addLocation=0x7f09005b;
+        public static final int action_search=0x7f09005c;
+        public static final int addLocation=0x7f09005d;
         public static final int bildurl=0x7f090031;
         public static final int book_now=0x7f090010;
         public static final int btnAddLocationCoordination=0x7f090035;
         public static final int btnAnlegen=0x7f090034;
         public static final int btnNavigation=0x7f090020;
         public static final int btnShowOnMap=0x7f090021;
-        public static final int btnStop=0x7f090059;
+        public static final int btnStop=0x7f09005b;
         public static final int btnVisit=0x7f09001c;
         public static final int btnWeather=0x7f090025;
         public static final int btnbildurl=0x7f090033;
@@ -578,21 +578,21 @@ containing a value of this type.
         public static final int buy_with_google=0x7f09000e;
         public static final int classic=0x7f090011;
         public static final int currDegree=0x7f090029;
-        public static final int degree_high1=0x7f090047;
-        public static final int degree_high2=0x7f09004b;
-        public static final int degree_high3=0x7f09004e;
-        public static final int degree_high4=0x7f090052;
-        public static final int degree_high5=0x7f090057;
-        public static final int degree_low1=0x7f090048;
-        public static final int degree_low2=0x7f09004c;
-        public static final int degree_low3=0x7f09004f;
-        public static final int degree_low4=0x7f090053;
-        public static final int degree_low5=0x7f090058;
-        public static final int dialog_day1=0x7f090046;
-        public static final int dialog_day2=0x7f09004a;
-        public static final int dialog_day3=0x7f09004d;
-        public static final int dialog_day4=0x7f090050;
-        public static final int dialog_day5=0x7f090055;
+        public static final int degree_high1=0x7f090049;
+        public static final int degree_high2=0x7f09004d;
+        public static final int degree_high3=0x7f090050;
+        public static final int degree_high4=0x7f090054;
+        public static final int degree_high5=0x7f090059;
+        public static final int degree_low1=0x7f09004a;
+        public static final int degree_low2=0x7f09004e;
+        public static final int degree_low3=0x7f090051;
+        public static final int degree_low4=0x7f090055;
+        public static final int degree_low5=0x7f09005a;
+        public static final int dialog_day1=0x7f090048;
+        public static final int dialog_day2=0x7f09004c;
+        public static final int dialog_day3=0x7f09004f;
+        public static final int dialog_day4=0x7f090052;
+        public static final int dialog_day5=0x7f090057;
         public static final int emptyList=0x7f09003a;
         public static final int etxtAddLocationAbout=0x7f09002c;
         public static final int etxtAddLocationLatitude=0x7f090030;
@@ -606,8 +606,8 @@ containing a value of this type.
         public static final int imageView1=0x7f090015;
         public static final int imageView2=0x7f090017;
         public static final int imageView3=0x7f090018;
-        public static final int imageView4=0x7f090051;
-        public static final int imageView5=0x7f090056;
+        public static final int imageView4=0x7f090053;
+        public static final int imageView5=0x7f090058;
         public static final int imgIcon=0x7f09003c;
         public static final int imgWeather=0x7f090027;
         public static final int linearLayout1=0x7f090040;
@@ -622,16 +622,16 @@ containing a value of this type.
         public static final int normal=0x7f090001;
         public static final int pager=0x7f090022;
         public static final int production=0x7f090007;
-        public static final int refreshWeatherData=0x7f09005c;
+        public static final int refreshWeatherData=0x7f09005e;
         public static final int sandbox=0x7f090008;
         public static final int satellite=0x7f090002;
         public static final int schneckeView=0x7f090024;
         public static final int selectionDetails=0x7f09000b;
         public static final int spinner1=0x7f090043;
         public static final int strict_sandbox=0x7f090009;
-        public static final int tableRow1=0x7f090045;
-        public static final int tableRow2=0x7f090049;
-        public static final int tableRow5=0x7f090054;
+        public static final int tableRow1=0x7f090047;
+        public static final int tableRow2=0x7f09004b;
+        public static final int tableRow5=0x7f090056;
         public static final int terrain=0x7f090003;
         public static final int textView1=0x7f090023;
         public static final int textView2=0x7f090019;
@@ -645,6 +645,8 @@ containing a value of this type.
         public static final int txtOrtID=0x7f09003f;
         public static final int txtOrtName=0x7f09003d;
         public static final int txtVisitStatus=0x7f09001b;
+        public static final int waitDialog=0x7f090045;
+        public static final int weatherDialogTable=0x7f090046;
         public static final int wrap_content=0x7f09000d;
     }
     public static final class integer {
@@ -661,7 +663,8 @@ containing a value of this type.
         public static final int list_item=0x7f030007;
         public static final int map_fragment=0x7f030008;
         public static final int noitem_listview=0x7f030009;
-        public static final int weather_dialog=0x7f03000a;
+        public static final int wait_dialog=0x7f03000a;
+        public static final int weather_dialog=0x7f03000b;
     }
     public static final class menu {
         public static final int location_actionbar_menu=0x7f0d0000;
@@ -679,7 +682,7 @@ containing a value of this type.
         public static final int Wetter=0x7f070027;
         public static final int Willkommen=0x7f070025;
         public static final int activity_location=0x7f070024;
-        public static final int add_location=0x7f07002a;
+        public static final int add_location=0x7f07002b;
         public static final int app_name=0x7f070020;
         public static final int auth_client_needs_enabling_title=0x7f070001;
         public static final int auth_client_needs_installation_title=0x7f070002;
@@ -776,10 +779,11 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f07001e;
-        public static final int empty_listview=0x7f07002b;
-        public static final int notvisited=0x7f07002e;
-        public static final int search_actionbar=0x7f07002c;
-        public static final int visited=0x7f07002d;
+        public static final int empty_listview=0x7f07002c;
+        public static final int notvisited=0x7f07002f;
+        public static final int search_actionbar=0x7f07002d;
+        public static final int visited=0x7f07002e;
+        public static final int wait_dialog=0x7f07002a;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

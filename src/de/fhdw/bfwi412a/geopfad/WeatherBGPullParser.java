@@ -8,45 +8,14 @@ import org.xmlpull.v1.XmlPullParser;
 
 public class WeatherBGPullParser {
 
-   private List <String> mWeatherDates = new ArrayList <String>();
-   private List <String> mWeatherTempsHigh = new ArrayList <String>();
-   private List <String> mWeatherTempsLow = new ArrayList <String>();
-   private List <String> mWeatherCodes = new ArrayList <String>();
-   private List <Weather> mWeatherData = new ArrayList <Weather>();
-   public volatile boolean parsingComplete = true;
-   private boolean InternetAcces = true;
+	private List <Weather> mWeatherData = new ArrayList <Weather>();
    
 public WeatherBGPullParser(){
 }
 
-public boolean isInternetAcces() {
-	return InternetAcces;
-}
-
-public void setInternetAcces(boolean internetAcces) {
-	InternetAcces = internetAcces;
-}
-
 public List<Weather> getWeatherData() {
-
-	fetchXML();
-	while(parsingComplete);
-    for(int i=0; i < mWeatherCodes.size(); i++){
-    	Weather currWeather = new Weather();
-
-    	currWeather.setDate(mWeatherDates.get(i));
-    	currWeather.setTemperatureHigh(mWeatherTempsHigh.get(i));
-    	currWeather.setTemperatureLow(mWeatherTempsLow.get(i));
-    	currWeather.setWeatherCode(mWeatherCodes.get(i));
-    	mWeatherData.add(currWeather);
-    }
 	return mWeatherData;
 }
-
-public void fetchXML(){
-	Thread thread = new Thread(new WeatherBGRunnable(this));
-	thread.start(); 
-	}
 
 public void parseXMLAndStoreIt(XmlPullParser myParser) {
       int event;
@@ -64,16 +33,20 @@ public void parseXMLAndStoreIt(XmlPullParser myParser) {
 
                case XmlPullParser.END_TAG:
                   if(name.equals("yweather:condition")){ 	
-                	  mWeatherDates.add(myParser.getAttributeValue(null,"date"));
-                	  mWeatherTempsHigh.add(myParser.getAttributeValue(null,"temp"));
-                	  mWeatherTempsLow.add("aktuelles Wetter");
-                	  mWeatherCodes.add(myParser.getAttributeValue(null,"code"));
+                	  Weather currWeather = new Weather();
+                	  currWeather.setDate(myParser.getAttributeValue(null,"date"));
+                	  currWeather.setTemperatureHigh(myParser.getAttributeValue(null,"temp"));
+                	  currWeather.setTemperatureLow("aktuelles Wetter");
+                	  currWeather.setWeatherCode(myParser.getAttributeValue(null,"code"));
+                	  mWeatherData.add(currWeather);
                   }
                   else if(name.equals("yweather:forecast")){
-                	  mWeatherDates.add(myParser.getAttributeValue(null,"day"));
-                	  mWeatherTempsHigh.add(myParser.getAttributeValue(null,"high"));
-                	  mWeatherTempsLow.add(myParser.getAttributeValue(null,"low"));
-                	  mWeatherCodes.add(myParser.getAttributeValue(null,"code"));
+                	  Weather currWeather = new Weather();
+                	  currWeather.setDate(myParser.getAttributeValue(null,"day"));
+                	  currWeather.setTemperatureHigh(myParser.getAttributeValue(null,"high"));
+                	  currWeather.setTemperatureLow(myParser.getAttributeValue(null,"low"));
+                	  currWeather.setWeatherCode(myParser.getAttributeValue(null,"code"));
+                	  mWeatherData.add(currWeather);
                   }
                   else{
                   }
@@ -81,7 +54,6 @@ public void parseXMLAndStoreIt(XmlPullParser myParser) {
                   }		 
                   event = myParser.next(); 
               }
-                 parsingComplete = false;
       } catch (Exception e) {
          e.printStackTrace();
       }

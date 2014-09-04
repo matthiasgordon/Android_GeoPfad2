@@ -15,17 +15,17 @@ public class WeatherForecastDialog extends Dialog implements android.view.View.O
 	List <Weather> WeatherData;
 	Context mContext;
 	
-	public WeatherForecastDialog(Context context, ActivityStartGUI gui, List <Weather> data) {
+	public WeatherForecastDialog(Context context, List <Weather> data) {
 		super(context);
 		mContext = context;
 		setContentView(R.layout.weather_dialog);
 		setTitle("Wettervorhersage");
-		mGUI = gui;
 		WeatherData = data;
-		loadGUIandData();
+		loadDataAndFillGUI();
 	}
 	
-	public void loadGUIandData(){
+	public void loadDataAndFillGUI(){
+		
 		
 		for(int i= 1; i<=5; i++){
 			String day = "dialog_day" + i;

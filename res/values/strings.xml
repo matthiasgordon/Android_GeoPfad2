@@ -16,6 +16,7 @@
     <string name="Wetter">Hier das aktuelle Wetter in Bergisch Gladbach:</string>
     <string name="Button_Map">Los!</string>
     <string name="which_places">Welche Orte sollen angezeigt werden?</string>
+    <string name="wait_dialog">Bitte, warten...</string>
     <string name="add_location">Add Location</string>
     <string name="empty_listview">Keine Orte gefunden.</string>
     <string name="search_actionbar">Suchen</string>

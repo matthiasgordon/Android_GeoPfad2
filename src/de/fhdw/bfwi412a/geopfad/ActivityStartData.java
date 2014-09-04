@@ -16,8 +16,8 @@ public class ActivityStartData {
 		mActivity = act;
 		mOrte = Orte_DOM_Parser.getOrteFromFile(act);
 		mAchievements = countAchievements(mOrte);
-		WeatherBGPullParser parser = new WeatherBGPullParser();
-		mWeatherData = parser.getWeatherData();
+//		WeatherBGPullParser parser = new WeatherBGPullParser();
+//		mWeatherData = parser.getWeatherData();
 		if(mWeatherData == null)
 			LoadWeatherDataSuccess = false;
 	}
@@ -34,9 +34,9 @@ public class ActivityStartData {
 		return mAchievements;
 	}
 
-	public List<Weather> getWeatherData() {
-		return mWeatherData;
-	}
+//	public List<Weather> getWeatherData() {
+//		return mWeatherData;
+//	}
 
 	public boolean isLoadWeatherDataSuccess() {
 		return LoadWeatherDataSuccess;
