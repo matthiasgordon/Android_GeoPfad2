@@ -4,30 +4,54 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    android:paddingTop="16dp"
+    android:padding="16dp"
+    android:paddingBottom="16dp"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp" >
+    android:paddingRight="16dp"
+    android:paddingTop="16dp" >
     
 	<TextView
-	    android:id="@+id/txtAddLocationName"
+	    android:id="@+id/txtAddLocationTitel"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:gravity="center_horizontal"
 	    android:textSize="20sp"
 	    android:textStyle="bold"
-	    android:text="Neuer Ort" />
+	    android:text="Neuer Ort"/>
     
-   	<EditText 
-       android:id="@+id/etxtAddLocationName"
-       android:layout_width="fill_parent"
-       android:layout_height="wrap_content"
-       android:layout_below="@id/txtAddLocationName"
-       android:paddingTop="8dp"
-       android:paddingBottom="8dp"
-       android:ems="10"
-       android:textColorHint="@color/hint"
-       android:hint="Ortname"
-       android:inputType="text">"
+	<TextView
+	    android:id="@+id/txtAddLocationAllgemein"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="8dp"
+	    android:layout_marginBottom="8dp"
+	    android:gravity="bottom"
+	    android:paddingLeft="8dp"
+	    android:paddingTop="8dp"
+	    android:layout_below="@id/txtAddLocationTitel"
+	    android:text="Allgemein"
+	    android:textSize="17sp"
+	    android:textStyle="bold" />
+	
+   <View 
+   android:layout_below="@id/txtAddLocationAllgemein"
+   android:layout_width="fill_parent"
+   android:layout_height="3dp"       
+   android:background="@color/gray" />
+	
+   	<EditText
+   	    android:id="@+id/etxtAddLocationName"
+   	    android:layout_width="fill_parent"
+   	    android:layout_height="wrap_content"
+   	    android:layout_below="@id/txtAddLocationAllgemein"
+   	    android:layout_marginTop="8dp"
+   	    android:ems="10"
+   	    android:hint="Ortname"
+   	    android:inputType="text"
+   	    android:paddingBottom="8dp"
+   	    android:paddingTop="8dp"
+   	    android:textColorHint="@color/hint" >
+
    		<requestFocus />
    	</EditText>
    
@@ -92,44 +116,83 @@
 		       android:inputType="numberDecimal"/>
    	</LinearLayout>
    
-    <TextView 
-       android:id="@+id/bildurl"
+  	<Button
+   	   android:id="@+id/btnAddLocationCoordination"
+   	   android:layout_width="wrap_content"
+   	   android:layout_height="wrap_content"
+   	   android:layout_centerHorizontal="true"
+   	   android:text="Aktuelle Koordinaten" 
+   	   android:textSize="13sp"
+   	   android:layout_below="@id/lloAddLocationEtxtPoint"/>
+  	
+  	<TextView 
+	   android:id="@+id/txtAddLocationImage"
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
-       android:layout_below="@id/lloAddLocationEtxtPoint"
-       android:layout_marginTop="8dp"/>
-    
-    <RelativeLayout 
-        android:id="@+id/RelativeLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/bildurl"
-        android:layout_marginTop="8dp">
-    
-		    <Button 
-		       android:id="@+id/btnbildurl"
-		       android:layout_width="64px"
-		       android:layout_height="56px"
-		       android:background="@drawable/button_folder"/>
+       android:paddingTop="16dp"
+       android:paddingLeft="8dp"
+       android:layout_below="@id/btnAddLocationCoordination"
+       android:gravity="bottom"
+       android:text="Bild"
+       android:textStyle="bold"
+       android:textSize="17sp"/>	
+   <View 
+	   android:layout_below="@id/txtAddLocationImage"
+	   android:layout_width="fill_parent"
+	   android:layout_height="3dp"       
+	   android:background="@color/gray" />	 
+  	
+  	<LinearLayout
+  	    android:id="@+id/lloAddLocationAddImg"
+	    android:orientation="horizontal"
+	    android:layout_height="wrap_content"
+	    android:layout_width="fill_parent"
+	    android:layout_below="@id/txtAddLocationImage"
+	    android:layout_marginTop="8dp">
+   			
+   			<Button
+   			    android:id="@+id/btnbildurl"
+   			    android:layout_width="64dp"
+   			    android:layout_height="56dp"
+   			    android:layout_marginRight="8dp"
+   			    android:layout_marginTop="8dp"
+   			    android:background="@drawable/button_folder" />
 
-		   	<Button
-		   	    android:id="@+id/btnAnlegen"
-		   	    android:layout_width="64px"
-		   	    android:layout_height="64px"
-		   	    android:layout_alignParentRight="true"
-		   	    android:layout_alignParentTop="true"
-		   	    android:background="@drawable/button_savelocation" />
+   			<ImageView
+   			    android:id="@+id/imgAddLocationPreview"
+   			    android:layout_width="match_parent"
+   			    android:layout_height="wrap_content"
+   			    android:layout_weight="1"
+   			    android:adjustViewBounds="true"
+   			    android:src="@drawable/preview"
+   			    android:layout_marginTop="8dp"
+   			    android:maxHeight="@dimen/destination_preview_height"
+   			    android:maxWidth="@dimen/destination_preview_width"/>
+   			    
+   			    
+   			
+		    <TextView
+		        android:id="@+id/bildurl"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:layout_marginLeft="8dp"
+		        android:layout_marginTop="8dp"
+		        android:textColorHint="@color/hint"
+		        android:textSize="18sp"
+		        android:textStyle="bold" 
+		        android:visibility="invisible"/>
 
-		   	<Button
-		   	    android:id="@+id/btnAddLocationCoordination"
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_height="wrap_content"
-		   	    android:layout_alignParentTop="true"
-		   	    android:layout_centerHorizontal="true"
-		   	    android:text="Aktuelle \n Koordinaten" 
-		   	    android:textSize="13sp"/>
-
-	</RelativeLayout>	
+    </LinearLayout>
+	    
+   	<Button
+   	    android:id="@+id/btnAnlegen"
+   	    android:layout_alignParentBottom="true"
+   	    android:layout_alignParentRight="true"
+   	    android:background="@drawable/button_savelocation" 
+   	    android:layout_width="64dp"
+   	    android:layout_height="64dp"/>
+   	 
 	      
    <TextView 
        android:id="@+id/txtName"

@@ -5,7 +5,7 @@ import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 
-public class DistanceCalculator {
+public class DistanceCalculator implements android.location.GpsStatus.Listener{
 	
 	LocationManager mLocationManager;
 	private String mProvider;
@@ -38,6 +38,12 @@ public class DistanceCalculator {
 		    return d;
 		}
 		return -1;
+	}
+
+	@Override
+	public void onGpsStatusChanged(int event) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

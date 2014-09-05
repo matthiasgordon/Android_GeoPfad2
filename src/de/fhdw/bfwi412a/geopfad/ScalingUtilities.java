@@ -75,6 +75,11 @@ public class ScalingUtilities {
 		 		mDstWidth = mTotalwidth;
 		        mDstHeight = mTotalheight;
 		 	}
+		 	
+		 	if(destination.equals("preview")){
+		 		mDstWidth = context.getResources().getDimensionPixelSize(R.dimen.destination_preview_width);
+		 		mDstHeight = context.getResources().getDimensionPixelSize(R.dimen.destination_preview_height);
+		 	}
 	        // Part 1: Decode image
 	        Bitmap unscaledBitmap = ScalingUtilities.decodeExternResource(mOrtImage,
 	                mDstWidth, mDstHeight, ScalingLogic.FIT);

@@ -32,6 +32,7 @@ import android.util.Xml;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -251,7 +252,9 @@ public class AddLocation extends Activity {
 		  if (resultCode == RESULT_OK && requestCode == IMAGE_URL) {
 		    if (data.hasExtra("bildurl")) {
 		    	TextView url = (TextView) findViewById(R.id.bildurl);
-		    	url.setText(data.getExtras().getString("bildurl"));		      
+		    	url.setText(data.getExtras().getString("bildurl"));	
+		    	ImageView imgPreview = (ImageView) findViewById(R.id.imgAddLocationPreview);
+		    	imgPreview.setImageBitmap(ScalingUtilities.fitScaleExtern(data.getExtras().getString("bildurl"), this, "preview"));
 		    }
 		  }
 		} 
