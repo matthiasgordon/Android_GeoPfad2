@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.model.LatLng;
 
+/** MapFramentData provides Data (locations, coordinates, and SharedPreferences file)
+ * for MapFragment*/
+
 public class MapFragmentData {
 	public static final String PREFS_NAME = "MYPrefernceFile";
 	
@@ -16,6 +19,9 @@ public class MapFragmentData {
 	private List <LatLng> mRouteCoordinates = new ArrayList <LatLng> ();
 	private SharedPreferences mVisitStatus;
 
+	/** Constructor gets locations from Orte_DOM_Parser and 
+	 * routecoordinates from the own Coordinates class;
+	 * save SharedPreferences file mVisitSatus*/
 
 	public MapFragmentData(MapFragment mfrag){
 		mActivity = mfrag.getActivity();

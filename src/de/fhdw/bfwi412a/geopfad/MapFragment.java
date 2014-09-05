@@ -6,13 +6,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**Class implemented by: Marc Niedermeier 
+ * MapFragment is one part of the FragentActivity ActivityMain; 
+ * shows route in GoogleMap of entire GeoPfad with Marker for each location;
+ * can be called with parameter to show single location highlighted;
+ * when called without parameter it shows all locations;
+ * has spinner to change the selection of shown markers */
+
 public class MapFragment extends Fragment {
 	
-	MapFragmentData mData;
-	MapFragmentGUI mGUI;
-	MapFragmentApplicationLogic mApplicationLogic;
-	String mLocationName;
-	boolean mIsFromIntent;
+	private MapFragmentData mData;
+	private MapFragmentGUI mGUI;
+	private MapFragmentApplicationLogic mApplicationLogic;
+	private String mLocationName;
+	private boolean mIsFromIntent;
+	
+	/** two constructors when string is passed it is saved in mLocationName*/
 	
 	public MapFragment(){
 		mIsFromIntent = false;
@@ -44,6 +53,9 @@ public class MapFragment extends Fragment {
 	private void initData () {
 		mData = new MapFragmentData(this);
 	}
+	
+	/** after providing and data the map is styled in initGUI and the spinner 
+	 * selection list is created */
 
 	private void initGUI (View view) {
 		mGUI = new MapFragmentGUI(this, view, mLocationName, mIsFromIntent);

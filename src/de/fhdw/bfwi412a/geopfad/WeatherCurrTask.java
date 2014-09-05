@@ -9,6 +9,13 @@ import org.xmlpull.v1.XmlPullParserException;
 import android.os.AsyncTask;
 import android.view.View;
 
+/** Class implemented by: Marc Niedermeier
+ * WheaterCurrTask is an AsnycTask that loads the currentWeather if needed(tablet-version)
+ * in background so the actual GUI can be loaded without delays for the user
+ * @param Void not used param
+ * @param Void not used param
+ * @param List<Weather> doInBackgroud-method returns list of weather-objects*/
+
 public class WeatherCurrTask extends AsyncTask<Void, Void, List<Weather>> {
     private ActivityStart mActivity; 
     private ActivityStartGUI mGUI;
@@ -18,6 +25,8 @@ public class WeatherCurrTask extends AsyncTask<Void, Void, List<Weather>> {
 		mGUI = gui;
 	}
 
+	/** Method that runs before the doInBackground method has finished and sets
+	 * a wait-message to the GUI*/
 	@Override
 	protected void onPreExecute() {
 		// TODO Auto-generated method stub
@@ -25,12 +34,16 @@ public class WeatherCurrTask extends AsyncTask<Void, Void, List<Weather>> {
 		setWeatherError();
 	}
 	
+	/**Method that runs in the background while rest of the GUI is loaded, loads and returns
+	 * weather data
+	 * @return weatherData that was loaded*/
+	
 	@Override
     protected List<Weather> doInBackground(Void... params) {
-        	List<Weather> test = new ArrayList<Weather>();
+        	List<Weather> weatherData = new ArrayList<Weather>();
 			try {
 				WeatherDataLoader loader = new WeatherDataLoader();
-				test = loader.loadXmlFromNetwork("http://weather.yahooapis.com/forecastrss?w=638139&u=c");
+				weatherData = loader.loadXmlFromNetwork("http://weather.yahooapis.com/forecastrss?w=638139&u=c");
 			} catch (XmlPullParserException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -38,8 +51,12 @@ public class WeatherCurrTask extends AsyncTask<Void, Void, List<Weather>> {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-            return test;
+            return weatherData;
     }
+	
+	/** method that is called after doInBackground method has finished; it displays
+	 * the loaded weather data in the GUI
+	 * @param result of the doInBackground method -> weather data*/
 
 	@Override
 	protected void onPostExecute(List<Weather> result) {
@@ -48,6 +65,9 @@ public class WeatherCurrTask extends AsyncTask<Void, Void, List<Weather>> {
 			fillWeatherGUI(result);
 	}
 
+	/** Method that fills the GUI with the loaded weather data
+	 * @param loaded mResult of the DoInBackground method (loaded weather data)*/
+	
 	public void fillWeatherGUI(List<Weather> mResult){
 		if(mGUI.getCurrWeather()!= null){
 			mGUI.getCurrWeather().setVisibility(View.VISIBLE);
@@ -60,6 +80,8 @@ public class WeatherCurrTask extends AsyncTask<Void, Void, List<Weather>> {
 							.get(0).getWeatherCode()), "drawable", mActivity.getPackageName()));
 		}
 	}
+	
+	/** Method that sets wait dialog in the GUI; is called befor doInBackground*/
 	
 	public void setWeatherError(){
 		if(mGUI.getCurrWeather()!= null){

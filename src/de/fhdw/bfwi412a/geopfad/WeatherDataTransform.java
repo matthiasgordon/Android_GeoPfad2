@@ -1,9 +1,15 @@
 package de.fhdw.bfwi412a.geopfad;
+/**Class implemented by: Marc Niedermeier
+ * WeatherDataTransform is a helper class that helps to display the weather data
+ * in the GUI*/
 
 public class WeatherDataTransform {
 	private String mImageName;
 	private String mGday;
 	
+	/**Method that is used to transform an english day-description to a german one
+	 * @param day english day desciption
+	 * @return mGday german day description */
 	
 	public String dayToGerman(String day){
 		if(day.equals("Mon"))
@@ -23,6 +29,11 @@ public class WeatherDataTransform {
 		
 		return mGday;
 	}
+	
+	/**Method that transforms a given weathercode to a string that describes the
+	 * imagename of the image that fits to the displayed weather
+	 * @param weathercode weathercode that has to be transfromed
+	 * @return mImageName holds name of the weatherimage that has to be displayed*/
 	
 	public String getWeatherImageName(String weathercode){		
 		if(weathercode.equals("0"))

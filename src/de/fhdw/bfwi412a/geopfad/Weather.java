@@ -2,6 +2,9 @@ package de.fhdw.bfwi412a.geopfad;
 
 public class Weather {
 	
+	/** Class implemented by: Marc Niedermeier:
+	 * own created Weather-class to make handling weather data easier*/
+	
 	private String mWeatherDate;
 	private String mWeatherTemperatureHigh;
 	private String mWeatherTemperatureLow;

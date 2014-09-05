@@ -3,6 +3,10 @@ package de.fhdw.bfwi412a.geopfad;
 public class SchneckenImgUrlGenerator {
 	private String mImgUrl;
 	
+	/**Class implemented by: Marc Niedermeier
+	 * SchneckenImgGenerator transforms the amount of achievements to an image-URL 
+	 * to display the right "Schnecken"-image an the ActivityStart*/
+	
 	public SchneckenImgUrlGenerator(int achievement){
 		mImgUrl = getImageUrl(achievement);
 	}
@@ -11,6 +15,11 @@ public class SchneckenImgUrlGenerator {
 		return mImgUrl;
 	}
 
+	/**Transforms int to the imgURL
+	 * @param int that describes the achievement
+	 * @return imgUrl of the right "Schnecken"-image
+	 * */
+	
 	private String getImageUrl (int achievement){
 		String imageUrl = "prozent_0";
 		if(achievement > 17){

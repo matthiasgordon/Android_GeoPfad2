@@ -11,8 +11,16 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+/** class implemented by Marc Niedermeier:
+ * Weather DataLoader loads a XML-File from the network parses and stores it by using a
+ * WeatherPullParser */
 public class WeatherDataLoader {
 	
+	
+	/**Method that loads an InputStream from a given URLString givs it to the WeatherPullParser
+	 * and closes the InputStream
+	 * @param urlString is the URL which holds the weather data in a XML-string
+	 * @return parsedWeatherData is a list of Weather objects that hold the parsed weather data*/
     public List <Weather> loadXmlFromNetwork(String urlString) throws XmlPullParserException, IOException {
         InputStream stream = null;
         List<Weather> parsedWeatherData = new ArrayList<Weather>();
@@ -24,7 +32,7 @@ public class WeatherDataLoader {
             myparser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             myparser.setInput(stream, null);
             
-            WeatherBGPullParser mParser = new WeatherBGPullParser();
+            WeatherPullParser mParser = new WeatherPullParser();
             mParser.parseXMLAndStoreIt(myparser);
             
             stream.close();
@@ -37,6 +45,10 @@ public class WeatherDataLoader {
         }
         return parsedWeatherData;       
     }
+    
+    /** Method that downloads an InputStream from a given URL string
+     * @param urlString URL that serves the weather data in a XML file
+     * @return stream is the downloaded InputStream*/
 
     private InputStream downloadUrl(String urlString) throws IOException {
         URL url = new URL(urlString);

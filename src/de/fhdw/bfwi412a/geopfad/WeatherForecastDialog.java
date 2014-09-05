@@ -9,11 +9,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**Class implemented by: Marc Niedermeier
+ * WeatherForecastDialog is a dialog that shows the weatherforecast of the next 5 days
+ * @param context in which the dialog is shown
+ * @param data is the weather data that has to be displayed*/
+
 public class WeatherForecastDialog extends Dialog implements android.view.View.OnClickListener{
 
 	private Context mContext;
 	private List <Weather> WeatherData;
-
+	
 	public WeatherForecastDialog(Context context, List <Weather> data) {
 		super(context);
 		mContext = context;
@@ -22,6 +27,9 @@ public class WeatherForecastDialog extends Dialog implements android.view.View.O
 		setTitle("Wettervorhersage");
 		loadDataAndFillGUI();
 	}
+	
+	/** Method that uses the loaded data to display it in the forecast-dialog;
+	 * implements OK-Butto to finish the dialog*/
 	
 	public void loadDataAndFillGUI(){
 		

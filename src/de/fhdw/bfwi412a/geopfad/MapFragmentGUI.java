@@ -20,6 +20,9 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+/** MapFrgmentGUI loads and provides all GUI-elements;
+ * serves methods to fill/style the GUI*/
+
 public class MapFragmentGUI {
 	private MapFragment mMFragment;
 	private BitmapDescriptor mMarkerIcon;
@@ -28,10 +31,16 @@ public class MapFragmentGUI {
 	private Spinner mSpinner;
 	private String mSelLocName;
 	
+	/** Method saves loads all GUI elements and saves information about intent
+	 * @param frag parent MapFrgment
+	 * @param view View that is created by MapFragment
+	 * @param sellocname Name of the Location that has to be highlighted
+	 * @param isfromintent boolean that tells if intent is given to the MapFragment*/
+	
 	MapFragmentGUI(MapFragment mfrag, View view, String sellocname, boolean isfromintent){
-		mMarkerIcon = BitmapDescriptorFactory.fromResource(R.drawable.reisszwecke_klein);
 		mMFragment = mfrag;
 		mSelLocName = sellocname;
+		mMarkerIcon = BitmapDescriptorFactory.fromResource(R.drawable.reisszwecke_klein);
 		FragmentManager mFragmentManager = mfrag.getActivity().getSupportFragmentManager();
 		if(mFragment == null){
 			mFragment = (SupportMapFragment) mFragmentManager.findFragmentById(R.id.map);
@@ -47,6 +56,14 @@ public class MapFragmentGUI {
 	public Spinner getSpinner() {
 		return mSpinner;
 	}
+	
+	/** Method styles Map depending on which parameters is given to it 
+	 * (decides which Marker are shown and how they are presented)
+	 * @param mRouteCoordinates are the coordinates of the route that draw the polyline on the map
+	 * @param mOrte is the list of all locations
+	 * @param mMarkerId is the id of the option which is selected by the spinner
+	 * @param mVisitedStatus is the SharedPreferences file for comparing if locations are visited
+	 * @param mIsFromIntent decides if only one marker is highlighted or not*/
 
 	public void styleMap(List <LatLng> mRouteCoordinates, List <Ort> mOrte, 
 			int mMarkerId, SharedPreferences mVisitStatus, boolean mIsFromIntent){
@@ -64,6 +81,14 @@ public class MapFragmentGUI {
 			mMap.setMyLocationEnabled(true);
 		}
 	}
+	
+	/** Method that draws the group of markers that are wanted on the map
+	 * @param mMarkerId stands for selected spinner option, decides which marker are shown:
+	 * 	0: all locations are shown
+	 * 	1: all visited locations are shown
+	 * 	2: all unvisited locations are shown
+	 * @param mOrte list of all locations
+	 * @param mVisitStatus SharedPreferences filed for comparing*/
 	
 	public void setupMarkers(int mMarkerId, List <Ort> mOrte, 
 			SharedPreferences mVisitStatus){
@@ -98,6 +123,10 @@ public class MapFragmentGUI {
 		}	
 	}
 	
+	/** Method for highlighting only one explicit marker
+	 * @param locName name of the marker that should be highlighted
+	 * @param mOrte list of all locations*/
+	
 	public void setupMarker(String locName, List<Ort> mOrte){
 		Marker marker=null;
 		for(Ort curOrt : mOrte)
@@ -107,6 +136,11 @@ public class MapFragmentGUI {
 						.icon(mMarkerIcon));
 			marker.showInfoWindow();
 	}
+	
+	/** Method that defines the spinner optionslist
+	 * @param isIntent boolean that says if intent was given to MapFragment
+	 * 	if isIntent=true the name of highlighted location is added to optionsmenu
+	 * 	if isIntent=false normal optionslist is shown*/
 	
 	public void setSpinnerList(boolean isIntent){
 		String[] arrayList = mMFragment.getResources().getStringArray(R.array.string_spinner);

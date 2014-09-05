@@ -6,6 +6,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/** ActivityStartGUI provides all the GUI-elements of ActivityStart and serves 
+ * methods to fill them */
+
 public class ActivityStartGUI {
 	private ActivityStart mActivity;
 	private TextView mTemperature;
@@ -48,6 +51,8 @@ public class ActivityStartGUI {
 	public Button getBtnWeather() {
 		return btnWeather;
 	}
+	/** Method is only called when no Internet is available makes weather-GUI-elements 
+	 * invisible and sets error-message to the temperature-TextView*/
 
 	public void setWeatherInternetError(){
 		btnWeather.setVisibility(View.INVISIBLE);
@@ -55,6 +60,10 @@ public class ActivityStartGUI {
 		mLocation.setVisibility(View.INVISIBLE);
 		mTemperature.setText(R.string.no_internet);
 	}
+	
+	/** Method requests the imageURL of the wanted "Schnecken"-image; 
+	 * scales it with the ScalingUtilities class to the devices screen and fills ImageView
+	 * @param number of visited locations*/
 	
 	public void setSchneckenView(int achievement){
 		SchneckenImgUrlGenerator imgGenerator = new SchneckenImgUrlGenerator(achievement);
