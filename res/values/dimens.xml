@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">100dp</dimen>
+    <dimen name="destination_list_width">82dip</dimen>
+    <dimen name="destination_list_height">62dip</dimen>
+    <dimen name="destination_preview_width">120dip</dimen>
+    <dimen name="destination_preview_height">79dip</dimen>
+    
+</resources>

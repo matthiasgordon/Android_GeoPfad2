@@ -2,6 +2,7 @@ package de.fhdw.bfwi412a.geopfad;
 
 import android.content.Context;
 import android.location.Criteria;
+import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationManager;
 
@@ -10,6 +11,7 @@ public class DistanceCalculator implements android.location.GpsStatus.Listener{
 	LocationManager mLocationManager;
 	private String mProvider;
 	Criteria criteria;
+	int mStatus;
 	
 	public DistanceCalculator() {
 		criteria = new Criteria();
@@ -17,8 +19,17 @@ public class DistanceCalculator implements android.location.GpsStatus.Listener{
 	
 	public Location getLiveLocation(Context context) {
 		mLocationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-		mProvider = mLocationManager.getBestProvider(criteria, false);
-		Location liveLocation = mLocationManager.getLastKnownLocation(mProvider);
+		mLocationManager.addGpsStatusListener(this);
+		Location liveLocation = null;
+		switch (mStatus){
+		case 0:
+			mProvider = mLocationManager.getBestProvider(criteria, false);
+			liveLocation = mLocationManager.getLastKnownLocation(mProvider);
+			break;
+		case 1:
+			break;
+		}
+
 		return liveLocation;
 	}
 	
@@ -42,7 +53,22 @@ public class DistanceCalculator implements android.location.GpsStatus.Listener{
 
 	@Override
 	public void onGpsStatusChanged(int event) {
-		// TODO Auto-generated method stub
+		
+	       switch (event) 
+	       {
+	          case GpsStatus.GPS_EVENT_SATELLITE_STATUS:
+	        	  mStatus = 1;
+	          break;
+	          case GpsStatus.GPS_EVENT_FIRST_FIX:
+	        	  mStatus = 0;// this means you  found GPS Co-ordinates                          
+	          break;
+	          case GpsStatus.GPS_EVENT_STARTED:
+	        	  mStatus = 1;
+	          break;
+	          case GpsStatus.GPS_EVENT_STOPPED:
+	        	  mStatus = 1;
+	          break;
+	        }
 		
 	}
 	
