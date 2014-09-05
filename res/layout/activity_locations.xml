@@ -109,19 +109,28 @@
 					android:textSize="15sp" />
 			
 			</TableRow>
-				<Button
-					android:id="@+id/btnNavigation"
-					android:layout_width="100px"
-					android:layout_height="104px"
-					android:text="@string/NavigationLocation"
-					android:textSize="25sp"
-					android:background="@drawable/button_navigation" />
-
+			<TableRow
+					android:id="@+id/TableRow3"
+					android:orientation="horizontal"
+					android:layout_margin="10dp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:gravity="center" >
+			
 				<Button
 				    android:id="@+id/btnShowOnMap"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
-				    android:text="Auf Karte" />
-			
+				    android:background="@drawable/button_map" />
+				
+				<Button
+					android:id="@+id/btnNavigation"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+					android:text="@string/NavigationLocation"
+					android:textSize="25sp"
+					android:background="@drawable/button_navigation" />
+
+			</TableRow>
 	</LinearLayout>
 </ScrollView>
