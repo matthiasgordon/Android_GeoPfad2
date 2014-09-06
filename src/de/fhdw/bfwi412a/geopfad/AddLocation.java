@@ -18,6 +18,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import org.xmlpull.v1.XmlSerializer;
@@ -41,7 +42,8 @@ public class AddLocation extends Activity {
 
 
 		static final int IMAGE_URL = 100;
-		static final File ORTE_XML = new File(Environment.getExternalStorageDirectory().getPath() + "/orte.xml");
+		static final File GEOPFAD_DIRECTORY = new File(Environment.getExternalStorageDirectory().getPath() + "/GeoPfad");
+		static final File ORTE_XML = new File(GEOPFAD_DIRECTORY + "/orte.xml");
 		ListFragmentGUI mListFragmentGUI;
 		
 		@Override
@@ -52,6 +54,7 @@ public class AddLocation extends Activity {
 			Button btnAnlegen = (Button)findViewById(R.id.btnAnlegen);
 			Button btnbildurl = (Button)findViewById(R.id.btnbildurl);
 			Button btnCoordination = (Button)findViewById(R.id.btnAddLocationCoordination);
+			
 			final String ortId = this.getIntent().getExtras().getString("listLength");
 			final EditText etOrtName = (EditText) findViewById(R.id.etxtAddLocationName);
 			final EditText etAbout = (EditText) findViewById(R.id.etxtAddLocationAbout);
@@ -110,7 +113,13 @@ public class AddLocation extends Activity {
 						String ortLat = mEtLat.getText().toString();
 						String ortLng = mEtLng.getText().toString();
 					  
-						if(!extImageUrl.equals("")){
+						if(!ortName.equals("") && !about.equals("") && !extImageUrl.equals("") &&
+								ortLat != null && ortLng != null){
+							
+							if(!GEOPFAD_DIRECTORY.exists()){
+								GEOPFAD_DIRECTORY.mkdir();
+							}
+							
 							if(ORTE_XML.exists()){
 				
 								DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -124,29 +133,29 @@ public class AddLocation extends Activity {
 						    	
 						    	Node node =  document.getElementsByTagName("orte").item(0);
 						    	
-						    	org.w3c.dom.Element newOrt = document.createElement("ort");
+						    	Element newOrt = document.createElement("ort");
 						    	
-						    	org.w3c.dom.Element newOrtId = document.createElement("id");
+						    	Element newOrtId = document.createElement("id");
 						    	newOrtId.appendChild(document.createTextNode(ortId));
 						    	newOrt.appendChild(newOrtId);
 						    	
-						    	org.w3c.dom.Element newOrtName = document.createElement("name");
+						    	Element newOrtName = document.createElement("name");
 						    	newOrtName.appendChild(document.createTextNode(ortName));
 						    	newOrt.appendChild(newOrtName);
 						    	
-						    	org.w3c.dom.Element newAbout = document.createElement("about");
+						    	Element newAbout = document.createElement("about");
 						    	newAbout.appendChild(document.createTextNode(about));
 						    	newOrt.appendChild(newAbout);
 						    	
-						    	org.w3c.dom.Element newLat = document.createElement("latitude");
+						    	Element newLat = document.createElement("latitude");
 						    	newLat.appendChild(document.createTextNode(ortLat));
 						    	newOrt.appendChild(newLat);
 						    	
-						    	org.w3c.dom.Element newLng = document.createElement("longitude");
+						    	Element newLng = document.createElement("longitude");
 						    	newLng.appendChild(document.createTextNode(ortLng));
 						    	newOrt.appendChild(newLng);
 						    	
-						    	org.w3c.dom.Element newExtImageUrl = document.createElement("extImageUrl");
+						    	Element newExtImageUrl = document.createElement("extImageUrl");
 						    	newExtImageUrl.appendChild(document.createTextNode(extImageUrl));
 						    	newOrt.appendChild(newExtImageUrl);
 						    	
@@ -207,7 +216,7 @@ public class AddLocation extends Activity {
 						    }
 						}
 						else {
-							String bildFehler = "Bitte fügen Sie ein Bild hinzu!";
+							String bildFehler = "Bitte füllen Sie alle Felder aus!";
 							Toast.makeText(AddLocation.this, bildFehler,
 							        Toast.LENGTH_LONG).show();
 						}

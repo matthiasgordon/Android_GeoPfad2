@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -110,11 +111,26 @@ public class FileChooser extends ListActivity {
 		}
 		@Override
 		public void finish() {
-		  // Prepare data intent 
+		  // Prepare data intent
+			if(url !=null){
 		  Intent data = new Intent();
 		  data.putExtra("bildurl", url);
 		  // Activity finished ok, return the data
 		  setResult(RESULT_OK, data);
+			}
+			else {
+				setResult(RESULT_CANCELED);
+			}
 		  super.finish();
 		}
+		
+		@Override
+	    public boolean onOptionsItemSelected(MenuItem item) {
+	        switch (item.getItemId()) {
+	        case android.R.id.home:
+	            finish();
+	            return true;
+	        }
+	        return super.onOptionsItemSelected(item);
+	    }
 }
