@@ -71,7 +71,12 @@ public class ActivityLocationsApplicationLogic {
 	}
 	
 	public void setDistance() {
-		Double distance = mDistCalc.getDistance(mData.getLatitude(), mData.getLongitude(), mActivity);
+		Double distance = 0.0;
+		do{
+			distance = mDistCalc.getDistance(mData.getLatitude(), mData.getLongitude(), mActivity);
+		}
+		while(distance == null);
+		
 		if(distance != 0 && distance != -1) {
 			Double distance_rounded = Math.rint(distance*100)/100;
 			if(distance_rounded>1000) {

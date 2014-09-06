@@ -28,13 +28,19 @@ public class DistanceCalculator implements android.location.GpsStatus.Listener{
 			break;
 		case 1:
 			break;
+		case 2:
+			break;
+		case 3:
+			break;
 		}
 
 		return liveLocation;
 	}
 	
 	public double getDistance(double toLat, double toLng, Context context) {
+
 		Location liveLocation = getLiveLocation(context);
+		
 		if(liveLocation != null) {
 		double liveLat = liveLocation.getLatitude();
 		double liveLng = liveLocation.getLongitude();
@@ -48,7 +54,10 @@ public class DistanceCalculator implements android.location.GpsStatus.Listener{
 		    double d = r * c;
 		    return d;
 		}
+		
 		return -1;
+		
+		
 	}
 
 	@Override
@@ -57,16 +66,16 @@ public class DistanceCalculator implements android.location.GpsStatus.Listener{
 	       switch (event) 
 	       {
 	          case GpsStatus.GPS_EVENT_SATELLITE_STATUS:
-	        	  mStatus = 1;
+	        	  mStatus = 0;
 	          break;
 	          case GpsStatus.GPS_EVENT_FIRST_FIX:
 	        	  mStatus = 0;// this means you  found GPS Co-ordinates                          
 	          break;
 	          case GpsStatus.GPS_EVENT_STARTED:
-	        	  mStatus = 1;
+	        	  mStatus = 2;
 	          break;
 	          case GpsStatus.GPS_EVENT_STOPPED:
-	        	  mStatus = 1;
+	        	  mStatus = 3;
 	          break;
 	        }
 		

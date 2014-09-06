@@ -64,6 +64,7 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 			holder.txtOrtID.setText(ort.getId());
 			
 			Double distance = mDistanceCalc.getDistance(ort.getLat(), ort.getLng(), context);
+			
 			if(distance != 0 && distance != -1) {
 				Double distance_rounded = Math.rint(distance*100)/100;
 				if(distance_rounded>1000) {
