@@ -29,7 +29,7 @@ public class ListFragmentApplicationLogic {
 	}
 	
 	public void addLocation() {
-		Intent intent = new Intent(mFrag.getActivity(), AddLocation.class);
+		Intent intent = new Intent(mFrag.getActivity(), ActivityAddLocation.class);
 		intent.putExtra("listLength", String.valueOf(mGUI.getmListLength()+1));
 		mFrag.startActivityForResult(intent, ADD_LOCATION);
 	}

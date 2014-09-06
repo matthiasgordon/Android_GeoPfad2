@@ -1,5 +1,6 @@
 package de.fhdw.bfwi412a.geopfad;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,15 +28,15 @@ public class Orte_DOM_Parser {
     	List<Ort> listOrte;
 		listOrte = new ArrayList<Ort>();
 		Ort curOrt = null;
-    	
+    	final File ORTE_XML = ActivityAddLocationData.ORTE_XML;
 		ArrayList<InputStream> arrayInputStream = new ArrayList<InputStream>();
         InputStream inputStreamLocal = context.getResources().openRawResource(R.raw.orte);
         arrayInputStream.add(inputStreamLocal);
         
-        if(AddLocation.ORTE_XML.exists()){
+        if(ORTE_XML.exists()){
 	        FileInputStream fileInputStreamExtern;
 			try {
-				fileInputStreamExtern = new FileInputStream(AddLocation.ORTE_XML);
+				fileInputStreamExtern = new FileInputStream(ORTE_XML);
 				InputStream inputStreamExtern = fileInputStreamExtern;
 		        arrayInputStream.add(inputStreamExtern);
 			} catch (FileNotFoundException e) {

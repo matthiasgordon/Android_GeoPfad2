@@ -65,13 +65,13 @@
         </activity>
         
                 <activity
-            android:name=".AddLocation"
+            android:name=".ActivityAddLocation"
             android:parentActivityName="de.fhdw.bfwi412a.geopfad.ActivityMain"  >
         </activity>
         
         <activity
             android:name=".FileChooser"
-            android:parentActivityName="de.fhdw.bfwi412a.geopfad.AddLocation"  >
+            android:parentActivityName="de.fhdw.bfwi412a.geopfad.ActivityAddLocation"  >
         </activity>
         
         <service android:name=".ServiceNotifyDistance"></service>
