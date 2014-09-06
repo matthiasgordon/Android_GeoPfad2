@@ -114,7 +114,7 @@ public class AddLocation extends Activity {
 						String ortLng = mEtLng.getText().toString();
 					  
 						if(!ortName.equals("") && !about.equals("") && !extImageUrl.equals("") &&
-								ortLat != null && ortLng != null){
+								!ortLat.equals("") && !ortLng.equals("")){
 							
 							if(!GEOPFAD_DIRECTORY.exists()){
 								GEOPFAD_DIRECTORY.mkdir();
