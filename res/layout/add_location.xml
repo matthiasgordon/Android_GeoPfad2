@@ -17,7 +17,7 @@
 	    android:gravity="center_horizontal"
 	    android:textSize="20sp"
 	    android:textStyle="bold"
-	    android:text="Neuer Ort"/>
+	    android:text="@string/new_location_title"/>
     
 	<TextView
 	    android:id="@+id/txtAddLocationAllgemein"
@@ -29,7 +29,7 @@
 	    android:paddingLeft="8dp"
 	    android:paddingTop="8dp"
 	    android:layout_below="@id/txtAddLocationTitel"
-	    android:text="Allgemein"
+	    android:text="@string/new_location_headline_general"
 	    android:textSize="17sp"
 	    android:textStyle="bold" />
 	
@@ -46,7 +46,7 @@
    	    android:layout_below="@id/txtAddLocationAllgemein"
    	    android:layout_marginTop="8dp"
    	    android:ems="10"
-   	    android:hint="Ortname"
+   	    android:hint="@string/et_hint_location_name"
    	    android:inputType="text"
    	    android:paddingBottom="8dp"
    	    android:paddingTop="8dp"
@@ -63,7 +63,7 @@
        android:paddingTop="8dp"
        android:paddingBottom="8dp"
        android:textColorHint="@color/hint"
-       android:hint="Ortbeschreibung"
+       android:hint="@string/et_hint_location_description"
        android:inputType="text"/>
 
    	    
@@ -75,7 +75,7 @@
        android:paddingLeft="8dp"
        android:layout_below="@id/etxtAddLocationAbout"
        android:gravity="bottom"
-       android:text="Koordinaten"
+       android:text="@string/new_location_headline_coordination"
        android:textStyle="bold"
        android:textSize="17sp"/>	
    <View 
@@ -101,7 +101,7 @@
 		       android:layout_weight="1"
 		       android:ems="10"
 		       android:textColorHint="@color/hint"
-		       android:hint="Latitude"
+		       android:hint="@string/et_hint_location_latitude"
 		       android:inputType="numberDecimal">
    			</EditText>
    			
@@ -112,7 +112,7 @@
 		       android:layout_weight="1"
 		       android:ems="10"
 		       android:textColorHint="@color/hint"
-		       android:hint="Longitude"
+		       android:hint="@string/et_hint_location_longitude"
 		       android:inputType="numberDecimal"/>
    	</LinearLayout>
    
@@ -121,7 +121,7 @@
    	   android:layout_width="wrap_content"
    	   android:layout_height="wrap_content"
    	   android:layout_centerHorizontal="true"
-   	   android:text="Aktuelle Koordinaten" 
+   	   android:text="@string/btn_current_coordination" 
    	   android:textSize="13sp"
    	   android:layout_below="@id/lloAddLocationEtxtPoint"/>
   	
@@ -133,7 +133,7 @@
        android:paddingLeft="8dp"
        android:layout_below="@id/btnAddLocationCoordination"
        android:gravity="bottom"
-       android:text="Bild"
+       android:text="@string/new_location_headline_image"
        android:textStyle="bold"
        android:textSize="17sp"/>	
    <View 
@@ -159,6 +159,7 @@
    			    android:background="@drawable/button_folder" />
 
    			<ImageView
+   			    android:contentDescription="@string/extimageview"
    			    android:id="@+id/imgAddLocationPreview"
    			    android:layout_width="match_parent"
    			    android:layout_height="wrap_content"

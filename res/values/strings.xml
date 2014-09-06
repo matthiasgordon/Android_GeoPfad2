@@ -19,11 +19,33 @@
     </string-array>
     <string name="which_places">Welche Orte sollen angezeigt werden?</string>
     
-    <string name="wait_dialog">Bitte, warten...</string>
+    <string name="wait_dialog">Bitte, warten&#8230;</string>
     <string name="no_internet">Kein Internet, Wetterdaten nicht verfügbar</string>
     <string name="add_location">Add Location</string>
     <string name="empty_listview">Keine Orte gefunden.</string>
     <string name="search_actionbar">Suchen</string>
     <string name="visited">Besucht</string>
-    <string name="notvisited">Nicht besucht</string>    
+    <string name="notvisited">Nicht besucht</string>
+    <string name="filechooser_startdirectory">/sdcard/</string>
+    <string name="imageview1">First Image from Drawable.</string>
+    <string name="imageview2">Second Image from Drawable.</string>
+    <string name="imageview3">Third Image from Drawable.</string>
+    <string name="extimageview">Image from Sdcard.</string>
+    <string name="different_to_location">Luftlinie zum Ort:</string>
+    <string name="gps_hint_turn_on">Bitte GPS einschalten</string>
+    <string name="new_location_title">Neuer Ort</string>
+    <string name="new_location_headline_general">Allgemein</string>
+    <string name="et_hint_location_name">Ortname</string>
+    <string name="et_hint_location_description">Ortbeschreibung</string>
+    <string name="new_location_headline_coordination">Koordinaten</string>
+    <string name="et_hint_location_latitude">Latitude</string>
+    <string name="et_hint_location_longitude">Longitude</string>
+    <string name="btn_current_coordination">Aktuelle Koordinaten</string>
+    <string name="new_location_headline_image">Bild</string>
+    <string name="listview_image">Miniaturbild im ListView</string>
+    <string name="intent_extras_image_url">image_url</string>
+    <string name="xml_file_name">/orte.xml</string>
+    <string name="xml_directory_name">/GeoPfad</string>
+    <string name="alert_gps_no_signal">Kein GPS Signal!</string>
+    <string name="alert_gps_turn_on">Bitte schalten Sie GPS ein!</string>    
 </resources>

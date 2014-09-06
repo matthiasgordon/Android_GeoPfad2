@@ -693,7 +693,10 @@ containing a value of this type.
          */
         public static final int activity_location=0x7f070020;
         public static final int add_location=0x7f070024;
+        public static final int alert_gps_no_signal=0x7f07003d;
+        public static final int alert_gps_turn_on=0x7f07003e;
         public static final int app_name=0x7f07001a;
+        public static final int btn_current_coordination=0x7f070037;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -783,7 +786,24 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f070018;
+        public static final int different_to_location=0x7f07002e;
         public static final int empty_listview=0x7f070025;
+        public static final int et_hint_location_description=0x7f070033;
+        public static final int et_hint_location_latitude=0x7f070035;
+        public static final int et_hint_location_longitude=0x7f070036;
+        public static final int et_hint_location_name=0x7f070032;
+        public static final int extimageview=0x7f07002d;
+        public static final int filechooser_startdirectory=0x7f070029;
+        public static final int gps_hint_turn_on=0x7f07002f;
+        public static final int imageview1=0x7f07002a;
+        public static final int imageview2=0x7f07002b;
+        public static final int imageview3=0x7f07002c;
+        public static final int intent_extras_image_url=0x7f07003a;
+        public static final int listview_image=0x7f070039;
+        public static final int new_location_headline_coordination=0x7f070034;
+        public static final int new_location_headline_general=0x7f070031;
+        public static final int new_location_headline_image=0x7f070038;
+        public static final int new_location_title=0x7f070030;
         public static final int no_internet=0x7f070023;
         public static final int notvisited=0x7f070028;
         public static final int search_actionbar=0x7f070026;
@@ -794,6 +814,8 @@ containing a value of this type.
          */
         public static final int wallet_buy_button_place_holder=0x7f070019;
         public static final int which_places=0x7f070021;
+        public static final int xml_directory_name=0x7f07003c;
+        public static final int xml_file_name=0x7f07003b;
     }
     public static final class style {
         public static final int ActionBarTabStyle=0x7f05000a;

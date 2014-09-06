@@ -55,19 +55,19 @@ public class ActivityAddLocationApplicationLogic {
 				mEtAddLocLng.setText(String.valueOf(mLiveLocation.getLongitude()));
 			}
 			else if(enabled) {
-				String mGPSFehler = "Kein GPS Signal!";
+				String mGPSFehler = String.valueOf(R.string.alert_gps_no_signal);
 				Toast.makeText(mAddLoc, mGPSFehler,
 				        Toast.LENGTH_SHORT).show();
 			}
 			else {
-				String mGPSFehler = "Bitte schalten Sie GPS ein!";
+				String mGPSFehler = String.valueOf(R.string.alert_gps_turn_on);
 				Toast.makeText(mAddLoc, mGPSFehler,
 				        Toast.LENGTH_SHORT).show();
 			}
 	}
 	
 	public void changeToFilechooser(){
-	Intent intent = new Intent(mAddLocData.getmAddLoc(), FileChooser.class);
+	Intent intent = new Intent(mAddLocData.getmAddLoc(), ActivityFileChooser.class);
 	mAddLoc.startActivityForResult(intent, ActivityAddLocationData.IMAGE_URL);
 	}
 	

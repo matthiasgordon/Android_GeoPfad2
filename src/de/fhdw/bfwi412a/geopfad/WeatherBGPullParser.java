@@ -19,7 +19,6 @@ public List<Weather> getWeatherData() {
 
 public void parseXMLAndStoreIt(XmlPullParser myParser) {
       int event;
-      String text=null;
       try {
          event = myParser.getEventType();
          while (event != XmlPullParser.END_DOCUMENT) {
@@ -28,7 +27,6 @@ public void parseXMLAndStoreIt(XmlPullParser myParser) {
                case XmlPullParser.START_TAG:
                break;
                case XmlPullParser.TEXT:
-               text = myParser.getText();
                break;
 
                case XmlPullParser.END_TAG:

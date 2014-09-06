@@ -70,7 +70,7 @@
         </activity>
         
         <activity
-            android:name=".FileChooser"
+            android:name=".ActivityFileChooser"
             android:parentActivityName="de.fhdw.bfwi412a.geopfad.ActivityAddLocation"  >
         </activity>
         

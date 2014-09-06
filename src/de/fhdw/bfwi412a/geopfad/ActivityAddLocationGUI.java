@@ -2,6 +2,7 @@ package de.fhdw.bfwi412a.geopfad;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ActivityAddLocationGUI {
@@ -16,6 +17,7 @@ public class ActivityAddLocationGUI {
 	EditText mEtLat;
 	EditText mEtLng;
 	TextView mImageUrl;
+	ImageView imgPreview;
 	
 	public ActivityAddLocationGUI(ActivityAddLocation addLoc, ActivityAddLocationData addLocData) {
 		mAddLoc = addLoc;
@@ -31,6 +33,7 @@ public class ActivityAddLocationGUI {
 		mEtLat = (EditText)mAddLoc.findViewById(R.id.etxtAddLocationLatitude);
 		mEtLng = (EditText)mAddLoc.findViewById(R.id.etxtAddLocationLongitude);
 		mImageUrl = (TextView)mAddLoc.findViewById(R.id.bildurl);
+		imgPreview = (ImageView)mAddLoc.findViewById(R.id.imgAddLocationPreview);
 	}
 
 	public ActivityAddLocation getmAddLoc() {
@@ -76,6 +79,9 @@ public class ActivityAddLocationGUI {
 	public TextView getmImageUrl() {
 		return mImageUrl;
 	}
-	
+
+	public ImageView getImgPreview() {
+		return imgPreview;
+	}
 	
 }

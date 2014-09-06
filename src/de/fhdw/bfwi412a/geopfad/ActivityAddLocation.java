@@ -1,7 +1,6 @@
 package de.fhdw.bfwi412a.geopfad;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -44,11 +43,11 @@ public class ActivityAddLocation extends Activity {
 		@Override
 		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		  if (resultCode == RESULT_OK && requestCode == ActivityAddLocationData.IMAGE_URL) {
-		    if (data.hasExtra("bildurl")) {
-		    	TextView url = (TextView) findViewById(R.id.bildurl);
-		    	url.setText(data.getExtras().getString("bildurl"));	
-		    	ImageView imgPreview = (ImageView) findViewById(R.id.imgAddLocationPreview);
-		    	imgPreview.setImageBitmap(ScalingUtilities.fitScaleExtern(data.getExtras().getString("bildurl"), this, "preview"));
+		    if (data.hasExtra(mAddLocData.getExtrasImageUrl())) {
+		    	TextView url = mAddLocGUI.getmImageUrl();
+		    	url.setText(data.getExtras().getString(mAddLocData.getExtrasImageUrl()));	
+		    	ImageView imgPreview = mAddLocGUI.getImgPreview();
+		    	imgPreview.setImageBitmap(ScalingUtilities.fitScaleExtern(data.getExtras().getString(mAddLocData.getExtrasImageUrl()), this, "preview"));
 		    }
 		  }
 		} 
