@@ -90,7 +90,10 @@
 					android:textSize="15sp" />
 			</TableRow>
 	
-				<RelativeLayout android:layout_width="match_parent" android:layout_height="fill_parent" >
+				<RelativeLayout
+				    android:layout_width="match_parent"
+				    android:layout_height="fill_parent"
+				    android:paddingBottom="20dp" >
 			
 			<TableRow
 					android:id="@+id/TableRow2"
