@@ -15,10 +15,10 @@ import android.widget.SearchView;
 
 public class ListFragment extends Fragment {
 	
-	ListFragmentData mData;
-	ListFragmentGUI mGUI;
-	ListFragmentApplicationLogic mAppLogic;
-	ListFragmentEventToListenerMapping mEventToListenerMapping;
+	private ListFragmentData mData;
+	private ListFragmentGUI mGUI;
+	private ListFragmentApplicationLogic mAppLogic;
+	private ListFragmentEventToListenerMapping mEventToListenerMapping;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View mView = inflater.inflate(R.layout.list_fragment, container, false);

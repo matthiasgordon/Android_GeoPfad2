@@ -42,13 +42,11 @@ import android.util.DisplayMetrics;
 
 /**
  * Class containing static utility methods for bitmap decoding and scaling
- *
- * @author Andreas Agvard (andreas.agvard@sonyericsson.com)
  */
 public class ScalingUtilities {
 
     /**
-     * Utility function for decoding an image resource. The decoded bitmap will
+     * Utility function for decoding an internal and external image resource. The decoded bitmap will
      * be optimized for further scaling to the requested destination dimensions
      * and scaling logic.
      *
@@ -59,6 +57,8 @@ public class ScalingUtilities {
      * @param scalingLogic Logic to use to avoid image stretching
      * @return Decoded bitmap
      */
+	
+	/**method implemented by Marcel Böttcher*/
 	 public static Bitmap fitScaleExtern(String mOrtImage, Context context, String destination) {
 		 	
 	        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
@@ -94,6 +94,7 @@ public class ScalingUtilities {
 
 	    }
 	 
+	 /** Class overridden by: Marcel Böttcher*/
 	 public static Bitmap fitScale(Resources res, int resId, Context context, String destination) {	
 		 
 		    DisplayMetrics metrics = context.getResources().getDisplayMetrics();
@@ -115,9 +116,6 @@ public class ScalingUtilities {
 		 	if(destination.equals(context.getResources().getString(R.string.scale_destination_activity_start_image_snail))){
 		 		mDstWidth = mTotalwidth - 200;
 		        mDstHeight = mTotalheight - 200;
-		        /**	mDstWidth = mTotalwidth - context.getResources().getDimensionPixelSize(R.dimen.start_padding);
-		        mDstHeight = mDstWidth - context.getResources().getDimensionPixelSize(R.dimen.start_padding);
-		        */
 		 	}
 		    /** Part 1: Decode image */
 		    Bitmap unscaledBitmap = ScalingUtilities.decodeResource(res, resId,mDstWidth, mDstHeight, ScalingLogic.FIT);
@@ -129,7 +127,7 @@ public class ScalingUtilities {
 		    return scaledBitmap;
 
  }
-	 	
+	 /** Class overridden by: Marcel Böttcher*/
     public static Bitmap decodeResource(Resources res, int resId, int dstWidth, int dstHeight,
             ScalingLogic scalingLogic) {
         Options options = new Options();
@@ -143,6 +141,7 @@ public class ScalingUtilities {
         return unscaledBitmap;
     }
 
+    /** Class implemented by: Marcel Böttcher*/
     public static Bitmap decodeExternResource(String res, int dstWidth, int dstHeight,
             ScalingLogic scalingLogic) {
         Options options = new Options();

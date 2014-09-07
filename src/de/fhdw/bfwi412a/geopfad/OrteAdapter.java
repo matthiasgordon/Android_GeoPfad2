@@ -16,16 +16,16 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 
 	// declaring
 	private Context context;
-	private List<Ort> orte = null;
-	private  int layoutResourceId;
+	private List<Ort> mOrte = null;
+	private  int mLayoutResourceId;
 	private DistanceCalculator mDistanceCalc;
 		
 		
 	public OrteAdapter(Context context, int layoutResourceId, List<Ort> orte) {
 		super(context, layoutResourceId, orte);
 		mDistanceCalc = new DistanceCalculator();
-		this.layoutResourceId = layoutResourceId;
-		this.orte = orte;
+		this.mLayoutResourceId = layoutResourceId;
+		this.mOrte = orte;
 		this.context = context;
 	}
 		
@@ -44,7 +44,7 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 			// to inflate it basically means to render, or show, the view.
 			if (row == null) {
 				LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-				row = inflater.inflate(layoutResourceId, parent, false);
+				row = inflater.inflate(mLayoutResourceId, parent, false);
 			
 			
 				holder = new OrtHolder();
@@ -60,7 +60,7 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 				
 			}
 			
-			Ort ort = orte.get(position);
+			Ort ort = mOrte.get(position);
 			holder.txtOrtName.setText(ort.getName());
 			holder.txtOrtID.setText(ort.getId());
 			

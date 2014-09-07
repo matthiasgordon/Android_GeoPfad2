@@ -1,93 +1,91 @@
 /** class implemented by Marcel Böttcher und Patrick Glawe */
 package de.fhdw.bfwi412a.geopfad;
 
-
-
 public class Ort {
-	private String id;
-	private String name;
-	private String imgUrl;
-	private String imgUrl2;
-	private String imgUrl3;
-	private String extImgUrl;
-	private String about;	
-	private double latitude;
-	private double longitude;
-	private String visitKey;
+	private String mId;
+	private String mName;
+	private String mImgUrl;
+	private String mImgUrl2;
+	private String mImgUrl3;
+	private String mExtImgUrl;
+	private String mAbout;	
+	private double mLatitude;
+	private double mLongitude;
+	private String mVisitKey;
 	
 	public Ort(){
 		
 	}
 	
 	public String getId() {
-		return id;
+		return mId;
 	}
 
 	public void setId(String id) {
-		this.id = id;
+		this.mId = id;
 	}
 
 	public Ort(String Errormessage){
-		name = Errormessage;
+		mName = Errormessage;
 	}
 	
 	public String getName() {
-		return name;
+		return mName;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.mName = name;
 	}
 	public String getImgUrl() {
-		return imgUrl;
+		return mImgUrl;
 	}
 	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
+		this.mImgUrl = imgUrl;
 	}
 	public String getImgUrl2() {
-		return imgUrl2;
+		return mImgUrl2;
 	}
 
 	public void setImgUrl2(String imgUrl2) {
-		this.imgUrl2 = imgUrl2;
+		this.mImgUrl2 = imgUrl2;
 	}
 
 	public String getImgUrl3() {
-		return imgUrl3;
+		return mImgUrl3;
 	}
 
 	public void setImgUrl3(String imgUrl3) {
-		this.imgUrl3 = imgUrl3;
+		this.mImgUrl3 = imgUrl3;
 	}
 	public String getAbout() {
-		return about;
+		return mAbout;
 	}
 	public String getExtImgUrl() {
-		return extImgUrl;
+		return mExtImgUrl;
 	}
 
 	public void setExtImgUrl(String extImgUrl) {
-		this.extImgUrl = extImgUrl;
+		this.mExtImgUrl = extImgUrl;
 	}
 	public void setAbout(String about) {
-		this.about = about;
+		this.mAbout = about;
 	}
 	public double getLat() {
-		return latitude;
+		return mLatitude;
 	}
 	public void setLat(double latitude) {
-		this.latitude = latitude;
+		this.mLatitude = latitude;
 	}
 	public double getLng() {
-		return longitude;
+		return mLongitude;
 	}
 	public void setLng(double longitude) {
-		this.longitude = longitude;
+		this.mLongitude = longitude;
 	}
 	public String getVisitKey() {
-		return visitKey;
+		return mVisitKey;
 	}
 	public void setVisitKey(String visitKey) {
-		this.visitKey = visitKey;
+		this.mVisitKey = visitKey;
 	}
 	
 

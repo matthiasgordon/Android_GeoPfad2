@@ -13,7 +13,7 @@ public class ListFragmentGUI {
 	private OrteAdapter ortAdapter;
 	private TextView mError;
 	private int mListLength;
-	ListFragmentData mData;
+	private ListFragmentData mData;
 	
 	public ListFragmentGUI(View mView, ListFragmentData data) {
 		mData = data;

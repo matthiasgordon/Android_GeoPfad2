@@ -12,10 +12,10 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class ListFragmentEventToListenerMapping implements OnItemClickListener, SearchView.OnQueryTextListener {
 	
-	ListFragment mFrag;
-	ListFragmentData mData;
-	ListFragmentGUI mGUI;
-	ListFragmentApplicationLogic mAppLogic;
+	private ListFragment mFrag;
+	private ListFragmentData mData;
+	private ListFragmentGUI mGUI;
+	private ListFragmentApplicationLogic mAppLogic;
 	
 	public ListFragmentEventToListenerMapping(ListFragment frag, ListFragmentData data, ListFragmentGUI gui, ListFragmentApplicationLogic applogic) {
 		mFrag = frag;

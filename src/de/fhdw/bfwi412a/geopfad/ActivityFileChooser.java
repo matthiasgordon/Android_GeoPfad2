@@ -76,6 +76,7 @@ public class ActivityFileChooser extends ListActivity {
 	    	finish();
 	    }
 		
+	    /** implemented by Marcel Böttcher*/
 		@Override
 		public void finish() {
 		  /** Prepare data intent */
@@ -93,6 +94,7 @@ public class ActivityFileChooser extends ListActivity {
 		  super.finish();
 		}
 		
+		/** implemented by Marcel Böttcher*/
 		@Override
 	    public boolean onOptionsItemSelected(MenuItem item) {
 	        switch (item.getItemId()) {

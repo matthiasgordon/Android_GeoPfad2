@@ -22,6 +22,11 @@ public class ActivityLocations extends Activity {
 		initEventToListenerMapping();
 	}
 	
+	/** 
+	 * implemented by Marcel Böttcher
+	 * when this activity is going to close 
+	 * the Bitmap Sources of the ImageViews
+	 * will be delete*/
 	@Override
 	public void onDestroy() {
 		mGUI.mImageUrl.setImageBitmap(null);

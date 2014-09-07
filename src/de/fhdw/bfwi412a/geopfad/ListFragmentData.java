@@ -7,8 +7,8 @@ import android.support.v4.app.FragmentActivity;
 
 public class ListFragmentData {
 	
-	List<Ort> mOrte;
-	FragmentActivity mActivity;
+	private List<Ort> mOrte;
+	private FragmentActivity mActivity;
 	
 	public ListFragmentData(ListFragment mFrag) {
 		
