@@ -1,3 +1,4 @@
+/** class implemented by Patrick Glawe */
 package de.fhdw.bfwi412a.geopfad;
 
 
@@ -25,13 +26,13 @@ public class FileArrayAdapter extends ArrayAdapter<FileChooserOption>{
         items = objects;
     }
     
-    //Method to get item from a location in the List
+    /** Method to get item from a location in the List */ 
     public FileChooserOption getItem(int i)
      {
          return items.get(i);
      }
 
-    //Method create our custom view from the data in items and use add_location.xml to be the view
+    /** Method create our custom view from the data in items and use add_location.xml to be the view */ 
     @Override
        public View getView(int position, View convertView, ViewGroup parent) {
                View v = convertView;

@@ -1,10 +1,10 @@
-/** implemented by Patrick Glawe*/
+/** class implemented by Patrick Glawe*/
 package de.fhdw.bfwi412a.geopfad;
 
 
 import android.annotation.SuppressLint;
 
-// hold our data were going to get from listing all the file and directories
+/** hold our data were going to get from listing all the file and directories */ 
 public class FileChooserOption implements Comparable<FileChooserOption>{
     private String name;
     private String data;

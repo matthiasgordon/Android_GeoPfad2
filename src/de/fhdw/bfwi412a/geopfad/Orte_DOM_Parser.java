@@ -60,7 +60,7 @@ public class Orte_DOM_Parser {
 		        try{
 					db = dbf.newDocumentBuilder();
 		
-					//parse rss feed
+					/** parse rss feed */
 			        Document doc;
 				    doc = db.parse(inputStream);
 				    doc.normalize();
@@ -71,20 +71,20 @@ public class Orte_DOM_Parser {
 				     {
 				        	
 				    	
-				    	//get all elements named "entry"
+				    	/** get all elements named "entry" */
 				        NodeList nl = doc.getElementsByTagName(context.getResources().getString(R.string.tag_ort));
 				        
-				        //check if NodeList has child elements
+				        /** check if NodeList has child elements */
 				        if (nl != null && nl.getLength() > 0) {
 				        	
-				        	//if true, loop through all elements
+				        	/** if true, loop through all elements */
 				        	for (int i = 0 ; i < nl.getLength(); i++) {
 				        		
 				        		curOrt = new Ort();
-				        		//get each entry
+				        		/** get each entry */
 				        		Element entry = (Element) nl.item(i);
 				        		
-				        		//read the title of each entry
+				        		/** read the title of each entry */
 				        		Element id = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_id)).item(0);
 				        		Element title = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_name)).item(0);
 				        		Element image = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_image)).item(0);
@@ -96,7 +96,7 @@ public class Orte_DOM_Parser {
 				        		Element longitude = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_location_longitude)).item(0);
 				        		Element visitKey = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_visitkey)).item(0);
 				        		
-				        		//add both new TextView and LinearLayout
+				        		/** add both new TextView and LinearLayout */
 					        	curOrt.setId(id.getFirstChild().getNodeValue());
 					        	curOrt.setName(title.getFirstChild().getNodeValue());	//layout.addView(tv_title);
 					        	

@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class OrteAdapter extends ArrayAdapter<Ort> {
 
-	// declaring
+	/** declaring */
 	private Context context;
 	private List<Ort> mOrte = null;
 	private  int mLayoutResourceId;
@@ -29,19 +29,20 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 		this.context = context;
 	}
 		
-		/*
+		/**
 		 * we are overriding the getView method here - this is what defines how each
 		 * list item will look.
 		 */
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent){
 
-			// assign the view we are converting to a local variable
+			/** assign the view we are converting to a local variable */
 			View row = convertView;
 			OrtHolder holder;
 			
-			// first check to see if the view is null. if so, we have to inflate it.
-			// to inflate it basically means to render, or show, the view.
+			/** first check to see if the view is null. if so, we have to inflate it.
+			 * to inflate it basically means to render, or show, the view
+			 */
 			if (row == null) {
 				LayoutInflater inflater = ((Activity)context).getLayoutInflater();
 				row = inflater.inflate(mLayoutResourceId, parent, false);
