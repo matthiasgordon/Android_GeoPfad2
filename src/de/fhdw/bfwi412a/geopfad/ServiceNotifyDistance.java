@@ -29,20 +29,17 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 	public static final String PREFS_NAME = "MYPrefernceFile";
 	private SharedPreferences mVisitStatus;
 	
-	NotificationManager mManager;
-	PendingIntent mContentIntent;
-	LocationManager mLocationManager;
+	private NotificationManager mManager;
+	private LocationManager mLocationManager;
 	private IntentBuilder mIntentBuilder;
 	private String mProvider;
-	Criteria mCriteria;
-	Intent mIntent;
-	List<Ort> mOrte;
-	int mPosition;
-	Context mContext;
-	DistanceCalculator mDistCalc;
+	private Criteria mCriteria;
+	private List<Ort> mOrte;
+	private Context mContext;
+	private DistanceCalculator mDistCalc;
 
 	@Override
-		public IBinder onBind(Intent intent) {
+	public IBinder onBind(Intent intent) {
 		return null;
 	}
 
@@ -96,9 +93,8 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 		for(int i=0;i<mOrte.size();i++) {
 			distance = mDistCalc.getDistance(mOrte.get(i).getLat(), mOrte.get(i).getLng(), mContext);
 			if(distance <= 50 && distance != -1) {
-				mPosition = i;
 				String distanceText = String.valueOf(Math.rint(distance*100)/100);
-				Notification notification = buildNotification(mOrte.get(i).getName(), mPosition, distanceText);
+				Notification notification = buildNotification(mOrte.get(i).getName(), i, distanceText);
 				mManager.notify(i, notification);
 				mVisitStatus = getSharedPreferences(PREFS_NAME, 0);
 				SharedPreferences.Editor editor = mVisitStatus.edit();
@@ -116,7 +112,7 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 	 * @return notification the completed notification which can be passed
 	 */
 	public Notification buildNotification(String locationName, int position, String distanceText) {
-		mContentIntent = PendingIntent.getActivity(this, 0, mIntentBuilder.buildIntentForActivityLocations
+		PendingIntent mContentIntent = PendingIntent.getActivity(this, 0, mIntentBuilder.buildIntentForActivityLocations
 				(mContext, mOrte, position), PendingIntent.FLAG_CANCEL_CURRENT);
 		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
 		mBuilder.setAutoCancel(true);
