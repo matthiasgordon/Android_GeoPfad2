@@ -18,9 +18,9 @@ public class ActivityAddLocationData {
 	public ActivityAddLocationData(ActivityAddLocation addLoc){
 		mAddLoc = addLoc;
 		extrasImageUrl = mAddLoc.getResources().getString(R.string.intent_extras_image_url);
-		xmlDirectoryName = String.valueOf(R.string.xml_directory_name);
+		xmlDirectoryName = mAddLoc.getResources().getString(R.string.xml_directory_name);
 		geopfadDirectory = new File(Environment.getExternalStorageDirectory().getPath() + xmlDirectoryName);
-		xmlFileName = String.valueOf(R.string.xml_file_name);
+		xmlFileName = mAddLoc.getResources().getString(R.string.xml_file_name);
 		orteXml = new File(geopfadDirectory + xmlFileName);
 		
 	}

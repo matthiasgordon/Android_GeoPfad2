@@ -11,14 +11,16 @@ public class AdapterAsyncTask extends AsyncTask<String, Void, Bitmap>{
 	private Ort mOrt;
 	private Context context;
 	private OrtHolder mOrtHolder;
-	private final String mKeyList = context.getResources().getString(R.string.scale_internal_image);
-	private final String mKeyLocation = context.getResources().getString(R.string.scale_external_image);
+	private String mKeyList;
+	private String mKeyLocation;
 	
 	
 	public AdapterAsyncTask(Context context,OrtHolder holder, Ort ort) {
 	    this.mOrtHolder= holder;
 	    this.context= context;
 	    this.mOrt = ort;
+	    mKeyList = context.getResources().getString(R.string.scale_internal_image);
+	    mKeyLocation = context.getResources().getString(R.string.scale_external_image);
 	}
 	
 	@Override
@@ -28,11 +30,16 @@ public class AdapterAsyncTask extends AsyncTask<String, Void, Bitmap>{
 		
 		if(params[0].equalsIgnoreCase(mKeyList)) {
 			
-			mOrtBitmap = ScalingUtilities.fitScale(context.getResources(),context.getResources().getIdentifier("thumb_"+mOrt.getImgUrl(), "drawable", context.getPackageName()), context, "list");	
+			mOrtBitmap = ScalingUtilities.fitScale(context.getResources(),context.getResources()
+					.getIdentifier("thumb_"+mOrt.getImgUrl(), "drawable",context.getPackageName()), 
+					context, 
+					context.getResources().getString(R.string.scale_destination_fragment_list));	
 		}
 		else if(params[0].equalsIgnoreCase(mKeyLocation)){
 			
-			mOrtBitmap = ScalingUtilities.fitScaleExtern(mOrt.getExtImgUrl(), context, "list");
+			mOrtBitmap = ScalingUtilities.fitScaleExtern(mOrt.getExtImgUrl(), 
+					context, 
+					context.getResources().getString(R.string.scale_destination_fragment_list));
 		}
 		
 		return mOrtBitmap;

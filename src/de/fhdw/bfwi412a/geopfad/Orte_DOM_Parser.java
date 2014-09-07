@@ -30,9 +30,9 @@ public class Orte_DOM_Parser {
     	List<Ort> listOrte;
 		listOrte = new ArrayList<Ort>();
 		Ort curOrt = null;
-		final String XML_DIRECTORY_NAME = String.valueOf(R.string.xml_directory_name);
+		final String XML_DIRECTORY_NAME = context.getResources().getString(R.string.xml_directory_name);
 		final File GEOPFAD_DIRECTORY = new File(Environment.getExternalStorageDirectory().getPath() + XML_DIRECTORY_NAME);
-		final String XML_FILE_NAME = String.valueOf(R.string.xml_file_name);
+		final String XML_FILE_NAME = context.getResources().getString(R.string.xml_file_name);
 		final File ORTE_XML = new File(GEOPFAD_DIRECTORY + XML_FILE_NAME);
     	 
 		ArrayList<InputStream> arrayInputStream = new ArrayList<InputStream>();
