@@ -15,10 +15,10 @@ public class ActivityLocationsApplicationLogic {
 	private ActivityLocationsData mData;
 	private ActivityLocationsGUI mGUI;
 	private DistanceCalculator mDistCalc;
-	ActivityLocations mActivity;
+	private ActivityLocations mActivity;
 	private LocationManager mLocationManager;
 	private String mProvider;
-	Criteria mCriteria;
+	private Criteria mCriteria;
 	
 
 	public ActivityLocationsApplicationLogic(ActivityLocations act, ActivityLocationsData data, ActivityLocationsGUI gui) {
@@ -63,19 +63,19 @@ public class ActivityLocationsApplicationLogic {
 		String notvisited = mActivity.getResources().getString(R.string.notvisited);
 		
 		if(visitStatus.getString(mData.getVisitKey(), notvisited).equals(notvisited)){
-			editor.putString(mData.mVisitKey, visited);
+			editor.putString(mData.getVisitKey(), visited);
 			editor.commit();
 		}
 		else{
-			editor.putString(mData.mVisitKey, notvisited);
+			editor.putString(mData.getVisitKey(), notvisited);
 			editor.commit();
 		}
-		mGUI.getVisitStatus().setText(visitStatus.getString(mData.mVisitKey, "Nicht besucht."));
-		if(visitStatus.getString(mData.mVisitKey, notvisited).equals(notvisited)){
-			mGUI.mBtnVisit.setChecked(false);
+		mGUI.getVisitStatus().setText(visitStatus.getString(mData.getVisitKey(), "Nicht besucht."));
+		if(visitStatus.getString(mData.getVisitKey(), notvisited).equals(notvisited)){
+			mGUI.getBtnVisit().setChecked(false);
 		}
 		else{
-			mGUI.mBtnVisit.setChecked(true);
+			mGUI.getBtnVisit().setChecked(true);
 		}
 	}
 	

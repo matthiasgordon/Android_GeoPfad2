@@ -1,17 +1,15 @@
 package de.fhdw.bfwi412a.geopfad;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 
 /** Class implemented by: Johanna Korten*/
 
 public class ActivityLocations extends Activity {
 
-	Context context = ActivityLocations.this;
-	ActivityLocationsData mData;
-	ActivityLocationsGUI mGUI;
-	ActivityLocationsApplicationLogic mAppLogic;
+	private ActivityLocationsData mData;
+	private ActivityLocationsGUI mGUI;
+	private ActivityLocationsApplicationLogic mAppLogic;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +27,10 @@ public class ActivityLocations extends Activity {
 	 * will be delete*/
 	@Override
 	public void onDestroy() {
-		mGUI.mImageUrl.setImageBitmap(null);
-		mGUI.mImageUrl2.setImageBitmap(null);
-		mGUI.mImageUrl3.setImageBitmap(null);
-		mGUI.mExtImageUrl.setImageBitmap(null);
+		mGUI.getImageUrl().setImageBitmap(null);
+		mGUI.getImageUrl2().setImageBitmap(null);
+		mGUI.getImageUrl3().setImageBitmap(null);
+		mGUI.getExtImageUrl().setImageBitmap(null);
 		super.onDestroy();
 	}
 	
@@ -45,7 +43,7 @@ public class ActivityLocations extends Activity {
 		mGUI = new ActivityLocationsGUI(this, mData);
 		this.getActionBar().setTitle(mData.getTitle());
 		mGUI.getVisitStatus().setText(mData.getVisitStatus().getString
-				(mData.mVisitKey, this.getResources().getString(R.string.notvisited)));
+				(mData.getVisitKey(), this.getResources().getString(R.string.notvisited)));
 		if(mGUI.getVisitStatus().getText().toString().equals(this.getResources().getString(R.string.notvisited))){
 			mGUI.getBtnVisit().setChecked(false);
 		}

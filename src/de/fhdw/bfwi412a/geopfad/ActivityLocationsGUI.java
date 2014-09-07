@@ -1,6 +1,5 @@
 package de.fhdw.bfwi412a.geopfad;
 
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.widget.Button;
@@ -10,20 +9,18 @@ import android.widget.TextView;
 
 public class ActivityLocationsGUI {
 	
-	ActivityLocationsApplicationLogic mAppLogic;
-	ActivityLocations mActLoc;
-	ActivityLocationsData mData;
-	SharedPreferences VisitStatus;
-	TextView mAbout;
-	ImageView mImageUrl;
-	ImageView mImageUrl2;
-	ImageView mImageUrl3;
-	ImageView mExtImageUrl;
-	TextView mVisitStatus;
-	TextView mDistance;
-	CheckBox mBtnVisit;
-	Button mBtnNavigation;
-	Button mBtnShowOnMap;
+	private ActivityLocations mActLoc;
+	private ActivityLocationsData mData;
+	private TextView mAbout;
+	private ImageView mImageUrl;
+	private ImageView mImageUrl2;
+	private ImageView mImageUrl3;
+	private ImageView mExtImageUrl;
+	private TextView mVisitStatus;
+	private TextView mDistance;
+	private CheckBox mBtnVisit;
+	private Button mBtnNavigation;
+	private Button mBtnShowOnMap;
 
 	public ActivityLocationsGUI(ActivityLocations actloc, ActivityLocationsData data) {
 		mActLoc = actloc;
@@ -55,7 +52,7 @@ public class ActivityLocationsGUI {
 		return mImageUrl3;
 	}
 	
-	public ImageView getmExtImageUrl() {
+	public ImageView getExtImageUrl() {
 		return mExtImageUrl;
 	}
 	

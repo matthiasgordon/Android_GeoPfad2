@@ -8,10 +8,10 @@ import android.location.LocationManager;
 
 public class DistanceCalculator implements GpsStatus.Listener{
 	
-	LocationManager mLocationManager;
+	private LocationManager mLocationManager;
 	private String mProvider;
-	Criteria criteria;
-	int mStatus;
+	private Criteria criteria;
+	private int mStatus;
 	
 	public DistanceCalculator() {
 		criteria = new Criteria();

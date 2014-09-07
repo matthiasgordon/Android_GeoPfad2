@@ -6,19 +6,19 @@ import android.os.Bundle;
 public class ActivityLocationsData {
 	public static final String PREFS_NAME = "MYPrefernceFile";
 	
-	ActivityLocations mActivity;
-	Bundle mOrtInfo;
-	String mTitle;
-	String mImageUrl;
-	String mImageUrl2;
-	String mImageUrl3;
-	String mExtImageUrl;
-	String mAbout;
-	double mLatitude;
-	double mLongitude;
-	double mLiveLatitude;
-	double mLiveLongitude;
-	final String mVisitKey;
+	private ActivityLocations mActivity;
+	private Bundle mOrtInfo;
+	private String mTitle;
+	private String mImageUrl;
+	private String mImageUrl2;
+	private String mImageUrl3;
+	private String mExtImageUrl;
+	private String mAbout;
+	private double mLatitude;
+	private double mLongitude;
+	private double mLiveLatitude;
+	private double mLiveLongitude;
+	private final String mVisitKey;
 	private SharedPreferences mVisitStatus;
 
 	
