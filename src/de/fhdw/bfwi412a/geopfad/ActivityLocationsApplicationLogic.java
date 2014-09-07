@@ -8,7 +8,7 @@ import android.location.LocationManager;
 import android.net.Uri;
 
 /** Class implemented by: Johanna Korten*
- * this class is responsible for logic of activity locations/
+ * this class is responsible for logic of activity locations.*/
 
 public class ActivityLocationsApplicationLogic {
 	

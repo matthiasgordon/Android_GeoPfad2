@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-/** Class implemented by: Johanna Korten*/
+/** Class implemented by: Johanna Korten
+ *implements interfaces
+ **/
 
 public class ActivityLocationsEventToListenerMapping implements OnClickListener, LocationListener {
 
