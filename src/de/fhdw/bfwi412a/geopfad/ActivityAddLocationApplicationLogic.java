@@ -69,7 +69,7 @@ public class ActivityAddLocationApplicationLogic {
 	
 	public void changeToFilechooser(){
 	Intent intent = new Intent(mAddLocData.getmAddLoc(), ActivityFileChooser.class);
-	mAddLoc.startActivityForResult(intent, ActivityAddLocationData.IMAGE_URL);
+	mAddLoc.startActivityForResult(intent, mAddLocData.getIMAGE_URL());
 	}
 	
 	public void setOrt(){

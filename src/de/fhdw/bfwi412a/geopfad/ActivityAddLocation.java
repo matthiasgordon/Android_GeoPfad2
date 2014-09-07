@@ -43,7 +43,7 @@ public class ActivityAddLocation extends Activity {
 		
 		@Override
 		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		  if (resultCode == RESULT_OK && requestCode == ActivityAddLocationData.IMAGE_URL) {
+		  if (resultCode == RESULT_OK && requestCode == mAddLocData.getIMAGE_URL()) {
 		    if (data.hasExtra(mAddLocData.getExtrasImageUrl())) {
 		    	TextView url = mAddLocGUI.getmImageUrl();
 		    	url.setText(data.getExtras().getString(mAddLocData.getExtrasImageUrl()));	

@@ -7,7 +7,7 @@ import android.os.Environment;
 
 public class ActivityAddLocationData {
 
-	static final int IMAGE_URL = 100;
+	private final int IMAGE_URL = 100;
 	private String xmlDirectoryName;
 	private File geopfadDirectory;
 	private String xmlFileName;
@@ -25,9 +25,11 @@ public class ActivityAddLocationData {
 		
 	}
 	
-	public static int getImageUrl() {
+
+	public int getIMAGE_URL() {
 		return IMAGE_URL;
 	}
+
 	public ActivityAddLocation getmAddLoc() {
 		return mAddLoc;
 	}
