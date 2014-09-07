@@ -121,7 +121,7 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
 		mBuilder.setAutoCancel(true);
 		mBuilder.setSmallIcon(R.drawable.ic_launcher);
-		mBuilder.setContentTitle( locationName + " ist in der NŠhe.");
+		mBuilder.setContentTitle( locationName + " ist in der Nähe.");
 		mBuilder.setContentText("Luftlinie zum Ort: " + distanceText + "m.");
 		mBuilder.setContentIntent(mContentIntent);
 		Notification notification = mBuilder.build();
