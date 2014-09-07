@@ -6,7 +6,7 @@ import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationManager;
 
-public class DistanceCalculator implements android.location.GpsStatus.Listener{
+public class DistanceCalculator implements GpsStatus.Listener{
 	
 	LocationManager mLocationManager;
 	private String mProvider;
