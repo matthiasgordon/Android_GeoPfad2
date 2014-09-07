@@ -8,16 +8,21 @@ import android.os.Environment;
 public class ActivityAddLocationData {
 
 	static final int IMAGE_URL = 100;
-	static final String XML_DIRECTORY_NAME = String.valueOf(R.string.xml_directory_name);
-	static final File GEOPFAD_DIRECTORY = new File(Environment.getExternalStorageDirectory().getPath() + XML_DIRECTORY_NAME);
-	static final String XML_FILE_NAME = String.valueOf(R.string.xml_file_name);
-	static final File ORTE_XML = new File(GEOPFAD_DIRECTORY + XML_FILE_NAME);
+	private String xmlDirectoryName;
+	private File geopfadDirectory;
+	private String xmlFileName;
+	private File orteXml;
 	private String extrasImageUrl;
 	private ActivityAddLocation mAddLoc;
 	
 	public ActivityAddLocationData(ActivityAddLocation addLoc){
 		mAddLoc = addLoc;
-		extrasImageUrl = String.valueOf(R.string.intent_extras_image_url);
+		extrasImageUrl = mAddLoc.getResources().getString(R.string.intent_extras_image_url);
+		xmlDirectoryName = String.valueOf(R.string.xml_directory_name);
+		geopfadDirectory = new File(Environment.getExternalStorageDirectory().getPath() + xmlDirectoryName);
+		xmlFileName = String.valueOf(R.string.xml_file_name);
+		orteXml = new File(geopfadDirectory + xmlFileName);
+		
 	}
 	
 	public static int getImageUrl() {
@@ -30,5 +35,20 @@ public class ActivityAddLocationData {
 	public String getExtrasImageUrl() {
 		return extrasImageUrl;
 	}
-	
+
+	public String getXmlDirectoryName() {
+		return xmlDirectoryName;
+	}
+
+	public File getGeopfadDirectory() {
+		return geopfadDirectory;
+	}
+
+	public String getXmlFileName() {
+		return xmlFileName;
+	}
+
+	public File getOrteXml() {
+		return orteXml;
+	}
 }

@@ -56,12 +56,12 @@ public class ActivityAddLocationApplicationLogic {
 				mEtAddLocLng.setText(String.valueOf(mLiveLocation.getLongitude()));
 			}
 			else if(enabled) {
-				String mGPSFehler = String.valueOf(R.string.alert_gps_no_signal);
+				String mGPSFehler = mAddLoc.getResources().getString(R.string.alert_gps_no_signal);
 				Toast.makeText(mAddLoc, mGPSFehler,
 				        Toast.LENGTH_SHORT).show();
 			}
 			else {
-				String mGPSFehler = String.valueOf(R.string.alert_gps_turn_on);
+				String mGPSFehler = mAddLoc.getResources().getString(R.string.alert_gps_turn_on);
 				Toast.makeText(mAddLoc, mGPSFehler,
 				        Toast.LENGTH_SHORT).show();
 			}
@@ -74,8 +74,8 @@ public class ActivityAddLocationApplicationLogic {
 	
 	public void setOrt(){
 		try {
-			final File GEOPFAD_DIRECTORY= ActivityAddLocationData.GEOPFAD_DIRECTORY;
-			final File ORTE_XML = ActivityAddLocationData.ORTE_XML;
+			final File GEOPFAD_DIRECTORY= mAddLocData.getGeopfadDirectory();
+			final File ORTE_XML = mAddLocData.getOrteXml();
 			String ortId = mAddLocGui.getmOrtId();
 			String ortName = mAddLocGui.getmEtOrtName().getText().toString();
 			String about = mAddLocGui.getmEtAbout().getText().toString();

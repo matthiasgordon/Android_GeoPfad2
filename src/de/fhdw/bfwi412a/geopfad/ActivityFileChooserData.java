@@ -13,7 +13,7 @@ public class ActivityFileChooserData {
 	
 	public ActivityFileChooserData(ActivityFileChooser fileChooser) {
 		mFileChooser = fileChooser;
-		mStartDirectory = String.valueOf(R.string.filechooser_startdirectory);
+		mStartDirectory = mFileChooser.getResources().getString(R.string.filechooser_startdirectory);
 		currentDir = new File(mStartDirectory);
 		
 	}

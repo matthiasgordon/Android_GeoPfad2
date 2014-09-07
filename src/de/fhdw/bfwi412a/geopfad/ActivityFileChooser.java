@@ -3,6 +3,7 @@ package de.fhdw.bfwi412a.geopfad;
 
 
 import java.io.File;
+
 import android.annotation.SuppressLint;
 import android.app.ListActivity;
 import android.content.Intent;
@@ -82,7 +83,7 @@ public class ActivityFileChooser extends ListActivity {
 			
 			if(url !=null){
 			  Intent data = new Intent();
-			  data.putExtra("bildurl", url);
+			  data.putExtra(getResources().getString(R.string.intent_extras_image_url), url);
 			  /** Activity finished ok, return the data */
 			  setResult(RESULT_OK, data);
 			}
