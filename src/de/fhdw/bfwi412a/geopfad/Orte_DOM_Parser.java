@@ -72,7 +72,7 @@ public class Orte_DOM_Parser {
 				        	
 				    	
 				    	//get all elements named "entry"
-				        NodeList nl = doc.getElementsByTagName("ort");
+				        NodeList nl = doc.getElementsByTagName(context.getResources().getString(R.string.tag_ort));
 				        
 				        //check if NodeList has child elements
 				        if (nl != null && nl.getLength() > 0) {
@@ -85,17 +85,16 @@ public class Orte_DOM_Parser {
 				        		Element entry = (Element) nl.item(i);
 				        		
 				        		//read the title of each entry
-				        		Element id = (Element) entry.getElementsByTagName("id").item(0);
-				        		Element title = (Element) entry.getElementsByTagName("name").item(0);
-				        		Element image = (Element) entry.getElementsByTagName("image").item(0);
-				        		Element image2 = (Element) entry.getElementsByTagName("image2").item(0);
-				        		Element image3 = (Element) entry.getElementsByTagName("image3").item(0);
-				        		Element extImage = (Element) entry.getElementsByTagName("extImageUrl").item(0);
-				        		Element about = (Element) entry.getElementsByTagName("about").item(0);
-				        		Element link = (Element) entry.getElementsByTagName("link").item(0);
-				        		Element latitude = (Element) entry.getElementsByTagName("latitude").item(0);
-				        		Element longitude = (Element) entry.getElementsByTagName("longitude").item(0);
-				        		Element visitKey = (Element) entry.getElementsByTagName("visitKey").item(0);
+				        		Element id = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_id)).item(0);
+				        		Element title = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_name)).item(0);
+				        		Element image = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_image)).item(0);
+				        		Element image2 = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_image2)).item(0);
+				        		Element image3 = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_image3)).item(0);
+				        		Element extImage = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_ext_image_url)).item(0);
+				        		Element about = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_about)).item(0);
+				        		Element latitude = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_location_latitude)).item(0);
+				        		Element longitude = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_location_longitude)).item(0);
+				        		Element visitKey = (Element) entry.getElementsByTagName(context.getResources().getString(R.string.tag_ort_visitkey)).item(0);
 				        		
 				        		//add both new TextView and LinearLayout
 					        	curOrt.setId(id.getFirstChild().getNodeValue());
@@ -120,9 +119,6 @@ public class Orte_DOM_Parser {
 						        	}
 						        	if(about != null){
 						        		curOrt.setAbout(about.getFirstChild().getNodeValue());
-						        	}
-						        	if(link != null){
-							        	curOrt.setLink(link.getFirstChild().getNodeValue());
 						        	}
 						        	if(latitude != null){
 							        	curOrt.setLat(Double.parseDouble(latitude.getFirstChild().getNodeValue()));
@@ -156,21 +152,4 @@ public class Orte_DOM_Parser {
         }
 	     return listOrte;
    }  
-    
-    
-//	public static InputStream getInputStreamFromURL(String urlString){
-//		InputStream in = null;    
-//        URL url = null;
-//		
-//        try {
-//			url = new URL(urlString);
-//			in = url.openStream();
-//		} catch (MalformedURLException e1) {
-//			e1.printStackTrace();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		return in;
-//	}
 }

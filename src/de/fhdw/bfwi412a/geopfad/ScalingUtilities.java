@@ -67,17 +67,17 @@ public class ScalingUtilities {
 		 	int mDstWidth = 0;
 		 	int mDstHeight = 0;
 		 	
-		 	if(destination.equals("list")){
+		 	if(destination.equals(context.getResources().getString(R.string.scale_destination_fragment_list))){
 		 		mDstWidth = context.getResources().getDimensionPixelSize(R.dimen.destination_list_width);
 		 		mDstHeight = context.getResources().getDimensionPixelSize(R.dimen.destination_list_height);
 		 	}
 		 	
-		 	if(destination.equals("location")){
+		 	if(destination.equals(context.getResources().getString(R.string.scale_destination_activity_location))){
 		 		mDstWidth = mTotalwidth;
 		        mDstHeight = mTotalheight;
 		 	}
 		 	
-		 	if(destination.equals("preview")){
+		 	if(destination.equals(context.getResources().getString(R.string.scale_destination_activity_addlocation_image_preview))){
 		 		mDstWidth = context.getResources().getDimensionPixelSize(R.dimen.destination_preview_width);
 		 		mDstHeight = context.getResources().getDimensionPixelSize(R.dimen.destination_preview_height);
 		 	}
@@ -102,17 +102,17 @@ public class ScalingUtilities {
 		 	int mDstWidth = 0;
 		 	int mDstHeight = 0;
 		 	
-		 	if(destination.equals("list")){
+		 	if(destination.equals(context.getResources().getString(R.string.scale_destination_fragment_list))){
 		 		mDstWidth = context.getResources().getDimensionPixelSize(R.dimen.destination_list_width);
 		 		mDstHeight = context.getResources().getDimensionPixelSize(R.dimen.destination_list_height);
 		 	}
 		 	
-		 	if(destination.equals("location")){
+		 	if(destination.equals(context.getResources().getString(R.string.scale_destination_activity_location))){
 		 		mDstWidth = mTotalwidth;
 		        mDstHeight = mTotalheight;
 		 	}
 		 	
-		 	if(destination.equals("schnecke")){
+		 	if(destination.equals(context.getResources().getString(R.string.scale_destination_activity_start_image_snail))){
 		 		mDstWidth = mTotalwidth - 200;
 		        mDstHeight = mTotalheight - 200;
 		        /**	mDstWidth = mTotalwidth - context.getResources().getDimensionPixelSize(R.dimen.start_padding);

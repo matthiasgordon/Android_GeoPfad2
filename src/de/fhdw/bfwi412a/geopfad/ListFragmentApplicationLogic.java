@@ -22,7 +22,7 @@ public class ListFragmentApplicationLogic {
 	}
 	
 	public void showDetailView(View view){
-		TextView txtOrtID = (TextView)view.findViewWithTag("ID");
+		TextView txtOrtID = (TextView)view.findViewWithTag(mFrag.getResources().getString(R.string.tag_listview_ort_id));
 		int mOrtID = Integer.parseInt(txtOrtID.getText().toString())-1;
 		
 		Intent intent = mIntentBuilder.buildIntentForActivityLocations(mData.getActivity(), mData.getOrte(), mOrtID);
@@ -31,7 +31,7 @@ public class ListFragmentApplicationLogic {
 	
 	public void addLocation() {
 		Intent intent = new Intent(mFrag.getActivity(), ActivityAddLocation.class);
-		intent.putExtra("listLength", String.valueOf(mGUI.getmListLength()+1));
+		intent.putExtra(mFrag.getResources().getString(R.string.intent_extras_list_length), String.valueOf(mGUI.getmListLength()+1));
 		mFrag.startActivityForResult(intent, ADD_LOCATION);
 	}
 	

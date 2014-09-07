@@ -101,31 +101,31 @@ public class ActivityAddLocationApplicationLogic {
 			        
 			        System.out.println(document);
 			    	
-			    	Node node =  document.getElementsByTagName("orte").item(0);
+			    	Node node =  document.getElementsByTagName(mAddLoc.getResources().getString(R.string.root_tag_ort)).item(0);
 			    	
-			    	Element newOrt = document.createElement("ort");
+			    	Element newOrt = document.createElement(mAddLoc.getResources().getString(R.string.tag_ort));
 			    	
-			    	Element newOrtId = document.createElement("id");
+			    	Element newOrtId = document.createElement(mAddLoc.getResources().getString(R.string.tag_ort_id));
 			    	newOrtId.appendChild(document.createTextNode(ortId));
 			    	newOrt.appendChild(newOrtId);
 			    	
-			    	Element newOrtName = document.createElement("name");
+			    	Element newOrtName = document.createElement(mAddLoc.getResources().getString(R.string.tag_ort_name));
 			    	newOrtName.appendChild(document.createTextNode(ortName));
 			    	newOrt.appendChild(newOrtName);
 			    	
-			    	Element newAbout = document.createElement("about");
+			    	Element newAbout = document.createElement(mAddLoc.getResources().getString(R.string.tag_ort_about));
 			    	newAbout.appendChild(document.createTextNode(about));
 			    	newOrt.appendChild(newAbout);
 			    	
-			    	Element newLat = document.createElement("latitude");
+			    	Element newLat = document.createElement(mAddLoc.getResources().getString(R.string.tag_ort_location_latitude));
 			    	newLat.appendChild(document.createTextNode(ortLat));
 			    	newOrt.appendChild(newLat);
 			    	
-			    	Element newLng = document.createElement("longitude");
+			    	Element newLng = document.createElement(mAddLoc.getResources().getString(R.string.tag_ort_location_longitude));
 			    	newLng.appendChild(document.createTextNode(ortLng));
 			    	newOrt.appendChild(newLng);
 			    	
-			    	Element newExtImageUrl = document.createElement("extImageUrl");
+			    	Element newExtImageUrl = document.createElement(mAddLoc.getResources().getString(R.string.tag_ort_ext_image_url));
 			    	newExtImageUrl.appendChild(document.createTextNode(extImageUrl));
 			    	newOrt.appendChild(newExtImageUrl);
 			    	
@@ -138,7 +138,7 @@ public class ActivityAddLocationApplicationLogic {
 			    	StreamResult result = new StreamResult(ORTE_XML);
 			    	transformer.transform(source, result);
 			    	
-			    	String message = "Ort wurde hinzugefügt!";
+			    	String message = mAddLoc.getResources().getString(R.string.hint_new_ort_added);
 					Toast.makeText(mAddLoc, message,
 					        Toast.LENGTH_LONG).show();
 					mAddLoc.finish();
@@ -151,42 +151,42 @@ public class ActivityAddLocationApplicationLogic {
 					    StringWriter writer = new StringWriter();
 					    xmlSerializer.setOutput(writer);
 					    xmlSerializer.startDocument("UTF-8", true);
-					    xmlSerializer.startTag(null, "orte");
-					    xmlSerializer.startTag(null, "ort");
-					    xmlSerializer.startTag(null, "id");
+					    xmlSerializer.startTag(null, mAddLoc.getResources().getString(R.string.root_tag_ort));
+					    xmlSerializer.startTag(null, mAddLoc.getResources().getString(R.string.tag_ort));
+					    xmlSerializer.startTag(null, mAddLoc.getResources().getString(R.string.tag_ort_id));
 					    xmlSerializer.text(ortId);
-					    xmlSerializer.endTag(null, "id");
-					    xmlSerializer.startTag(null, "name");
+					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort_id));
+					    xmlSerializer.startTag(null, mAddLoc.getResources().getString(R.string.tag_ort_name));
 					    xmlSerializer.text(ortName);
-					    xmlSerializer.endTag(null, "name");
-					    xmlSerializer.startTag(null, "extImageUrl");
+					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort_name));
+					    xmlSerializer.startTag(null, mAddLoc.getResources().getString(R.string.tag_ort_ext_image_url));
 					    xmlSerializer.text(extImageUrl);
-					    xmlSerializer.endTag(null, "extImageUrl");
-					    xmlSerializer.startTag(null,"about");
+					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort_ext_image_url));
+					    xmlSerializer.startTag(null, mAddLoc.getResources().getString(R.string.tag_ort_about));
 					    xmlSerializer.text(about);
-					    xmlSerializer.endTag(null, "about"); 
-					    xmlSerializer.startTag(null,"latitude");
+					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort_about)); 
+					    xmlSerializer.startTag(null,mAddLoc.getResources().getString(R.string.tag_ort_location_latitude));
 					    xmlSerializer.text(ortLat);
-					    xmlSerializer.endTag(null, "latitude");
-					    xmlSerializer.startTag(null,"longitude");
+					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort_location_latitude));
+					    xmlSerializer.startTag(null,mAddLoc.getResources().getString(R.string.tag_ort_location_longitude));
 					    xmlSerializer.text(ortLng);
-					    xmlSerializer.endTag(null, "longitude");
-					    xmlSerializer.endTag(null, "ort");
-					    xmlSerializer.endTag(null, "orte");
+					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort_location_longitude));
+					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort));
+					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.root_tag_ort));
 					    xmlSerializer.endDocument();
 					    xmlSerializer.flush();
 					    String dataWrite = writer.toString();
 					    fileos.write(dataWrite.getBytes());
 					    fileos.close();
 					    
-					    String message = "Ort wurde hinzugefügt!";
+					    String message = mAddLoc.getResources().getString(R.string.hint_new_ort_added);
 						Toast.makeText(mAddLoc, message,
 						        Toast.LENGTH_LONG).show();
 				    	mAddLoc.finish();
 			    }
 			}
 			else {
-				String bildFehler = "Bitte füllen Sie alle Felder aus!";
+				String bildFehler = mAddLoc.getResources().getString(R.string.alert_fill_all_fields);
 				Toast.makeText(mAddLoc, bildFehler,
 				        Toast.LENGTH_LONG).show();
 			}

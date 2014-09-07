@@ -48,7 +48,9 @@ public class ActivityAddLocation extends Activity {
 		    	TextView url = mAddLocGUI.getmImageUrl();
 		    	url.setText(data.getExtras().getString(mAddLocData.getExtrasImageUrl()));	
 		    	ImageView imgPreview = mAddLocGUI.getImgPreview();
-		    	imgPreview.setImageBitmap(ScalingUtilities.fitScaleExtern(data.getExtras().getString(mAddLocData.getExtrasImageUrl()), this, "preview"));
+		    	imgPreview.setImageBitmap(ScalingUtilities.fitScaleExtern(data.getExtras()
+		    			.getString(mAddLocData.getExtrasImageUrl()), this, getResources()
+		    			.getString(R.string.scale_destination_activity_addlocation_image_preview)));
 		    }
 		  }
 		} 

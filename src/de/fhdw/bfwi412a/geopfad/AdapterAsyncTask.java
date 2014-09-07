@@ -11,8 +11,8 @@ public class AdapterAsyncTask extends AsyncTask<String, Void, Bitmap>{
 	private Ort mOrt;
 	private Context context;
 	private OrtHolder mOrtHolder;
-	private final String mKeyList = "intern";
-	private final String mKeyLocation = "extern";
+	private final String mKeyList = context.getResources().getString(R.string.scale_internal_image);
+	private final String mKeyLocation = context.getResources().getString(R.string.scale_external_image);
 	
 	
 	public AdapterAsyncTask(Context context,OrtHolder holder, Ort ort) {

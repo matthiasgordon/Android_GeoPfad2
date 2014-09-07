@@ -83,22 +83,26 @@ public class ActivityLocationsGUI {
 		Bitmap picture = null;
 		if(mData.getImageUrl() != null){
 			picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
-					.getIdentifier(mData.getImageUrl(), "drawable", mActLoc.getPackageName()), mActLoc, "location");
+					.getIdentifier(mData.getImageUrl(), "drawable", mActLoc.getPackageName()), mActLoc, 
+					mActLoc.getResources().getString(R.string.scale_destination_activity_location));
 			mImageUrl.setImageBitmap(picture);
 		}
 		if(mData.getImageUrl2() != null){
 			picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
-					.getIdentifier(mData.getImageUrl2(), "drawable", mActLoc.getPackageName()), mActLoc, "location");
+					.getIdentifier(mData.getImageUrl2(), "drawable", mActLoc.getPackageName()), mActLoc, 
+					mActLoc.getResources().getString(R.string.scale_destination_activity_location));
 			mImageUrl2.setImageBitmap(picture);
 		}
 		if(mData.getImageUrl3() != null){
 			picture = ScalingUtilities.fitScale(mActLoc.getResources(),mActLoc.getResources()
-					.getIdentifier(mData.getImageUrl3(), "drawable", mActLoc.getPackageName()), mActLoc, "location");
+					.getIdentifier(mData.getImageUrl3(), "drawable", mActLoc.getPackageName()), mActLoc, 
+					mActLoc.getResources().getString(R.string.scale_destination_activity_location));
 			mImageUrl3.setImageBitmap(picture);
 			
 		}
 		if(mData.getExtImageUrl() != null){	
-		picture = ScalingUtilities.fitScaleExtern(mData.getExtImageUrl(), mActLoc, "location");
+		picture = ScalingUtilities.fitScaleExtern(mData.getExtImageUrl(), mActLoc, 
+				mActLoc.getResources().getString(R.string.scale_destination_activity_location));
         Log.v("Path", mData.getExtImageUrl());
 		mExtImageUrl.setImageBitmap(picture);
 		}

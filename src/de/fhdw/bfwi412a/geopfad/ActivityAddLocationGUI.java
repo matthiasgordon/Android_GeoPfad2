@@ -28,7 +28,9 @@ public class ActivityAddLocationGUI {
 		mBtnbildurl = (Button)mAddLoc.findViewById(R.id.btnbildurl);
 		mBtnCoordination = (Button)mAddLoc.findViewById(R.id.btnAddLocationCoordination);
 		
-		mOrtId = mAddLoc.getIntent().getExtras().getString("listLength");
+		mOrtId = mAddLoc.getIntent().getExtras().
+				getString(mAddLoc.getResources().
+						getString(R.string.intent_extras_list_length));
 		mEtOrtName = (EditText)mAddLoc.findViewById(R.id.etxtAddLocationName);
 		mEtAbout = (EditText)mAddLoc.findViewById(R.id.etxtAddLocationAbout);
 		mEtLat = (EditText)mAddLoc.findViewById(R.id.etxtAddLocationLatitude);

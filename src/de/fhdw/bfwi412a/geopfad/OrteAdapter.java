@@ -78,17 +78,11 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 			    }
 			}
 			
-			int id;
-			
 			if(ort.getImgUrl() != null){
-				new AdapterAsyncTask(context,holder,ort).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "intern");      
+				new AdapterAsyncTask(context,holder,ort).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, context.getResources().getString(R.string.scale_internal_image));      
 			}
 			else if(ort.getExtImgUrl() != null) {
-				new AdapterAsyncTask(context,holder,ort).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "extern");
-			}
-			else {
-				id = context.getResources().getIdentifier("thumb_station1bild4", "drawable", context.getPackageName());
-				holder.imgIcon.setImageResource(id);
+				new AdapterAsyncTask(context,holder,ort).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, context.getResources().getString(R.string.scale_external_image));
 			}
 			
 			return row;

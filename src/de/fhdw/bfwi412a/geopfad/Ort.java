@@ -10,8 +10,7 @@ public class Ort {
 	private String imgUrl2;
 	private String imgUrl3;
 	private String extImgUrl;
-	private String about;
-	private String link;	
+	private String about;	
 	private double latitude;
 	private double longitude;
 	private String visitKey;
@@ -83,12 +82,6 @@ public class Ort {
 	}
 	public void setLng(double longitude) {
 		this.longitude = longitude;
-	}
-	public String getLink() {
-		return link;
-	}
-	public void setLink(String link) {
-		this.link = link;
 	}
 	public String getVisitKey() {
 		return visitKey;

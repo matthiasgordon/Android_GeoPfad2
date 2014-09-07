@@ -70,7 +70,8 @@ public class ActivityStartGUI {
 		Bitmap picture = null;
 		picture = ScalingUtilities.fitScale(mActivity.getResources(),mActivity.getResources()
 						.getIdentifier(imgGenerator.getImgUrl(), "drawable", 
-								mActivity.getPackageName()), mActivity, "schnecke");
+								mActivity.getPackageName()), mActivity, 
+								mActivity.getResources().getString(R.string.scale_destination_activity_start_image_snail));
 		mSchneckenBild.setImageBitmap(picture);
 	}	
 }

@@ -693,6 +693,7 @@ containing a value of this type.
          */
         public static final int activity_location=0x7f070020;
         public static final int add_location=0x7f070024;
+        public static final int alert_fill_all_fields=0x7f070048;
         public static final int alert_gps_no_signal=0x7f07003d;
         public static final int alert_gps_turn_on=0x7f07003e;
         public static final int app_name=0x7f07001a;
@@ -795,10 +796,12 @@ containing a value of this type.
         public static final int extimageview=0x7f07002d;
         public static final int filechooser_startdirectory=0x7f070029;
         public static final int gps_hint_turn_on=0x7f07002f;
+        public static final int hint_new_ort_added=0x7f070046;
         public static final int imageview1=0x7f07002a;
         public static final int imageview2=0x7f07002b;
         public static final int imageview3=0x7f07002c;
         public static final int intent_extras_image_url=0x7f07003a;
+        public static final int intent_extras_list_length=0x7f07004e;
         public static final int listview_image=0x7f070039;
         public static final int new_location_headline_coordination=0x7f070034;
         public static final int new_location_headline_general=0x7f070031;
@@ -806,7 +809,26 @@ containing a value of this type.
         public static final int new_location_title=0x7f070030;
         public static final int no_internet=0x7f070023;
         public static final int notvisited=0x7f070028;
+        public static final int root_tag_ort=0x7f070047;
+        public static final int scale_destination_activity_addlocation_image_preview=0x7f070053;
+        public static final int scale_destination_activity_location=0x7f070052;
+        public static final int scale_destination_activity_start_image_snail=0x7f070054;
+        public static final int scale_destination_fragment_list=0x7f070051;
+        public static final int scale_external_image=0x7f070050;
+        public static final int scale_internal_image=0x7f07004f;
         public static final int search_actionbar=0x7f070026;
+        public static final int tag_listview_ort_id=0x7f07004d;
+        public static final int tag_ort=0x7f07003f;
+        public static final int tag_ort_about=0x7f070042;
+        public static final int tag_ort_ext_image_url=0x7f070045;
+        public static final int tag_ort_id=0x7f070041;
+        public static final int tag_ort_image=0x7f070049;
+        public static final int tag_ort_image2=0x7f07004a;
+        public static final int tag_ort_image3=0x7f07004b;
+        public static final int tag_ort_location_latitude=0x7f070043;
+        public static final int tag_ort_location_longitude=0x7f070044;
+        public static final int tag_ort_name=0x7f070040;
+        public static final int tag_ort_visitkey=0x7f07004c;
         public static final int visited=0x7f070027;
         public static final int wait_dialog=0x7f070022;
         /**  Text on a placeholder buy button when Google Play services is not
