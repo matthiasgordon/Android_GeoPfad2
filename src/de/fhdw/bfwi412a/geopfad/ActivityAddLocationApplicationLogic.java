@@ -1,3 +1,4 @@
+/** class implemented by Marcel Böttcher */
 package de.fhdw.bfwi412a.geopfad;
 
 import java.io.File;
@@ -92,11 +93,11 @@ public class ActivityAddLocationApplicationLogic {
 				if(ORTE_XML.exists()){
 	
 					DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-			        //Create the documentBuilder
+			        /** Create the documentBuilder */
 			        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-			        //Create the Document  by parsing the file
+			        /** Create the Document  by parsing the file */
 			        Document document = documentBuilder.parse(ORTE_XML);
-			         //Get the root element of the xml Document;
+			         /** Get the root element of the xml Document; */
 			        
 			        System.out.println(document);
 			    	
@@ -192,31 +193,31 @@ public class ActivityAddLocationApplicationLogic {
 		    
 		}
 		catch (FileNotFoundException e) {
-		    // TODO Auto-generated catch block
+		    /**  TODO Auto-generated catch block */
 		    e.printStackTrace();
 		}
 		catch (IllegalArgumentException e) {
-		    // TODO Auto-generated catch block
+		    /**  TODO Auto-generated catch block */
 		    e.printStackTrace();
 		}
 		catch (IllegalStateException e) {
-		    // TODO Auto-generated catch block
+		    /** TODO Auto-generated catch block */
 		    e.printStackTrace();
 		}
 		catch (IOException e) {
-		    // TODO Auto-generated catch block
+		    /** TODO Auto-generated catch block */
 		    e.printStackTrace();
 		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
+			/** TODO Auto-generated catch block */
 			e.printStackTrace();
 		} catch (SAXException e) {
-			// TODO Auto-generated catch block
+			/** TODO Auto-generated catch block */
 			e.printStackTrace();
 		} catch (TransformerConfigurationException e) {
-			// TODO Auto-generated catch block
+			/** TODO Auto-generated catch block */
 			e.printStackTrace();
 		} catch (TransformerException e) {
-			// TODO Auto-generated catch block
+			/** TODO Auto-generated catch block */
 			e.printStackTrace();
 		}
 	

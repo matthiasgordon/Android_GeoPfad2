@@ -1,3 +1,4 @@
+/** class implemented by Marcel Böttcher und Patrick Glawe */
 package de.fhdw.bfwi412a.geopfad;
 
 
@@ -31,7 +32,7 @@ public class ListFragment extends Fragment {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle presses on the action bar items
+		/** Handle presses on the action bar items */
 		switch (item.getItemId()) {
 		case R.id.addLocation:
 			mAppLogic.addLocation();

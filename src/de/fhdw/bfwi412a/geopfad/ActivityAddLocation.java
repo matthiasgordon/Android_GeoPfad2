@@ -1,3 +1,4 @@
+/** class implemented by Marcel Böttcher */
 package de.fhdw.bfwi412a.geopfad;
 
 import android.app.Activity;
@@ -54,7 +55,7 @@ public class ActivityAddLocation extends Activity {
 		
 		@Override
 		public void finish() {
-		  // Activity finished ok, return the data
+		  /** Activity finished ok, return the data */
 		  setResult(RESULT_OK);
 		  super.finish();
 		}

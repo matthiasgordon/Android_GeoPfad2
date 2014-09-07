@@ -1,4 +1,5 @@
-/*
+/** class implemented by Marcel Böttcher 
+
  * Copyright (c) 2010, Sony Ericsson Mobile Communication AB. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -80,11 +81,11 @@ public class ScalingUtilities {
 		 		mDstWidth = context.getResources().getDimensionPixelSize(R.dimen.destination_preview_width);
 		 		mDstHeight = context.getResources().getDimensionPixelSize(R.dimen.destination_preview_height);
 		 	}
-	        // Part 1: Decode image
+	        /** Part 1: Decode image */
 	        Bitmap unscaledBitmap = ScalingUtilities.decodeExternResource(mOrtImage,
 	                mDstWidth, mDstHeight, ScalingLogic.FIT);
 
-	        // Part 2: Scale image
+	        /** Part 2: Scale image */
 	        Bitmap scaledBitmap = ScalingUtilities.createScaledBitmap(unscaledBitmap, mDstWidth,
 	                mDstHeight, ScalingLogic.FIT);
 	        unscaledBitmap.recycle();
@@ -114,13 +115,14 @@ public class ScalingUtilities {
 		 	if(destination.equals("schnecke")){
 		 		mDstWidth = mTotalwidth - 200;
 		        mDstHeight = mTotalheight - 200;
-//		 		mDstWidth = mTotalwidth - context.getResources().getDimensionPixelSize(R.dimen.start_padding);
-//		        mDstHeight = mDstWidth - context.getResources().getDimensionPixelSize(R.dimen.start_padding);
+		        /**	mDstWidth = mTotalwidth - context.getResources().getDimensionPixelSize(R.dimen.start_padding);
+		        mDstHeight = mDstWidth - context.getResources().getDimensionPixelSize(R.dimen.start_padding);
+		        */
 		 	}
-		    // Part 1: Decode image
+		    /** Part 1: Decode image */
 		    Bitmap unscaledBitmap = ScalingUtilities.decodeResource(res, resId,mDstWidth, mDstHeight, ScalingLogic.FIT);
 		
-		    // Part 2: Scale image
+		    /** Part 2: Scale image */
 		    Bitmap scaledBitmap = ScalingUtilities.createScaledBitmap(unscaledBitmap, mDstWidth,mDstHeight, ScalingLogic.FIT);
 		    unscaledBitmap.recycle();
 		

@@ -1,3 +1,4 @@
+/** class implemented by Patrick Glawe */
 package de.fhdw.bfwi412a.geopfad;
 
 

@@ -1,3 +1,4 @@
+/** class implemented by Patrick Glawe */
 package de.fhdw.bfwi412a.geopfad;
 
 import java.io.File;
@@ -23,13 +24,14 @@ public class ActivityFileChooserApplicationLogic {
 	}
 
 
-	//The first method is called fill. The purpose of fill is to get all the files and folder for the current directory we are in
-    //The Method work like this:
-    //get an array of all the files and directories in the current we are in 
-    //create 2 ListArrays. One for folders and one for files.
-    //sort files and directories into the appropriate ListArray.
-    //sort the ListArrays alphabetically and pass to one ListArray.
-    //pass this ListArray to our custom ArrayAdapter
+	/**The first method is called fill. The purpose of fill is to get all the files and folder for the current directory we are in
+     * The Method work like this:
+     * get an array of all the files and directories in the current we are in 
+     * create 2 ListArrays. One for folders and one for files.
+     * sort files and directories into the appropriate ListArray.
+     * sort the ListArrays alphabetically and pass to one ListArray.
+     * pass this ListArray to our custom ArrayAdapter
+     */
     void fill(File f)
     {	
     	FileArrayAdapter adapter = mFileChooserData.getAdapter();
@@ -58,7 +60,6 @@ public class ActivityFileChooserApplicationLogic {
          if(!f.getName().equalsIgnoreCase("sdcard"))
          dir.add(0,new FileChooserOption("..","Ordnerebene hoch",f.getParent()));
          adapter = new FileArrayAdapter(mFileChooser,R.layout.file_view,dir);
-         //ListView lv= (ListView) findViewById(R.id.listView1);
          mFileChooserData.setAdapter(adapter);
          mFileChooser.setListAdapter(adapter);
     }

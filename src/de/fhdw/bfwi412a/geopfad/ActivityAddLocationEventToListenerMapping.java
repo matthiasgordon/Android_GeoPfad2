@@ -1,3 +1,4 @@
+/** class implemented by Marcel Böttcher */
 package de.fhdw.bfwi412a.geopfad;
 
 import android.view.View;

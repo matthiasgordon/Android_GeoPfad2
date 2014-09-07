@@ -1,3 +1,4 @@
+/** class implemented by Patrick Glawe */
 package de.fhdw.bfwi412a.geopfad;
 
 
@@ -18,7 +19,7 @@ public class ActivityFileChooser extends ListActivity {
 		private ActivityFileChooserData mFileChoosData;
 		private ActivityFileChooserGUI mFileChoosGUI;
 		
-	    // Called when the activity is first created
+	    /** Called when the activity is first created */
 	    
 	    @Override
 	    public void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class ActivityFileChooser extends ListActivity {
 			new ActivityFileChooserEventToListener(mFileChoosLogic, mFileChoosGUI);
 		}
 
-	    //We need to handle users clicking on files and folders
+	    /** We need to handle users clicking on files and folders */
 	    @Override
 	    protected void onListItemClick(ListView l, View v, int position, long id) {
 	        
@@ -63,7 +64,7 @@ public class ActivityFileChooser extends ListActivity {
 	            onFileClick(o);
 	        }
 	    
-	    //The "file URL" is put in the variable url    
+	    /** The "file URL" is put in the variable url */   
 	    }
 	    
 	    private void onFileClick(FileChooserOption o)
@@ -76,13 +77,13 @@ public class ActivityFileChooser extends ListActivity {
 		
 		@Override
 		public void finish() {
-		  // Prepare data intent
+		  /** Prepare data intent */
 			String url = mFileChoosData.getUrl();
 			
 			if(url !=null){
 			  Intent data = new Intent();
 			  data.putExtra("bildurl", url);
-			  // Activity finished ok, return the data
+			  /** Activity finished ok, return the data */
 			  setResult(RESULT_OK, data);
 			}
 			else {
