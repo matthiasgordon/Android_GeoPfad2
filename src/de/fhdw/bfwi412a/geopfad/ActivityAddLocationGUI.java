@@ -7,18 +7,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ActivityAddLocationGUI {
-	ActivityAddLocation mAddLoc;
-	ActivityAddLocationData mAddLocData;
-	Button mBtnAnlegen;
-	Button mBtnbildurl;
-	Button mBtnCoordination;
-	String mOrtId;
-	EditText mEtOrtName;
-	EditText mEtAbout;
-	EditText mEtLat;
-	EditText mEtLng;
-	TextView mImageUrl;
-	ImageView imgPreview;
+	private ActivityAddLocation mAddLoc;
+	private ActivityAddLocationData mAddLocData;
+	private Button mBtnAnlegen;
+	private Button mBtnbildurl;
+	private Button mBtnCoordination;
+	private String mOrtId;
+	private EditText mEtOrtName;
+	private EditText mEtAbout;
+	private EditText mEtLat;
+	private EditText mEtLng;
+	private TextView mImageUrl;
+	private ImageView mImgPreview;
+	private String mVisitKey;
 	
 	public ActivityAddLocationGUI(ActivityAddLocation addLoc, ActivityAddLocationData addLocData) {
 		mAddLoc = addLoc;
@@ -36,7 +37,7 @@ public class ActivityAddLocationGUI {
 		mEtLat = (EditText)mAddLoc.findViewById(R.id.etxtAddLocationLatitude);
 		mEtLng = (EditText)mAddLoc.findViewById(R.id.etxtAddLocationLongitude);
 		mImageUrl = (TextView)mAddLoc.findViewById(R.id.bildurl);
-		imgPreview = (ImageView)mAddLoc.findViewById(R.id.imgAddLocationPreview);
+		mImgPreview = (ImageView)mAddLoc.findViewById(R.id.imgAddLocationPreview);
 	}
 
 	public ActivityAddLocation getmAddLoc() {
@@ -84,7 +85,15 @@ public class ActivityAddLocationGUI {
 	}
 
 	public ImageView getImgPreview() {
-		return imgPreview;
+		return mImgPreview;
+	}
+
+	public String getmVisitKey() {
+		return mVisitKey;
+	}
+
+	public void setmVisitKey(String mVisitKey) {
+		this.mVisitKey = mVisitKey;
 	}
 	
 }

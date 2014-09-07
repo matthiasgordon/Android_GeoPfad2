@@ -54,3 +54,4 @@ public class ActivityAddLocationData {
 		return orteXml;
 	}
 }
+

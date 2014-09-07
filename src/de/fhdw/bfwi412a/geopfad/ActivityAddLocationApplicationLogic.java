@@ -82,6 +82,7 @@ public class ActivityAddLocationApplicationLogic {
 			String extImageUrl = mAddLocGui.getmImageUrl().getText().toString();
 			String ortLat = mAddLocGui.getmEtLat().getText().toString();
 			String ortLng = mAddLocGui.getmEtLng().getText().toString();
+			String visitKey = ortLat + ortLng;
 		  
 			if(!ortName.equals("") && !about.equals("") && !extImageUrl.equals("") &&
 					!ortLat.equals("") && !ortLng.equals("")){
@@ -129,6 +130,10 @@ public class ActivityAddLocationApplicationLogic {
 			    	newExtImageUrl.appendChild(document.createTextNode(extImageUrl));
 			    	newOrt.appendChild(newExtImageUrl);
 			    	
+			    	Element newVisitKey = document.createElement(mAddLoc.getResources().getString(R.string.tag_ort_visitkey));
+			    	newVisitKey.appendChild(document.createTextNode(visitKey));
+			    	newOrt.appendChild(newVisitKey);
+			    	
 			    	node.appendChild(newOrt);
 			    	
 			    	TransformerFactory factory = TransformerFactory.newInstance();
@@ -171,6 +176,9 @@ public class ActivityAddLocationApplicationLogic {
 					    xmlSerializer.startTag(null,mAddLoc.getResources().getString(R.string.tag_ort_location_longitude));
 					    xmlSerializer.text(ortLng);
 					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort_location_longitude));
+					    xmlSerializer.startTag(null, mAddLoc.getResources().getString(R.string.tag_ort_visitkey));
+					    xmlSerializer.text(visitKey);
+					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort_visitkey));
 					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.tag_ort));
 					    xmlSerializer.endTag(null, mAddLoc.getResources().getString(R.string.root_tag_ort));
 					    xmlSerializer.endDocument();
