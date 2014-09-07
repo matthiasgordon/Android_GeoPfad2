@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+/** Class implemented by: Johanna Korten*/
+
 public class InternetConnectionCheck {
 
 	private Context mContext;
@@ -18,6 +20,10 @@ public class InternetConnectionCheck {
 		return isConnected;
 	}
 
+	/**grants the access to WLAN adapter and
+	 * checks if WLAN connection is available
+	 * */
+	
 	private boolean isOnline() {
 	    ConnectivityManager cm =
 	        (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);

@@ -30,6 +30,13 @@ public class ListFragmentEventToListenerMapping implements OnItemClickListener, 
 		mAppLogic.showDetailView(view);
 	}
 
+	/**Method implemented by: Johanna Korten
+	 *filters listview (build up a new filtered listview)
+	 *builds one list with all locations and one empty list
+	 *if the key input by the user equals to an existing location
+	 *the empty arraylist will be filled with the filtered locations
+	 *to ignore the case-sensitive all strings will be to upper case
+	 * */
 	@Override
 	public boolean onQueryTextChange(String mEntry) {
 		List <Ort> Orte = mData.getOrte();

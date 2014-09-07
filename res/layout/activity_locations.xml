@@ -23,35 +23,31 @@
 								android:layout_height="wrap_content">
 								
 								<ImageView
-								android:contentDescription="@string/imageview1"
 								android:adjustViewBounds="true"
 								android:id="@+id/imageView1"
 								android:layout_width="match_parent"
 								android:layout_height="wrap_content" />
 								
 								<ImageView
-								android:contentDescription="@string/imageview2"
 								android:adjustViewBounds="true"
 								android:id="@+id/extImageView"
 								android:layout_width="match_parent"
 								android:layout_height="wrap_content"/>
 								
 								<ImageView
-								android:contentDescription="@string/imageview3"
 								android:adjustViewBounds="true"
 								android:id="@+id/imageView2"
 								android:layout_width="match_parent"
 								android:layout_height="wrap_content" />
 								
 								<ImageView
-								android:contentDescription="@string/extimageview"
 								android:adjustViewBounds="true"
 								android:id="@+id/imageView3"
 								android:layout_width="match_parent"
 								android:layout_height="wrap_content" />										
 					</LinearLayout>
 				</HorizontalScrollView>
-<!-- 			HorizontalScrollView					 -->
+				
 
 
 				<TextView
@@ -61,6 +57,12 @@
 					android:layout_margin="10dp"
 					android:layout_gravity = "center_vertical|center_horizontal"
 					android:textSize="20sp" />
+				
+				   <View 
+				   android:layout_below="@id/textView2"
+				   android:layout_width="fill_parent"
+				   android:layout_height="3dp"       
+				   android:background="@color/gray" />
 				
 			<TableRow
 					android:id="@+id/lnlVisit"
@@ -87,14 +89,19 @@
 					android:text=""
 					android:textSize="15sp" />
 			</TableRow>
+	
+				<RelativeLayout android:layout_width="match_parent" android:layout_height="fill_parent" >
 			
 			<TableRow
 					android:id="@+id/TableRow2"
 					android:orientation="horizontal"
 					android:layout_margin="10dp"
-					android:layout_width="match_parent"
+					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
 					android:gravity="center" >
+				
+			    	
 			
 				<TextView
 					android:id="@+id/txtDescription"
@@ -104,15 +111,14 @@
 					android:textSize="15sp" />
 			
 				<TextView
-					android:id="@+id/txtDistance"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginLeft="10dp"
-					android:layout_marginRight="10dp"
-					android:text="@string/gps_hint_turn_on"
-					android:textSize="15sp" />
+				    android:id="@+id/txtDistance"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:text="@string/gps_hint_turn_on"
+				    android:textSize="15sp" />
 			
 			</TableRow>
+			</RelativeLayout>
 			<TableRow
 					android:id="@+id/TableRow3"
 					android:orientation="horizontal"
@@ -121,19 +127,26 @@
 					android:layout_height="wrap_content"
 					android:gravity="center" >
 			
-				<Button
+			<RelativeLayout android:layout_width="match_parent" android:layout_height="fill_parent" >
+			    	<Button
 				    android:id="@+id/btnShowOnMap"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
+				    android:layout_alignParentBottom="true"
+                	android:layout_alignParentLeft="true"
+                	android:layout_gravity="left"
 				    android:background="@drawable/button_map" />
 				
 				<Button
 					android:id="@+id/btnNavigation"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
+				    android:layout_alignParentBottom="true"
+               		android:layout_alignParentRight="true"
 					android:text="@string/NavigationLocation"
 					android:textSize="25sp"
 					android:background="@drawable/button_navigation" />
+				</RelativeLayout>
 
 			</TableRow>
 	</LinearLayout>

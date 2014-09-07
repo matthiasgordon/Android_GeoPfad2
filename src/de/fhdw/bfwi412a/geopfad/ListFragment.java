@@ -41,15 +41,14 @@ public class ListFragment extends Fragment {
 		}
 	}
 	
+	/**methods implements by: Johanna Korten
+	 * get searchview and executes this when searching
+	 * */
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		// TODO Auto-generated method stub
 		inflater.inflate(R.menu.location_actionbar_menu, menu);
-		// get the searview
 		MenuItem searchfield = menu.findItem(R.id.action_search);
 		SearchView searchview = (SearchView) searchfield.getActionView();
-		
-		// Execute this when searching
 		searchview.setOnQueryTextListener(mEventToListenerMapping);
 		super.onCreateOptionsMenu(menu, inflater);
 	}

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+/** Class implemented by: Johanna Korten*/
+
 public class ActivityLocationsEventToListenerMapping implements OnClickListener, LocationListener {
 
 	private ActivityLocationsGUI mGUI;
@@ -19,6 +21,9 @@ public class ActivityLocationsEventToListenerMapping implements OnClickListener,
 		mGUI.getBtnShowOnMap().setOnClickListener(this);
 		mAppLogic.getLocationManager().requestLocationUpdates(mAppLogic.getmProvider(), 400, 1, this);
 	}
+	
+	/**executes methods if the buttons or checkbox is clicked by the user
+	 * */
 	
 	@Override
 	public void onClick(View v) {

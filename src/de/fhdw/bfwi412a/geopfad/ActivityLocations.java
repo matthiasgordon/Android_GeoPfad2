@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
+/** Class implemented by: Johanna Korten*/
+
 public class ActivityLocations extends Activity {
 
 	Context context = ActivityLocations.this;

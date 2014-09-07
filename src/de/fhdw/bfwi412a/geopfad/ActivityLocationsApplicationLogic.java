@@ -7,6 +7,8 @@ import android.location.Criteria;
 import android.location.LocationManager;
 import android.net.Uri;
 
+/** Class implemented by: Johanna Korten*/
+
 public class ActivityLocationsApplicationLogic {
 	
 	private ActivityLocationsData mData;
@@ -39,6 +41,9 @@ public class ActivityLocationsApplicationLogic {
 		return mProvider;
 	}
 
+	/**loads the latitudes and longitudes from the current location to navigate
+	 * starts google maps*/
+	
 	public void navigateToLocation(){
 		double mLat = mData.getLatitude();
 		double mLng = mData.getLongitude();
@@ -46,6 +51,9 @@ public class ActivityLocationsApplicationLogic {
 				 Uri.parse("google.navigation:q=" + mLat + "," + mLng));
 		mActivity.startActivity(intent);
 	}
+	
+	/**saves data into sharedpreferences to stay if application is restarted
+	 * set checkbox checked/unchecked*/
 	
 	public void changeVisitStatus(){
 		SharedPreferences visitStatus = mData.getVisitStatus();
@@ -70,6 +78,9 @@ public class ActivityLocationsApplicationLogic {
 		}
 	}
 	
+	/**set distance between users current position and chosen location
+	 */
+	
 	public void setDistance() {
 		Double distance = 0.0;
 		do{
@@ -90,11 +101,17 @@ public class ActivityLocationsApplicationLogic {
 		}
 	}
 	
+	/**checks if provider (GPS) is enabled or not
+	 * */
+	
 	public boolean isProviderEnabled() {
 		LocationManager service = (LocationManager) mActivity.getSystemService(Context.LOCATION_SERVICE);
 		boolean enabled = service.isProviderEnabled(LocationManager.GPS_PROVIDER);
 		return enabled;
 	}
+	
+	/**commits the current location name and starts ActivityMain to show the location on map
+	*/
 
 	public void showOnMap() {
 		String mLocationName = mData.getTitle();
