@@ -83,6 +83,7 @@ public class OrteAdapter extends ArrayAdapter<Ort> {
 			}
 			else if(ort.getExtImgUrl() != null) {
 				new AdapterAsyncTask(context,holder,ort).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, context.getResources().getString(R.string.scale_external_image));
+				holder.imgIcon.setImageResource(R.drawable.ic_launcher);
 			}
 			
 			return row;
