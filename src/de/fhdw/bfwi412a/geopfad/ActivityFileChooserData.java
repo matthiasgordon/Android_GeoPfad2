@@ -3,6 +3,9 @@ package de.fhdw.bfwi412a.geopfad;
 
 import java.io.File;
 
+/** This class appropiate the path at what point the file explorer should open the external storage
+ * and save the actual path 
+ */
 public class ActivityFileChooserData {
 
 	private ActivityFileChooser mFileChooser;
