@@ -1,11 +1,10 @@
 package de.fhdw.bfwi412a.geopfad;
+/**Class implemented by: Matthias Wiegand
+ * SchneckenImgGenerator transforms the amount of achievements to an image-URL 
+ * to display the right "Schnecken"-image an the ActivityStart*/
 
 public class SchneckenImgUrlGenerator {
 	private String mImgUrl;
-	
-	/**Class implemented by: Matthias Wiegand
-	 * SchneckenImgGenerator transforms the amount of achievements to an image-URL 
-	 * to display the right "Schnecken"-image an the ActivityStart*/
 	
 	public SchneckenImgUrlGenerator(int achievement){
 		mImgUrl = getImageUrl(achievement);
