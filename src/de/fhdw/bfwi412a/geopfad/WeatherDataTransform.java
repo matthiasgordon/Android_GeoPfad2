@@ -1,5 +1,5 @@
 package de.fhdw.bfwi412a.geopfad;
-/**Class implemented by: Marc Niedermeier
+/**Class implemented by: Matthias Wiegand
  * WeatherDataTransform is a helper class that helps to display the weather data
  * in the GUI*/
 
