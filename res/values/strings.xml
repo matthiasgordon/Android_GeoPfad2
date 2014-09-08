@@ -19,8 +19,38 @@
     </string-array>
     <string name="which_places">Welche Orte sollen angezeigt werden?</string>
     
+    <!-- WeatherCodes -->
+    <string name="weather_thunderstorm">thunderstorm</string>
+    <string name="weather_rain_snow">rain_snow</string>
+    <string name="weather_drizzle">drizzle</string>
+    <string name="weather_flurries">flurries</string>
+    <string name="weather_snow">snow</string>
+    <string name="weather_sleet">sleet</string>
+    <string name="weather_fog">fog</string>
+    <string name="weather_cloudy">cloudy</string>
+    <string name="weather_mostly_cloudy">mostly_cloudy</string>
+    <string name="weather_partly_cloudy">partly_cloudy</string>
+    <string name="weather_clear">clear</string>
+    <string name="weather_storm">storm</string>
+    
+    <!-- Weather parser -->
+    <string name="curr_weather_tag">yweather:condition</string>
+    <string name="forecast_weather_tag">yweather:forecast</string>
+    <string name="curr_weather_day">date</string>
+    <string name="forecast_weather_day">day</string>
+    <string name="weather_code">code</string>
+    <string name="curr_weather_temp">temp</string>
+    <string name="forecast_weather_high">high</string>
+    <string name="forecast_weather_low">low</string>
+    
+    <!-- Error-Codes -->
+    <string name="alert_fill_all_fields">Bitte füllen Sie alle Felder aus!</string>
     <string name="wait_dialog">Bitte, warten&#8230;</string>
     <string name="no_internet">Kein Internet, Wetterdaten nicht verfügbar</string>
+    <string name="alert_gps_no_signal">Kein GPS Signal!</string>
+    <string name="alert_gps_turn_on">Bitte schalten Sie GPS ein!</string>
+    <string name="gps_hint_turn_on">Bitte GPS einschalten</string>
+    
     <string name="add_location">Add Location</string>
     <string name="empty_listview">Keine Orte gefunden.</string>
     <string name="search_actionbar">Suchen</string>
@@ -32,7 +62,6 @@
     <string name="imageview3">Third Image from Drawable.</string>
     <string name="extimageview">Image from Sdcard.</string>
     <string name="different_to_location">Luftlinie zum Ort:</string>
-    <string name="gps_hint_turn_on">Bitte GPS einschalten</string>
     <string name="new_location_title">Neuer Ort</string>
     <string name="new_location_headline_general">Allgemein</string>
     <string name="et_hint_location_name">Ortname</string>
@@ -46,8 +75,6 @@
     <string name="intent_extras_image_url">image_url</string>
     <string name="xml_file_name">/orte.xml</string>
     <string name="xml_directory_name">/GeoPfad</string>
-    <string name="alert_gps_no_signal">Kein GPS Signal!</string>
-    <string name="alert_gps_turn_on">Bitte schalten Sie GPS ein!</string>
     <string name="tag_ort">ort</string>
     <string name="tag_ort_name">name</string>
     <string name="tag_ort_id">id</string>
@@ -57,7 +84,6 @@
     <string name="tag_ort_ext_image_url">extImageUrl</string>
     <string name="hint_new_ort_added">Ort wurde hinzugefügt!</string>
     <string name="root_tag_ort">orte</string>
-    <string name="alert_fill_all_fields">Bitte füllen Sie alle Felder aus!</string>
     <string name="tag_ort_image">image</string>
     <string name="tag_ort_image2">image2</string>
     <string name="tag_ort_image3">image3</string>

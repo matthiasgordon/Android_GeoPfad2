@@ -20,7 +20,8 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-/** MapFrgmentGUI loads and provides all GUI-elements;
+/**Class implemented by: Marc Niedermeier 
+ * MapFrgmentGUI loads and provides all GUI-elements;
  * serves methods to fill/style the GUI*/
 
 public class MapFragmentGUI {

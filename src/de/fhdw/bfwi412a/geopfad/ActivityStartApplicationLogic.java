@@ -1,14 +1,17 @@
 package de.fhdw.bfwi412a.geopfad;
 
+import de.fhdw.bfwi412a.geopfad.weather.WeatherDialogTask;
 import android.content.Intent;
 import android.widget.Toast;
 
+/**Class implemented by: Marc Niedermeier
+ * Class serves all the logic which is needed for ActivityStart
+ * */
 
 public class ActivityStartApplicationLogic {
 	private ActivityStart mActivity;
 	private ActivityStartData mData;
 	private InternetConnectionCheck mConnected;
-	static final int REQUESTCODECOUNTERVALUE = 1;
 	
 	public ActivityStartApplicationLogic(ActivityStart act, ActivityStartGUI gui, ActivityStartData data) {
 		mActivity = act;
@@ -19,11 +22,11 @@ public class ActivityStartApplicationLogic {
 	/** Method is called when the button to ActivityMain is clicked; 
 	 * starts ActivityMain*/
 	
-	public void onToActivityMainButtonClicked() {
+	public void onToActivityMain() {
 		Intent intent;
 		intent = new Intent();
 		intent.setClass(mData.getActivity(), ActivityMain.class);
-		mData.getActivity().startActivityForResult(intent, REQUESTCODECOUNTERVALUE);
+		mData.getActivity().startActivity(intent);
 	}
 	
 	/** Method is called when weather-button is clicked;

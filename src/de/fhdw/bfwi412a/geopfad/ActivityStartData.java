@@ -3,7 +3,8 @@ package de.fhdw.bfwi412a.geopfad;
 import java.util.ArrayList;
 import java.util.List;
 
-/** ActivityStartData loads the Data and provides it for the Activity except for the 
+/**Class implemented by: Marc Niedermeier 
+ * ActivityStartData loads the Data and provides it for the Activity except for the 
  * weather data which is loaded by an asynctask*/
 
 public class ActivityStartData {

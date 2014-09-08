@@ -7,7 +7,8 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.model.Marker;
 
-/** MapFragmentEventToListener decides which methods have to be called after
+/** Class implemented by: Marc Niedermeier 
+ * MapFragmentEventToListener decides which methods have to be called after
  * events done by the user
  * OnItemSelectedListener for the spinner-menu
  * OnInfoWindowClickListener for the InfoWindow of the Markers on the map*/

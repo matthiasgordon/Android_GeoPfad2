@@ -6,7 +6,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-/** ActivityStartGUI provides all the GUI-elements of ActivityStart and serves 
+/**Class implemented by: Marc Niedermeier 
+ * ActivityStartGUI provides all the GUI-elements of ActivityStart and serves 
  * methods to fill them */
 
 public class ActivityStartGUI {

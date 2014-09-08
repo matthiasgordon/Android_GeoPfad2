@@ -8,7 +8,8 @@ import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.model.LatLng;
 
-/** MapFramentData provides Data (locations, coordinates, and SharedPreferences file)
+/** Class implemented by: Marc Niedermeier 
+ * MapFramentData provides Data (locations, coordinates, and SharedPreferences file)
  * for MapFragment*/
 
 public class MapFragmentData {

@@ -2,7 +2,9 @@ package de.fhdw.bfwi412a.geopfad;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-/** ActivityStartEventToListenerMapping starts functions in AppLogic when the User makes an event */
+/** Class implemented by: Marc Niedermeier
+ * ActivityStartEventToListenerMapping starts functions in AppLogic 
+ * when the User makes an event */
 
 public class ActivityStartEventToListenerMapping implements OnClickListener {
 
@@ -16,8 +18,8 @@ public class ActivityStartEventToListenerMapping implements OnClickListener {
 		mGUI.getBtnWeather().setOnClickListener(this);
 	}
 
-	/** onClick-method of OnClickListener is overwritten; checks which GUI-element is clicked
-	 * by case-statement and start the corresponding method in AppLogic
+	/** onClick-method of OnClickListener is overwritten; checks which GUI-element 
+	 * is clicked by case-statement and start the corresponding method in AppLogic
 	 * @param v View that was clicked by the user*/
 	
 	@Override
@@ -25,7 +27,7 @@ public class ActivityStartEventToListenerMapping implements OnClickListener {
 		switch(v.getId()){
 		
 		case R.id.ToActivityMainButton:
-			mAppLogic.onToActivityMainButtonClicked();
+			mAppLogic.onToActivityMain();
 			break;
 		case R.id.btnWeather:
 			mAppLogic.openWeatherDialog();

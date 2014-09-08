@@ -111,5 +111,13 @@
         android:layout_alignParentRight="true"
         android:text="@string/Button_Map" />
     
+    <ImageView
+        android:id="@+id/yahoo_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/yahoo_weather" />
+    
     </RelativeLayout>
 </LinearLayout>

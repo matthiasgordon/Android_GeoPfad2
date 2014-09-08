@@ -1,5 +1,6 @@
 package de.fhdw.bfwi412a.geopfad;
 
+import de.fhdw.bfwi412a.geopfad.weather.WeatherCurrTask;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

@@ -21,7 +21,10 @@ public class MapFragment extends Fragment {
 	private String mLocationName;
 	private boolean mIsFromIntent;
 	
-	/** two constructors when string is passed it is saved in mLocationName*/
+	/** two constructors when string is passed it is saved in mLocationName
+	 * boolean mIsFromIntent is set depending on which consturctor is used
+	 * mIsFromIntent is used to decide how the MapFragment is styled therefore
+	 * it is passed to several methods*/
 	
 	public MapFragment(){
 		mIsFromIntent = false;
@@ -43,6 +46,9 @@ public class MapFragment extends Fragment {
 		return mView;
 	}	
 
+	/** onResume refreshs Map every time when user gets to the MapFragment by pressing
+	 * the back button of the device*/
+	
 	@Override
 	public void onResume() {
 		// TODO Auto-generated method stub

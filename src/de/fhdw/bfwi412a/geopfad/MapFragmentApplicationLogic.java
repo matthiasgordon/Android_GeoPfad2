@@ -4,7 +4,8 @@ import android.content.Intent;
 
 import com.google.android.gms.maps.model.Marker;
 
-/** Class implemented by: Marc Niedermeier*/
+/** Class implemented by: Marc Niedermeier
+ * serves all the logic that is needed for the MapFragment*/
 
 public class MapFragmentApplicationLogic {
 	
