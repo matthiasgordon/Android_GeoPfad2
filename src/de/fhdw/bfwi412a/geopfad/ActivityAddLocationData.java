@@ -5,6 +5,8 @@ import java.io.File;
 
 import android.os.Environment;
 
+/** In this class, the storage paths are provided for the folder and the file 
+ * that are in the external memory or yet to be created.*/
 public class ActivityAddLocationData {
 
 	private final int IMAGE_URL = 100;

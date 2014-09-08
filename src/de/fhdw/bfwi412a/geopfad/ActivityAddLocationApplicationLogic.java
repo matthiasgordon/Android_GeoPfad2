@@ -31,6 +31,7 @@ import android.util.Xml;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**This class contains the methods that are executed when clicking a button. */
 public class ActivityAddLocationApplicationLogic {
 
 	private ActivityAddLocationGUI mAddLocGui;
@@ -43,6 +44,7 @@ public class ActivityAddLocationApplicationLogic {
 		mAddLoc = act;
 	}
 	
+	/**The method returns the current coordinates if GPS reception is available.*/
 	public void setCoordination(){
 		EditText mEtAddLocLat = mAddLocGui.getmEtLat();
 		EditText mEtAddLocLng = mAddLocGui.getmEtLng();
@@ -67,11 +69,14 @@ public class ActivityAddLocationApplicationLogic {
 			}
 	}
 	
+	/** The method starts the Activity ActivityFileChooser.*/
 	public void changeToFilechooser(){
 	Intent intent = new Intent(mAddLocData.getmAddLoc(), ActivityFileChooser.class);
 	mAddLoc.startActivityForResult(intent, mAddLocData.getIMAGE_URL());
 	}
 	
+	/** The method stores the data of the filled EdtitTextViews into the orte.xml file,
+	 *  which is located in the external memory in a separate folder.*/
 	public void setOrt(){
 		try {
 			final File GEOPFAD_DIRECTORY= mAddLocData.getGeopfadDirectory();

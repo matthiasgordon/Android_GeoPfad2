@@ -8,6 +8,7 @@ import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationManager;
 
+/**class implemented by Mathias Wiegand*/
 public class DistanceCalculator implements GpsStatus.Listener{
 	
 	private LocationManager mLocationManager;
@@ -19,8 +20,8 @@ public class DistanceCalculator implements GpsStatus.Listener{
 		criteria = new Criteria();
 	}
 	/**
-	 * get current coordinates
-	 * */
+	 * *method implemented by Marcel Böttcher and Mathias Wiegand
+	 * This method returns only coordinates when a current GPS signal was received.*/
 	public Location getLiveLocation(Context context) {
 		mLocationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 		mLocationManager.addGpsStatusListener(this);
@@ -40,7 +41,8 @@ public class DistanceCalculator implements GpsStatus.Listener{
 
 		return liveLocation;
 	}
-	/**Calculate Distance to location
+	/**method implemented by Mathias Wiegand
+	 * Calculate Distance to location
 	 * @param coordinates of the location and current coordinates
 	 * @return Distance as double
 	 * */
@@ -67,6 +69,8 @@ public class DistanceCalculator implements GpsStatus.Listener{
 		
 	}
 
+	/**method implemented by Marcel Böttcher
+	 * This method checks if a GPS signal is found.*/
 	@Override
 	public void onGpsStatusChanged(int event) {
 		

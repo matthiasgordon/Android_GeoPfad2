@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
+/**This class is the interface between the layout and the application 
+ * by binding the views of objects to the application.*/
 public class ListFragmentGUI {
 	
 	private ListView mListOrte;
@@ -22,6 +24,7 @@ public class ListFragmentGUI {
 		
 	}
 
+	/**The ListView is filled with the location data of the xml files from the internal and external memory.*/
 	public void fillListView (View mView, List <Ort> orte){
 		ortAdapter = new OrteAdapter(mView.getContext(), R.layout.list_item, orte);
 		mListOrte = (ListView) mView.findViewById(R.id.listViewOrte);

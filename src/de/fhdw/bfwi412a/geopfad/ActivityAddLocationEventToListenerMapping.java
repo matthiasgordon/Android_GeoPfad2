@@ -4,6 +4,7 @@ package de.fhdw.bfwi412a.geopfad;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+/**This class manages the onClick event of the button and calls the appropriate method when an event occurs.*/
 public class ActivityAddLocationEventToListenerMapping implements OnClickListener{
 	
 	private ActivityAddLocationApplicationLogic mAddLocAppLogic;
@@ -17,6 +18,7 @@ public class ActivityAddLocationEventToListenerMapping implements OnClickListene
 		mAddLocGUI.getmBtnAnlegen().setOnClickListener(this);
 	}
 	
+	/**Calls the appropriate method when an event occurs*/
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()){

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
+/**Class is used to generate background processes, which can take a long time, to process.*/
 public class AdapterAsyncTask extends AsyncTask<String, Void, Bitmap>{
 
 	private Ort mOrt;
@@ -23,6 +24,7 @@ public class AdapterAsyncTask extends AsyncTask<String, Void, Bitmap>{
 	    mKeyLocation = context.getResources().getString(R.string.scale_external_image);
 	}
 	
+	/**Generate a background processes, which scales a image*/
 	@Override
 	protected Bitmap doInBackground(String... params) {
 		
@@ -45,6 +47,7 @@ public class AdapterAsyncTask extends AsyncTask<String, Void, Bitmap>{
 		return mOrtBitmap;
 	}
 	
+	/**Set the the returned Bitmap of the doInBackground method*/
 	@Override
 	protected void onPostExecute(Bitmap result) {
 

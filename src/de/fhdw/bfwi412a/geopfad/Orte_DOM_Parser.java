@@ -21,8 +21,7 @@ import org.xml.sax.SAXException;
 import android.content.Context;
 import android.os.Environment;
 
-
-
+/**In the class all attributes associated with a location is read out from the "tags" of the orte.xml files.*/
 public class Orte_DOM_Parser {
 
 	public static List<Ort> getOrteFromFile(Context context) {

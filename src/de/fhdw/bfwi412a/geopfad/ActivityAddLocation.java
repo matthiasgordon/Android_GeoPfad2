@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/** The class allows the user to independently add new locations.*/
 public class ActivityAddLocation extends Activity {
 
 	private ActivityAddLocationData mAddLocData;
@@ -41,6 +42,7 @@ public class ActivityAddLocation extends Activity {
 			new ActivityAddLocationEventToListenerMapping(mAddLocAppLogic, mAddLocGUI);
 		}
 		
+		/** The method is called if an image was selected in the file explorer, .*/
 		@Override
 		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		  if (resultCode == RESULT_OK && requestCode == mAddLocData.getIMAGE_URL()) {
@@ -55,6 +57,7 @@ public class ActivityAddLocation extends Activity {
 		  }
 		} 
 		
+		/** Gives a Result to ActivityMain*/
 		@Override
 		public void finish() {
 		  /** Activity finished ok, return the data */

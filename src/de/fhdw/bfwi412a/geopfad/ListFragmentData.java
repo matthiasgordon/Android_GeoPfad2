@@ -5,6 +5,8 @@ import java.util.List;
 
 import android.support.v4.app.FragmentActivity;
 
+/**In the class an object "List <location>" mOrte is generated. 
+ * This object receives the data read out of the Orte_DOM_Parser.*/
 public class ListFragmentData {
 	
 	private List<Ort> mOrte;

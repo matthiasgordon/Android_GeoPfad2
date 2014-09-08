@@ -1,6 +1,7 @@
 /** class implemented by Marcel Böttcher und Patrick Glawe */
 package de.fhdw.bfwi412a.geopfad;
 
+/**includes the attributes of a location object*/
 public class Ort {
 	private String mId;
 	private String mName;

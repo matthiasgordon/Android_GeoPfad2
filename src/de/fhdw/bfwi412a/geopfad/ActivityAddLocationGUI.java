@@ -6,6 +6,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/**This class is the interface between the layout and the application 
+ * by binding the views to objects of the application.*/
 public class ActivityAddLocationGUI {
 	private ActivityAddLocation mAddLoc;
 	private ActivityAddLocationData mAddLocData;

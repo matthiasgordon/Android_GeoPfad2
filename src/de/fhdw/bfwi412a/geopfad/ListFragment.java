@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 
+/**Overview of all stations will shown in a list*/
 public class ListFragment extends Fragment {
 	
 	private ListFragmentData mData;
@@ -30,6 +31,9 @@ public class ListFragment extends Fragment {
 		return mView;
 	}
 
+	/**methods implements by: Johanna Korten
+	 * get searchview and executes this when searching
+	 * */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		/** Handle presses on the action bar items */
@@ -70,6 +74,8 @@ public class ListFragment extends Fragment {
 		mEventToListenerMapping = new ListFragmentEventToListenerMapping(this, mData, mGUI, mAppLogic);
 	}
 	
+	/** The method is called when ActivityAddLocation is closed. Also this method
+	 * refreshes the ListView.*/
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 	  if (requestCode == mAppLogic.ADD_LOCATION) {

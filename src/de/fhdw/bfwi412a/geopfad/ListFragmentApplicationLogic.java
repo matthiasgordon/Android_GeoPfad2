@@ -21,6 +21,7 @@ public class ListFragmentApplicationLogic {
 		mIntentBuilder = new IntentBuilder();
 	}
 	
+	/**The method combines the detail view of a location with its id.*/
 	public void showDetailView(View view){
 		TextView txtOrtID = (TextView)view.findViewWithTag(mFrag.getResources().getString(R.string.tag_listview_ort_id));
 		int mOrtID = Integer.parseInt(txtOrtID.getText().toString())-1;
@@ -29,6 +30,8 @@ public class ListFragmentApplicationLogic {
 		mData.getActivity().startActivity(intent);	
 	}
 	
+	/**This method added a row to the existing list of the listview,
+	 *  when the user creates a new location.*/
 	public void addLocation() {
 		Intent intent = new Intent(mFrag.getActivity(), ActivityAddLocation.class);
 		intent.putExtra(mFrag.getResources().getString(R.string.intent_extras_list_length), String.valueOf(mGUI.getmListLength()+1));

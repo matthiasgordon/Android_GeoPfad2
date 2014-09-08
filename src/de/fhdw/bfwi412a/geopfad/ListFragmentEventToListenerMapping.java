@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.SearchView;
 import android.widget.AdapterView.OnItemClickListener;
 
+/**This class manages the onItemClick events of the ListView rows 
+ * and calls the appropriate method when an event occurs.*/
 public class ListFragmentEventToListenerMapping implements OnItemClickListener, SearchView.OnQueryTextListener {
 	
 	private ListFragment mFrag;
