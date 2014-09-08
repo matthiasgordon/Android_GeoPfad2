@@ -1,5 +1,5 @@
 package de.fhdw.bfwi412a.geopfad;
-/**Class implemented by: Matthias Wiegand
+/**Class implemented by: Matthias Wiegand and Matthias Gordon
  * DistanceCalculator expects the current air line distance to a location*/
 
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.location.GpsStatus;
 import android.location.Location;
 import android.location.LocationManager;
 
-/**class implemented by Mathias Wiegand*/
+/**class implemented by Matthias Wiegand*/
 public class DistanceCalculator implements GpsStatus.Listener{
 	
 	private LocationManager mLocationManager;
@@ -20,8 +20,10 @@ public class DistanceCalculator implements GpsStatus.Listener{
 		criteria = new Criteria();
 	}
 	/**
-	 * *method implemented by Marcel Böttcher and Mathias Wiegand
-	 * This method returns only coordinates when a current GPS signal was received.*/
+	 * *method implemented by Marcel Böttcher and Matthias Wiegand
+	 * This method returns the live coordinates, but only when a current GPS signal was received.
+	 * @return liveLocation last known GPS data
+	 */
 	public Location getLiveLocation(Context context) {
 		mLocationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 		mLocationManager.addGpsStatusListener(this);
@@ -41,8 +43,9 @@ public class DistanceCalculator implements GpsStatus.Listener{
 
 		return liveLocation;
 	}
-	/**method implemented by Mathias Wiegand
+	/**method implemented by Matthias Wiegand
 	 * Calculate Distance to location
+	 * if no liveLocation is passed it returns -1 as an error
 	 * @param coordinates of the location and current coordinates
 	 * @return Distance as double
 	 * */

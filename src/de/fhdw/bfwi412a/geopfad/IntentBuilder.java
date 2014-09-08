@@ -1,4 +1,4 @@
-/** class implemented by Marcel Böttcher */
+/** class implemented by Marcel Böttcher and Matthias Gordon */
 package de.fhdw.bfwi412a.geopfad;
 
 import java.util.List;

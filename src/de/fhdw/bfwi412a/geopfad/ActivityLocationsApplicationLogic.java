@@ -79,7 +79,9 @@ public class ActivityLocationsApplicationLogic {
 		}
 	}
 	
-	/**set distance between users current position and chosen location
+	/**
+	 * method implemented by: Matthias Gordon
+	 * set distance between users current position and chosen location to the textfield
 	 */
 	
 	public void setDistance() {
@@ -102,8 +104,10 @@ public class ActivityLocationsApplicationLogic {
 		}
 	}
 	
-	/**checks if provider (GPS) is enabled or not
-	 * */
+	/**
+	 * method implemented by: Matthias Gordon
+	 * checks if provider (GPS) is enabled or not
+	 */
 	
 	public boolean isProviderEnabled() {
 		LocationManager service = (LocationManager) mActivity.getSystemService(Context.LOCATION_SERVICE);
@@ -111,7 +115,8 @@ public class ActivityLocationsApplicationLogic {
 		return enabled;
 	}
 	
-	/**commits the current location name and starts ActivityMain to show the location on map
+	/**
+	 * commits the current location name and starts ActivityMain to show the location on map
 	*/
 
 	public void showOnMap() {

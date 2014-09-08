@@ -42,6 +42,10 @@ public class ActivityLocationsEventToListenerMapping implements OnClickListener,
 		}
 	}
 
+	/**
+	 * LocationListener implemented by: Matthias Gordon
+	 * if location is changed the distance is being refreshed
+	 */
 	@Override
 	public void onLocationChanged(Location location) {
 		mAppLogic.setDistance();

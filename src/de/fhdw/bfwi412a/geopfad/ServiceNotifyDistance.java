@@ -26,9 +26,8 @@ import android.widget.Toast;
  */
 public class ServiceNotifyDistance extends Service implements LocationListener {
 
-	public static final String PREFS_NAME = "MYPrefernceFile";
+	private static final String PREFS_NAME = "MYPrefernceFile";
 	private SharedPreferences mVisitStatus;
-	
 	private NotificationManager mManager;
 	private LocationManager mLocationManager;
 	private IntentBuilder mIntentBuilder;
@@ -106,6 +105,7 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 
 	/**
 	 * The method builds the notification for the getDistanceForEachLocation method.
+	 * The intent for the notification is build by the IntentBuilder
 	 * @param locationName the name of the location is passed so that it can written in the headline of the notification
 	 * @param position this is the position of the location in the list of locations
 	 * @param distanceText the text with the distance in meters
@@ -125,7 +125,7 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 	}
 
 	/**
-	 * Whenever the user changes its position the getDistanceForEachLocation method is called.
+	 * Whenever the user changes its position the getDistanceForEachLocation method is being called.
 	 */
 	@Override
 	public void onLocationChanged(Location location) {
@@ -148,5 +148,4 @@ public class ServiceNotifyDistance extends Service implements LocationListener {
 		Toast.makeText(this, "Bitte " + provider.toUpperCase() + " aktivieren",
         Toast.LENGTH_SHORT).show();
 	}
-
 }
