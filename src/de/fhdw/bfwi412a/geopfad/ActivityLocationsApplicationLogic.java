@@ -7,7 +7,7 @@ import android.location.Criteria;
 import android.location.LocationManager;
 import android.net.Uri;
 
-/** Class implemented by: Johanna Korten*
+/** Class implemented by: Johanna Korten and Matthias Wiegand*
  * this class is responsible for logic of activity locations.*/
 
 public class ActivityLocationsApplicationLogic {
@@ -42,7 +42,8 @@ public class ActivityLocationsApplicationLogic {
 		return mProvider;
 	}
 
-	/**loads the latitudes and longitudes from the current location to navigate
+	/**method implemented by Matthias Wiegand
+	 * loads the latitudes and longitudes from the current location to navigate
 	 * starts google maps*/
 	
 	public void navigateToLocation(){
@@ -80,7 +81,7 @@ public class ActivityLocationsApplicationLogic {
 	}
 	
 	/**
-	 * method implemented by: Matthias Gordon
+	 * method implemented by: Matthias Wiegand
 	 * set distance between users current position and chosen location to the textfield
 	 */
 	
@@ -105,7 +106,7 @@ public class ActivityLocationsApplicationLogic {
 	}
 	
 	/**
-	 * method implemented by: Matthias Gordon
+	 * method implemented by: Matthias Wiegand
 	 * checks if provider (GPS) is enabled or not
 	 */
 	
