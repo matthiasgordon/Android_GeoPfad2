@@ -77,8 +77,10 @@ public class ActivityStart extends Activity {
 		if(connected.isConnected()){
 			WeatherCurrTask loader = new WeatherCurrTask(this, mGUI);
 			loader.execute();
-		}else
+		}else{
+			if(mGUI.getTemperature()!=null)
 			mGUI.setWeatherInternetError();
+		}
 	}
 	
 	private void initApplicationLogic() {
