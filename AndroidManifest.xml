@@ -46,12 +46,17 @@
     		android:value="AIzaSyBvr424W8t4IhaSwcaG3vao2vMiNFsS_hI"/>
         
         <activity
-            android:name=".ActivityStart"
-            android:label="@string/app_name" >
+            android:name=".SplashScreen"
+             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".ActivityStart"
+            android:label="@string/app_name" >
         </activity>
         
         <activity
