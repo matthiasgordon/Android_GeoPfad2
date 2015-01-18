@@ -9,5 +9,12 @@
         
     </item>
     
+    <item 
+        android:id="@+id/about" 
+        android:showAsAction="always" 
+        android:icon="@drawable/ic_action_about" 
+        android:title="about">
+        
+    </item>
 
 </menu>

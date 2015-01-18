@@ -29,6 +29,13 @@ public class ActivityStartApplicationLogic {
 		mData.getActivity().startActivity(intent);
 	}
 	
+	public void onToActivityAbout() {
+		Intent intent;
+		intent = new Intent();
+		intent.setClass(mData.getActivity(), ActivityAbout.class);
+		mData.getActivity().startActivity(intent);
+	}
+	
 	/** Method is called when weather-button is clicked;
 	 * checks if internet is available;
 	 * if available it starts a WeatherDialogTask, else it makes an error-toast */

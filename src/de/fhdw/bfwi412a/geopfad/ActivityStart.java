@@ -53,7 +53,11 @@ public class ActivityStart extends Activity {
 	      initApplicationLogic();
 	      initEventToListenerMapping();
 	      break;
+	    case R.id.about:
+	    	mAppLogic.onToActivityAbout();
+	    	break;
 	    }
+		
 		return super.onOptionsItemSelected(item);
 	}
 	

@@ -95,5 +95,20 @@
     <string name="scale_destination_fragment_list">list</string>
     <string name="scale_destination_activity_location">location</string>
     <string name="scale_destination_activity_addlocation_image_preview">preview</string>
-    <string name="scale_destination_activity_start_image_snail">schnecke</string>    
+    <string name="scale_destination_activity_start_image_snail">schnecke</string>
+    
+    <!-- Activity About -->
+    <string name="about_text">
+           Stadt Bergisch Gladbach
+		\nDer Bürgermeister
+		\nKonrad-Adenauer-Platz 1
+		\n51465 Bergisch Gladbach
+		\nTel. 02202 14-0 (Zentrale)
+		\nFax 02202 14-2300
+		\nE-Mail: info@bergischgladbach.de
+		\n
+		\nDie Stadt Bergisch Gladbach ist eine Körperschaft des öffentlichen Rechts.
+		\nSie wird vertreten durch Bürgermeister Lutz Urbach. Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE 121978025
+	</string>
+    <string name="about_title">Impressum</string>    
 </resources>
