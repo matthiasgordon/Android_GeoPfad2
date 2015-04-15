@@ -58,8 +58,6 @@
 					android:layout_gravity = "center_vertical|center_horizontal"
 					android:textSize="20sp" />
 				
-
-				
 			<TableRow
 					android:id="@+id/lnlVisit"
 					android:orientation="horizontal"
@@ -90,63 +88,43 @@
 				    android:layout_width="match_parent"
 				    android:layout_height="fill_parent"
 				    android:paddingBottom="20dp" >
-			
-			<TableRow
-					android:id="@+id/TableRow2"
-					android:orientation="horizontal"
-					android:layout_margin="10dp"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_alignParentRight="true"
-					android:gravity="center" >
-				
-			    	
-			
-				<TextView
-					android:id="@+id/txtDescription"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/different_to_location"
-					android:textSize="15sp" />
-			
-				<TextView
-				    android:id="@+id/txtDistance"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:text="@string/gps_hint_turn_on"
-				    android:textSize="15sp" />
-			
-			</TableRow>
-			</RelativeLayout>
-			<TableRow
-					android:id="@+id/TableRow3"
-					android:orientation="horizontal"
-					android:layout_margin="10dp"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:gravity="center" >
-			
-			<RelativeLayout android:layout_width="match_parent" android:layout_height="fill_parent" >
-			    	<Button
-				    android:id="@+id/btnShowOnMap"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:layout_alignParentBottom="true"
-                	android:layout_alignParentLeft="true"
-                	android:layout_gravity="left"
-				    android:background="@drawable/button_map" />
-				
-				<Button
-					android:id="@+id/btnNavigation"
-				    android:layout_width="wrap_content"
-				    android:layout_height="wrap_content"
-				    android:layout_alignParentBottom="true"
-               		android:layout_alignParentRight="true"
-					android:text="@string/NavigationLocation"
-					android:textSize="25sp"
-					android:background="@drawable/button_navigation" />
-				</RelativeLayout>
+					<Button
+					    android:id="@+id/btnShowOnMap"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_alignParentBottom="true"
+	                	android:layout_alignParentLeft="true"
+	                	android:layout_gravity="left"
+					    android:background="@drawable/button_map" />
+					
+					<Button
+						android:id="@+id/btnNavigation"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_alignParentBottom="true"
+	               		android:layout_alignParentRight="true"
+						android:text="@string/NavigationLocation"
+						android:textSize="25sp"
+						android:background="@drawable/button_navigation" />
 
-			</TableRow>
+					<TextView
+					    android:id="@+id/txtDescription"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_alignParentTop="true"
+					    android:layout_centerHorizontal="true"
+					    android:text="@string/different_to_location"
+					    android:textSize="15sp" />
+
+					<TextView
+					    android:id="@+id/txtDistance"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:layout_centerHorizontal="true"
+					    android:layout_centerVertical="true"
+					    android:text="@string/gps_hint_turn_on"
+					    android:textSize="15sp" />
+				 
+				</RelativeLayout>
 	</LinearLayout>
 </ScrollView>

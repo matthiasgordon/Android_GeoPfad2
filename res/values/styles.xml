@@ -15,7 +15,6 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
-    	<item name="android:buttonStyle">@style/RobotoButtonStyle</item>
     	<item name="android:actionBarTabTextStyle">@style/ActionBarTabTextStyle</item>
     	<item name="android:actionBarTabStyle">@style/ActionBarTabStyle</item>
     	<item name="android:actionBarStyle">@style/MyActionBar</item>
