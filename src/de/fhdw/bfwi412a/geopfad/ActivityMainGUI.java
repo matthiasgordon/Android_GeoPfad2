@@ -19,6 +19,7 @@ public class ActivityMainGUI {
 		 * The ViewPager enables the possibility to swipe between the two fragments.
 		 */
 		mViewPager=(ViewPager) act.findViewById(R.id.pager);
+		act.getActionBar().setTitle(R.string.bar_title);
 	}
 
 	public ViewPager getViewPager() {

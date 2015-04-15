@@ -29,6 +29,15 @@
               		android:textColor="#2E2E2E"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical|center"
-                    android:text="Application Version: Beta"/>
+                    android:text="Application Version: "/>
+          <TextView 
+              		android:layout_width="fill_parent"
+              		style="@style/RobotoTextViewStyle"
+              		android:textSize="15sp"
+              		android:textColor="#2E2E2E"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center"
+                    android:text="@string/version"/>
+           
 
   </LinearLayout>

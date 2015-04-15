@@ -35,6 +35,7 @@ public class ActivityLocationsGUI {
 		mBtnVisit = (CheckBox) mActLoc.findViewById(R.id.btnVisit);
 		mBtnShowOnMap = (Button) mActLoc.findViewById(R.id.btnShowOnMap);
 		mBtnNavigation = (Button) mActLoc.findViewById(R.id.btnNavigation);
+		actloc.getActionBar().setTitle(R.string.bar_title);
 	}
 
 	public TextView getAbout() {

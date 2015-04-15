@@ -40,6 +40,7 @@ public class ActivityAddLocationGUI {
 		mEtLng = (EditText)mAddLoc.findViewById(R.id.etxtAddLocationLongitude);
 		mImageUrl = (TextView)mAddLoc.findViewById(R.id.bildurl);
 		mImgPreview = (ImageView)mAddLoc.findViewById(R.id.imgAddLocationPreview);
+		addLoc.getActionBar().setTitle(R.string.bar_title);
 	}
 
 	public ActivityAddLocation getmAddLoc() {

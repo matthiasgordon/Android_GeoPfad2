@@ -9,6 +9,7 @@ public class ActivityAbout extends Activity {
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
+		getActionBar().setTitle(R.string.bar_title);
 		
 	}
 }

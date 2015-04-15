@@ -8,6 +8,7 @@ public class ActivityFileChooserGUI {
 	public ActivityFileChooserGUI(ActivityFileChooser mFileChoos) {
 		
 		this.mFileChoos = mFileChoos;
+		mFileChoos.getActionBar().setTitle(R.string.bar_title);
 	}
 
 	public ActivityFileChooser getmFileChoos() {

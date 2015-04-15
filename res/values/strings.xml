@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Geo Pfad</string>
+    <string name="app_name">GEOpfad Bergisch Gladbach</string>
     <string name="NavigationLocation"></string>
     
     <!-- Activity Start -->
-    <string name="Willkommen">Willkommen zum GeoPfad</string>
+    <string name="Willkommen">Willkommen zum GEOpfad</string>
     <string name="Erklaerung">Diese App bietet ihnen alle möglichen Infos rund um den Geopfad. Dabei handelt es sich um einen unter Geologen weltbekannten Rundweg durch Bergisch Gladbach. Auf dem Weg findet man zahlreiche geologisch wertvolle Funde, die eine Geschichte aus vergangenen Zeiten erzählen.</string>
     <string name="Wetter">Hier das aktuelle Wetter in Bergisch Gladbach:</string>
     <string name="Button_Map">Los!</string>
@@ -98,17 +98,34 @@
     <string name="scale_destination_activity_start_image_snail">schnecke</string>
     
     <!-- Activity About -->
-    <string name="about_text">
-           Stadt Bergisch Gladbach
-		\nDer Bürgermeister
-		\nKonrad-Adenauer-Platz 1
-		\n51465 Bergisch Gladbach
-		\nTel. 02202 14-0 (Zentrale)
-		\nFax 02202 14-2300
-		\nE-Mail: info@bergischgladbach.de
-		\n
-		\nDie Stadt Bergisch Gladbach ist eine Körperschaft des öffentlichen Rechts.
-		\nSie wird vertreten durch Bürgermeister Lutz Urbach. Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE 121978025
-	</string>
-    <string name="about_title">Impressum</string>    
+    <string name="about_text_city">
+         Stadt Bergisch Gladbach
+\nDer Bürgermeister
+\nKonrad-Adenauer-Platz 1
+\n51465 Bergisch Gladbach 
+\nTel. 02202 14-0 (Zentrale)
+\nFax 02202 14-2300
+\nE-Mail: info@bergischgladbach.de 
+\n
+</string>
+ <string name="about_text_app">
+GEOpfad Bergisch Gladbach
+\nVersionsnummer 1.0
+\n
+\nEntwickelt von:
+\nMarcel Böttcher
+\nPatrick Glawe
+\nMatthias Gordon
+\nJohanna Korten
+\nMarc Niedermeyer
+\nMatthias Wiegand
+\n
+\n
+\nCopyright © 2015 							
+\nAlle Rechte vorbehalten/All rights reserved	
+\n
+\nWetterdienst von:</string>
+    <string name="about_title">Impressum</string>
+    <string name="version">1.0</string>
+    <string name="bar_title">GEOpfad BG</string>    
 </resources>

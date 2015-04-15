@@ -62,6 +62,7 @@ public class ScalingUtilities {
 	 public static Bitmap fitScaleExtern(String mOrtImage, Context context, String destination) {
 		 	
 	        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+	        
 	        int mTotalwidth = metrics.widthPixels;
 	        int mTotalheight = metrics.heightPixels;
 		 	int mDstWidth = 0;
@@ -98,6 +99,12 @@ public class ScalingUtilities {
 	 public static Bitmap fitScale(Resources res, int resId, Context context, String destination) {	
 		 
 		    DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+		    double ySize = metrics.heightPixels / metrics.ydpi;
+	        double xSize = metrics.widthPixels / metrics.xdpi;
+	         
+	        // Bildschirmgrösse in Zoll
+	        double screenSize = Math.sqrt(xSize * xSize + ySize * ySize);
+	        
 		    int mTotalwidth = metrics.widthPixels;
 		    int mTotalheight = metrics.heightPixels;
 		 	int mDstWidth = 0;
@@ -114,8 +121,14 @@ public class ScalingUtilities {
 		 	}
 		 	
 		 	if(destination.equals(context.getResources().getString(R.string.scale_destination_activity_start_image_snail))){
+		 		if(screenSize < 4) {
+		 			mDstWidth = mTotalwidth - 250;
+			        mDstHeight = mTotalheight - 250;
+		 		}
+		 		else{
 		 		mDstWidth = mTotalwidth - 200;
 		        mDstHeight = mTotalheight - 200;
+		 		}
 		 	}
 		    /** Part 1: Decode image */
 		    Bitmap unscaledBitmap = ScalingUtilities.decodeResource(res, resId,mDstWidth, mDstHeight, ScalingLogic.FIT);

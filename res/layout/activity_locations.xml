@@ -56,7 +56,7 @@
 					android:layout_height="wrap_content"
 					android:layout_margin="10dp"
 					android:layout_gravity = "center_vertical|center_horizontal"
-					android:textSize="20sp" />
+					android:textSize="15sp" />
 				
 			<TableRow
 					android:id="@+id/lnlVisit"

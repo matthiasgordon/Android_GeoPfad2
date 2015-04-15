@@ -27,6 +27,7 @@ public class ActivityStartGUI {
 		mToActivityMainButton = (Button) mActivity.findViewById(R.id.ToActivityMainButton);
 		mSchneckenBild = (ImageView) mActivity.findViewById(R.id.schneckeView);
 		btnWeather = (Button) mActivity.findViewById(R.id.btnWeather);
+		mActivity.getActionBar().setTitle(R.string.bar_title);   
 	}
 		
 	public TextView getTemperature() {
